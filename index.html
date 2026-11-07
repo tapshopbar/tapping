@@ -232,7 +232,8 @@ footer{background:#000;color:#fff;padding:70px var(--pad) 40px}
 .rail a{flex:0 0 min(30vw,380px)}
 .rail .ph{aspect-ratio:5/4;background:#F6C640}
 .rail .cap{align-items:baseline;gap:12px}.rail .cap .pr{font-variant-numeric:tabular-nums;white-space:nowrap}.rail .cap .pr small{font-size:11px;font-weight:600;margin-left:1px}
-.board{padding:64px var(--pad) 0}
+.board{padding:64px var(--pad) 0}.board[hidden]{display:none}.board.open{animation:boardIn .5s ease both}@keyframes boardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+#menu-toggle{min-width:150px}#menu-toggle[aria-expanded="true"]{background:#000;color:#fff;border-color:#000}
 .board .bhead{display:flex;justify-content:space-between;align-items:end;gap:20px;border-top:3px solid #000;padding-top:22px;margin-bottom:34px}
 .board .bhead h3{font-size:clamp(28px,4vw,56px);margin:0}
 .board .bhead p{margin:0;font-size:12px;font-weight:600;color:#555;max-width:420px;text-align:right;line-height:1.5}
@@ -339,7 +340,7 @@ html[data-season="winter"] .rev{background:var(--wine)}html[data-season="glass"]
 </section>
 
 <section class="menu-sec" id="menu">
-  <div class="head"><div><h2 class="disp">On the table</h2><p class="sub">삼배체 굴부터 아메리카노까지 · 전 지점 공통 메뉴 66가지</p></div><a class="btn ghost" href="#fullmenu">FULL MENU</a></div>
+  <div class="head"><div><h2 class="disp">On the table</h2><p class="sub">삼배체 굴부터 아메리카노까지 · 전 지점 공통 메뉴 66가지</p></div><button class="btn ghost" id="menu-toggle" aria-expanded="false" aria-controls="fullmenu">MENU</button></div>
   <div class="rail">
     <a href="#fullmenu"><div class="ph"><img src="assets/m_oyster.jpg" alt="삼배체 생굴 3pcs" loading="lazy"></div><div class="cap"><span>삼배체 생굴 3pcs</span><span class="pr">18,900<small>원</small></span></div></a>
     <a href="#fullmenu"><div class="ph"><img src="assets/m_steak.jpg" alt="프라임 채끝 스테이크 250g" loading="lazy"></div><div class="cap"><span>프라임 채끝 스테이크 250g</span><span class="pr">54,900<small>원</small></span></div></a>
@@ -350,7 +351,7 @@ html[data-season="winter"] .rev{background:var(--wine)}html[data-season="glass"]
     <a href="#fullmenu"><div class="ph"><img src="assets/m_tteok.jpg" alt="루꼴라 치즈 떡볶이" loading="lazy"></div><div class="cap"><span>루꼴라 치즈 떡볶이</span><span class="pr">10,900<small>원</small></span></div></a>
     <a href="#fullmenu"><div class="ph"><img src="assets/m_truffle.jpg" alt="트러플 버섯 크림 파스타" loading="lazy"></div><div class="cap"><span>트러플 버섯 크림 파스타</span><span class="pr">18,900<small>원</small></span></div></a>
   </div>
-  <div class="board" id="fullmenu">
+  <div class="board" id="fullmenu" hidden>
     <div class="bhead"><h3 class="disp">Full menu</h3><p>가격 단위 원 · 부가세 포함 · 청계 기준이며 지점별로 일부 메뉴·가격이 다를 수 있습니다 (동대문 순살 닭강정 19,900 등) · 2026.11 네이버 플레이스 등록 메뉴 기준</p></div>
     <div class="bgrid">
       <div class="bcol"><h4><span class="disp">Oyster</span><small>삼배체 굴</small></h4><ul><li class="hot" title="매일매일 통영에서 직송되는 신선한 삼배체 굴"><span>삼배체 생굴 3pcs</span><i></i><b>18,900</b></li><li title="통통하고 따뜻하게 익은 찜굴과 달콤새콤한 초장의 조화가 돋보이는 메뉴"><span>삼배체 찜굴 3pcs</span><i></i><b>18,900</b></li><li title="풍미 가득한 구운 굴, 버터와 허브의 조화"><span>삼배체 구운 굴 3pcs</span><i></i><b>18,900</b></li></ul></div>
@@ -491,6 +492,17 @@ form.querySelectorAll('.tf-opt').forEach(b=>b.addEventListener('click',()=>{form
 document.querySelectorAll('[data-feedback]').forEach(a=>a.addEventListener('click',open));document.getElementById('fbclose').onclick=close;m.addEventListener('click',e=>{if(e.target===m)close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()})})();
 </script>
 
+
+<script id="js-menu-toggle">
+(function(){
+  var btn=document.getElementById('menu-toggle'), board=document.getElementById('fullmenu'); if(!btn||!board) return;
+  function open(scroll){ board.hidden=false; board.classList.add('open'); btn.setAttribute('aria-expanded','true'); btn.textContent='CLOSE MENU'; if(scroll) setTimeout(function(){ board.scrollIntoView({behavior:'smooth',block:'start'}); },30); }
+  function close(){ board.hidden=true; board.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.textContent='MENU'; document.getElementById('menu').scrollIntoView({behavior:'smooth',block:'start'}); }
+  btn.addEventListener('click',function(){ board.hidden?open(true):close(); });
+  document.querySelectorAll('.rail a[href="#fullmenu"]').forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); open(true); }); });
+  if(location.hash==='#fullmenu') open(true);
+})();
+</script>
 <script id="js-menu-rev">
 (function(){
   var DATA = {"updated":"2026-11-07","total":4183,"stores":{"청계":{"id":"1619947949","count":1419,"score":4.77},"상암":{"id":"2082658511","count":1055},"마곡":{"id":"2090093840","count":47},"동대문":{"id":"1784099751","count":1662}},"lead":{"store":"청계","when":"2026.08","text":"정말 이만한 와인바 없습니다…"},"items":[{"store":"청계","when":"2026.07","rating":5,"text":"추천 받은 와인과 주문한 안주가 잘 어울려서 시간 가는 줄 모르고 즐기다 왔습니다. 분위기도 좋고 직원분들도 친절하셔서 기분 좋게 다녀왔습니다.","tags":["술이 다양해요","가성비가 좋아요","음식이 맛있어요"]},{"store":"동대문","when":"2026.08","rating":5,"text":"와인을 소량으로 여러가지 맛 볼 수 있는 탭샵바 너무 좋네요. 술을 잘 못하는 저도 맛있는 와인을 여러가지 맛볼 수 있어 좋아요. 테이스팅과 한잔 이라는 두가지 옵션으로 가성비 좋게 즐길 수 있어서 좋았습니다.","tags":["음식이 맛있어요","술이 다양해요","대화하기 좋아요"]},{"store":"상암","when":"2026.07","rating":5,"text":"와인 종류가 다양해서 고르는 재미가 있고, 무엇보다 탭으로 조금씩 시음해볼 수 있어서 부담 없이 즐기기 좋았습니다. 와인을 잘 몰라도 여러 가지를 경험해볼 수 있는 점이 특히 좋았어요.","tags":["음식이 맛있어요","매장이 넓어요","친절해요"]},{"store":"마곡","when":"2026.09","rating":5,"text":"와인도 매우 다양하고, 잔와인을 맛있는 음식과 같이 무겁지 않게 마실 수 있어서 너무 좋은 거 같습니다. 보틀로 구매가능한 것도 넘 좋구요! 자주 올 것 같아요 :)","tags":["술이 다양해요","특별한 메뉴가 있어요","혼술하기 좋아요"]},{"store":"동대문","when":"2026.07","rating":5,"text":"와인 러버라면 꼭 와봐야할 곳 탭샵바. 분위기도 좋은데, 음식도 다 맛있습니다. 잠봉뵈르 샌드위치와 루꼴라 떡볶이 꼭 드세요.","tags":["인테리어가 멋져요","음악이 좋아요","술이 다양해요"]}]};
