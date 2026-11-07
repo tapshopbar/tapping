@@ -64,7 +64,7 @@ html[data-font="bi"] .disp{font-family:"Pretendard Variable",Pretendard,sans-ser
 html[data-font="bi"] .hl{font-size:clamp(46px,7.9vw,140px);line-height:1.0}
 html[data-font="bi"] .marq span,html[data-font="bi"] .loc h2,html[data-font="bi"] .y27 h2,html[data-font="bi"] .final h2,html[data-font="bi"] .menu-sec h2{letter-spacing:-.05em}
 html[data-font="bi"] .loc h2{font-size:clamp(40px,6.6vw,120px)}html[data-font="bi"] .final h2{font-size:clamp(44px,8vw,150px)}html[data-font="bi"] .y27 h2{font-size:clamp(44px,7.4vw,140px)}
-.hl .ln{display:block}
+.hl .ln{display:block}.hl .ln:last-child{white-space:nowrap}
 #cw{transition:opacity .5s ease-in-out;opacity:1}
 #cw.c1{color:var(--red)}#cw.c2{color:var(--blue)}#cw.c3{color:var(--yellow)}
 html[data-season="winter"] #cw.c1,html[data-season="winter"] #cw.c2,html[data-season="winter"] #cw.c3{color:var(--pine)}
@@ -157,8 +157,8 @@ footer{background:#000;color:#fff;padding:70px var(--pad) 40px}
 .legal{font-size:12px;line-height:1.8;opacity:.75;border-top:1px solid #333;padding-top:24px}
 .warn{font-size:11px;line-height:1.9;opacity:.75;margin-top:16px;max-width:1000px}
 .note{font-size:10px;opacity:.5;line-height:1.8;margin-top:14px}
-.copy{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;margin-top:30px;align-items:center;flex-wrap:wrap;gap:10px}
-.season{display:flex;gap:6px}.season button{background:transparent;border:1px solid #444;color:#aaa;font-size:10px;padding:5px 9px;letter-spacing:.06em}.season button.on{color:#000;background:#fff}
+.copy{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;margin-top:30px;align-items:center;flex-wrap:wrap;gap:10px;max-width:100%}
+.season{display:flex;gap:6px;flex-wrap:wrap}.season button{background:transparent;border:1px solid #444;color:#aaa;font-size:10px;padding:5px 9px;letter-spacing:.06em}.season button.on{color:#000;background:#fff}
 .paused video{opacity:.999}
 /* mobile */
 @media(max-width:860px){
@@ -176,7 +176,7 @@ footer{background:#000;color:#fff;padding:70px var(--pad) 40px}
  .film{height:120vw;min-height:0}.film .slogan{width:80vw}
  .app{grid-template-columns:1fr;padding:70px var(--pad) 50px;gap:34px}.app .pic{height:70vw;min-height:0}
  .feat{padding-bottom:70px}.feat .grid{grid-template-columns:1fr 1fr;gap:18px}.feat .card .n{margin-bottom:28px}
- .menu-sec{padding-bottom:70px}.menu-sec .head{display:block;margin-bottom:22px}.rail a{flex-basis:70vw}
+ .menu-sec{padding-bottom:70px}.menu-sec .head{display:flex;flex-direction:row;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:22px}.menu-sec .head .btn{padding:12px 16px;font-size:11px;white-space:nowrap;flex:0 0 auto}.menu-sec .head h2{font-size:11vw}.menu-sec .head .sub{font-size:12px}.rail a{flex-basis:70vw}
  .loc{padding:70px var(--pad)}.loc p.lead{font-size:15px;margin-bottom:34px}.stores{grid-template-columns:1fr 1fr;gap:16px}
  .rooms{grid-template-columns:1fr;gap:26px;margin-top:50px}.rooms .list{grid-template-columns:1fr;gap:16px}
  .taps{padding:50px 0 60px}.marq span{font-size:14vw}
@@ -193,6 +193,36 @@ footer{background:#000;color:#fff;padding:70px var(--pad) 40px}
 .fbbox{background:#fff;width:min(720px,100%);height:min(86vh,900px);position:relative;border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
 .fbbox iframe{flex:1;width:100%;border:0}.fbclose{position:absolute;right:10px;top:8px;width:36px;height:36px;border:0;background:#000;color:#fff;border-radius:50%;font-size:20px;z-index:2}
 .fbfoot{font-size:12px;padding:10px 16px;border-top:1px solid #eee;color:#555}.fbfoot a{font-weight:800;border-bottom:1px solid}
+
+.taps{padding:100px var(--pad) 90px;border-top:2px solid #000}
+.taps-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:28px}
+.taps-head h2{font-size:clamp(40px,6.4vw,110px);margin:0}
+.store-tabs{display:flex;gap:8px;flex-wrap:wrap}.store-tabs button{border:2px solid #000;background:transparent;padding:12px 18px;font-size:13px;font-weight:800;letter-spacing:-.02em}.store-tabs button[aria-selected="true"]{background:#000;color:#fff}
+.taps-meta{display:flex;gap:18px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#555;border-top:1px solid #000;padding:14px 0 0;margin-bottom:6px}
+.taps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0 32px}
+.tap{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:baseline;padding:16px 0;border-bottom:1px solid #d9d9d9}
+.tap .no{font-size:12px;font-weight:800;color:#999;letter-spacing:.06em}.tap .ko{font-size:17px;font-weight:800;letter-spacing:-.03em;display:block}.tap .en{font-size:12px;color:#666;display:block;margin-top:2px}
+.tap .tag{font-size:10px;font-weight:800;letter-spacing:.1em;padding:3px 7px;border-radius:999px;background:#eee;display:inline-block;margin-top:6px}
+.tap .tag.red{background:var(--red);color:#fff}.tap .tag.white{background:var(--yellow)}.tap .tag.premium{background:#000;color:#fff}.tap .tag.sb{background:var(--blue);color:#fff}
+.tap .price{font-size:14px;font-weight:700;white-space:nowrap;text-align:right}.tap .price small{display:block;font-size:10px;color:#888;font-weight:600}
+.taps-note{font-size:12px;color:#666;margin:22px 0 0;max-width:760px;line-height:1.7}
+.taps-note b{color:#000}
+@media(max-width:860px){.taps{padding:60px var(--pad) 60px}.taps-head{margin-bottom:18px}.taps-head h2{font-size:11vw}.store-tabs{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px;scrollbar-width:none}.store-tabs button{flex:0 0 auto;padding:10px 14px;font-size:12px}.taps-grid{grid-template-columns:1fr}.tap{grid-template-columns:28px 1fr auto}}
+
+.fbbox{display:none}
+.tf{background:#fff;width:min(760px,100%);min-height:min(78vh,620px);position:relative;border-radius:10px;padding:56px 56px 28px;display:flex;flex-direction:column;font-family:"Pretendard Variable",Pretendard,sans-serif;color:#0E0E0E}
+.tf-prog{position:absolute;left:0;top:0;right:0;height:4px;background:#eee;border-radius:10px 10px 0 0;overflow:hidden}.tf-prog i{display:block;height:100%;width:0;background:var(--red);transition:width .4s}
+.tf form{flex:1;display:flex;flex-direction:column}.tf-step{flex:1;animation:tfin .35s ease-out}@keyframes tfin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.tf-q{font-size:clamp(22px,2.6vw,32px);font-weight:800;letter-spacing:-.04em;line-height:1.3;margin:0 0 26px}.tf-q small{display:block;font-size:14px;font-weight:500;color:#777;margin-top:8px;letter-spacing:-.01em}.tf-n{color:var(--red);font-size:14px;font-weight:800;letter-spacing:.04em;margin-right:6px;vertical-align:middle}
+.tf-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tf-opt{display:flex;align-items:center;gap:12px;border:1.5px solid #cfcfcf;border-radius:8px;padding:14px 16px;font-size:16px;font-weight:700;cursor:pointer;letter-spacing:-.01em;transition:border-color .15s,background .15s}.tf-opt:hover,.tf-opt:focus{border-color:#000;outline:none}.tf-opt.on{border-color:var(--red);background:#fff4f2}.tf-opt input{display:none}.tf-opt .k{width:24px;height:24px;border:1.5px solid #999;border-radius:5px;font-size:12px;font-weight:800;display:grid;place-items:center;color:#555}.tf-opt.on .k{background:var(--red);border-color:var(--red);color:#fff}
+.tf textarea,.tf input[type=text]{width:100%;border:0;border-bottom:2px solid #000;font:inherit;font-size:22px;font-weight:600;padding:10px 0;background:transparent;resize:none;letter-spacing:-.02em}.tf textarea:focus,.tf input[type=text]:focus{outline:none;border-color:var(--red)}
+.tf-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px}.tf-right{display:flex;align-items:center;gap:14px}.tf-hint{font-size:12px;color:#999;font-weight:600}
+.tf-next{background:#000;color:#fff;border:0;font-size:15px;font-weight:800;padding:14px 26px;border-radius:6px;cursor:pointer}.tf-next:hover{background:var(--red)}.tf-back{background:transparent;border:0;font-size:14px;font-weight:700;color:#666;cursor:pointer}
+.tf-done .tf-q{font-size:clamp(28px,3.4vw,42px)}.tf-sub{font-size:15px;color:#555;margin:0}
+.shake{animation:shake .4s}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.tf .fbfoot{border:0;padding:14px 0 0;text-align:center}
+@media(max-width:860px){.fbmodal{padding:0;align-items:flex-end}.tf{width:100%;min-height:72vh;border-radius:14px 14px 0 0;padding:44px 22px 20px}.tf-opts{grid-template-columns:1fr}.tf-opt{padding:12px 14px;font-size:15px}.tf textarea,.tf input[type=text]{font-size:18px}}
 </style>
 
 <style id="css-menu-rev">
@@ -364,9 +394,11 @@ html[data-season="winter"] .rev{background:var(--wine)}html[data-season="glass"]
   </div>
 </section>
 
-<section class="taps" aria-label="탭 카테고리">
-  <p class="kicker">On tap right now · 64 wines</p>
-  <div class="marq"><div class="track disp" id="track"><span>France</span><span class="dot">·</span><span>Italy</span><span class="dot">·</span><span>USA</span><span class="dot">·</span><span>Spain</span><span class="dot">·</span><span>Australia</span><span class="dot">·</span><span>Chablis</span><span class="dot">·</span><span>Sauvignon Blanc</span><span class="dot">·</span><span>Rosé &amp; Natural</span><span class="dot">·</span><span>Sweet Wines</span><span class="dot">·</span><span>Whiskey</span><span class="dot">·</span><span>Premium</span><span class="dot">·</span><span>Food Pairing</span><span class="dot">·</span></div></div>
+<section class="taps" id="ontap" aria-label="매장별 탭 와인">
+  <div class="taps-head"><div><p class="kicker">On tap right now</p><h2 class="disp">What's on tap<br>tonight</h2></div><div class="store-tabs" role="tablist" aria-label="매장 선택"></div></div>
+  <div class="taps-meta"><span id="taps-count"></span><span id="taps-updated"></span></div>
+  <div class="taps-grid" id="taps-grid"></div>
+  <p class="taps-note" id="taps-note"></p>
 </section>
 
 <section class="y27" id="bytheglass">
@@ -413,21 +445,50 @@ html[data-season="winter"] .rev{background:var(--wine)}html[data-season="glass"]
 window.__errors=[];addEventListener('error',e=>__errors.push(e.message));
 (()=>{
  /* BARFLY-style word swap: fade out .5s → swap → fade in .5s → hold ~1s (observed cycle ≈2.0s) */
- const words=[['YOUR TASTE','c1'],['EVERYDAY','c2'],['SEOUL','c3'],['64 WINES','c1'],['YOUR CELLAR','c2'],['THE GLASS','c3']];
+ const words=[['YOUR TASTE','c1'],['EVERYDAY','c2'],['SEOUL','c3'],['64 WINES','c1'],['THE CELLAR','c2'],['THE GLASS','c3']];
+ function fitWord(){const ln=cw.parentElement;cw.style.fontSize='';const avail=ln.clientWidth;let w=ln.scrollWidth;if(w>avail+1){const r=Math.max(.55,(avail-(ln.scrollWidth-cw.offsetWidth)-6)/cw.offsetWidth);cw.style.fontSize=(r*100)+'%'}}addEventListener('resize',fitWord);document.fonts.ready.then(fitWord);
  const cw=document.getElementById('cw');let i=0;const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
- function cycle(){cw.style.opacity='0';setTimeout(()=>{i=(i+1)%words.length;cw.textContent=words[i][0];cw.className=words[i][1];cw.style.opacity='1';setTimeout(cycle,1000+500)},500)}
+ function cycle(){cw.style.opacity='0';setTimeout(()=>{i=(i+1)%words.length;cw.textContent=words[i][0];cw.className=words[i][1];fitWord();cw.style.opacity='1';setTimeout(cycle,1000+500)},500)}
  if(!reduce)setTimeout(cycle,1500);
  /* season preview */
  document.querySelectorAll('.season button[data-s]').forEach(b=>b.onclick=()=>{document.documentElement.dataset.season=b.dataset.s;document.querySelectorAll('.season button[data-s]').forEach(x=>x.classList.toggle('on',x===b))});document.querySelectorAll('.season button[data-f]').forEach(b=>b.onclick=()=>{document.documentElement.dataset.font=b.dataset.f;document.querySelectorAll('.season button[data-f]').forEach(x=>x.classList.toggle('on',x===b))});const fq=new URLSearchParams(location.search).get('font');if(fq&&document.querySelector('[data-f='+fq+']'))document.querySelector('[data-f='+fq+']').click();
  /* film control */
  const fv=document.getElementById('fvid'),fc=document.getElementById('fctl');fc.onclick=()=>{if(fv.paused){fv.play();fc.textContent='일시정지';fc.setAttribute('aria-pressed','false')}else{fv.pause();fc.textContent='재생';fc.setAttribute('aria-pressed','true')}};
  fv.addEventListener('canplay',()=>{document.querySelector('.film .ph').style.opacity='0'});
- const tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
+ const tr=document.getElementById('track');if(tr)tr.innerHTML+=tr.innerHTML;
 })();
 </script>
-<div class="fbmodal" id="fbmodal" hidden><div class="fbbox"><button class="fbclose" id="fbclose" aria-label="닫기">×</button><iframe id="fbframe" title="탭샵바 웹 시안 의견" loading="lazy"></iframe><div class="fbfoot">창이 안 보이면 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform" target="_blank" rel="noopener">새 창에서 열기 →</a></div></div></div>
+<div class="fbmodal" id="fbmodal" hidden role="dialog" aria-modal="true" aria-label="탭샵바 웹 시안 의견">
+ <div class="tf"><button class="fbclose" id="fbclose" aria-label="닫기">×</button>
+  <div class="tf-prog"><i id="tf-bar"></i></div>
+  <form id="tf" novalidate>
+   <section class="tf-step" data-step="0"><div class="tf-q"><span class="tf-n">1 →</span> 첫 화면에서 <b>INTO</b> 뒤에 바뀌는 문구 중<br>제일 끌린 것은?</div><div class="tf-opts"><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="YOUR TASTE"><span class="k">A</span>YOUR TASTE</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="EVERYDAY"><span class="k">B</span>EVERYDAY</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="SEOUL"><span class="k">C</span>SEOUL</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="64 WINES"><span class="k">D</span>64 WINES</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="YOUR CELLAR"><span class="k">E</span>YOUR CELLAR</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="THE GLASS"><span class="k">F</span>THE GLASS</label></div></section>
+   <section class="tf-step" data-step="1" hidden><div class="tf-q"><span class="tf-n">2 →</span> 좋았던 점은 무엇인가요?</div><textarea name="entry.1400456696" rows="3" placeholder="여기에 입력..."></textarea></section>
+   <section class="tf-step" data-step="2" hidden><div class="tf-q"><span class="tf-n">3 →</span> 아쉬운 점이나 바꾸고 싶은 것은요?<small>색, 문구, 글꼴, 사진, 구성 무엇이든</small></div><textarea name="entry.161839203" rows="3" placeholder="여기에 입력..."></textarea></section>
+   <section class="tf-step" data-step="3" hidden><div class="tf-q"><span class="tf-n">4 →</span> 이름 또는 연락처 <small>선택 · 답장 드릴 때만 씁니다</small></div><input type="text" name="entry.106472073" placeholder="예: 홍길동 / 010-0000-0000"></section>
+   <section class="tf-step tf-done" data-step="4" hidden><div class="tf-q">고마워요.<br><b>의견이 전달됐어요.</b></div><p class="tf-sub">탭샵바 마케팅팀이 읽고 다음 시안에 반영할게요.</p></section>
+   <div class="tf-nav"><button type="button" class="tf-back" id="tf-back">← 이전</button><div class="tf-right"><span class="tf-hint">Enter ↵</span><button type="button" class="tf-next" id="tf-next">다음</button></div></div>
+  </form>
+  <div class="fbfoot">창이 안 보이면 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform" target="_blank" rel="noopener">새 창에서 열기 →</a></div>
+ </div>
+</div>
 <script>
-(()=>{const m=document.getElementById('fbmodal'),fr=document.getElementById('fbframe'),src='https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform?embedded=true';const open=e=>{if(matchMedia('(max-width:860px)').matches){e.currentTarget.target='_blank';return;}e.preventDefault();if(!fr.src)fr.src=src;m.hidden=false;document.body.style.overflow='hidden'};const close=()=>{m.hidden=true;document.body.style.overflow=''};document.querySelectorAll('[data-feedback]').forEach(a=>a.addEventListener('click',open));document.getElementById('fbclose').onclick=close;m.addEventListener('click',e=>{if(e.target===m)close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()})})();
+(async()=>{const grid=document.getElementById('taps-grid'),tabs=document.querySelector('.store-tabs');if(!grid)return;let data;try{data=await (await fetch('assets/taps.json',{cache:'no-store'})).json()}catch(e){grid.innerHTML='<p>탭 정보를 불러오지 못했어요.</p>';return}
+const tagCls={Red:'red',White:'white','Sauvignon Blanc':'sb',Premium:'premium'};
+function render(id){const st=data.stores.find(x=>x.id===id);tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.id===id)));document.getElementById('taps-count').textContent=st.name+' · 탭 '+st.taps+'개 중 '+st.wines.length+'종 표시';document.getElementById('taps-updated').textContent='UPDATED '+data.updated+(data.mode==='sample'?' · SAMPLE':' · LIVE');grid.innerHTML=st.wines.map((w,i)=>`<div class="tap"><span class="no">${String(i+1).padStart(2,'0')}</span><div><span class="ko">${w.ko}</span><span class="en">${w.en} · ${w.origin}</span><span class="tag ${tagCls[w.cat]||''}">${w.cat.toUpperCase()}</span></div><div class="price">${w.bottle?w.bottle.toLocaleString('ko-KR')+'원<small>보틀 · 잔 가격은 탭 화면</small>':'<small>잔 가격은 탭 화면</small>'}</div></div>`).join('')}
+tabs.innerHTML=data.stores.map(s=>`<button role="tab" data-id="${s.id}" aria-selected="false">${s.name}</button>`).join('');tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(b)render(b.dataset.id)});document.getElementById('taps-note').innerHTML='<b>'+(data.mode==='sample'?'샘플 데이터.':'')+'</b> '+data.note;render(data.stores[0].id)})();
+</script>
+<script>
+(()=>{const m=document.getElementById('fbmodal'),form=document.getElementById('tf'),steps=[...form.querySelectorAll('.tf-step')],bar=document.getElementById('tf-bar'),back=document.getElementById('tf-back'),next=document.getElementById('tf-next');let i=0,sent=false;
+const open=e=>{e.preventDefault();m.hidden=false;document.body.style.overflow='hidden';go(0);setTimeout(()=>{const f=steps[0].querySelector('input,textarea,button.tf-opt');f&&f.focus()},50)};
+const close=()=>{m.hidden=true;document.body.style.overflow=''};
+function go(n){i=Math.max(0,Math.min(steps.length-1,n));steps.forEach((s,k)=>s.hidden=k!==i);bar.style.width=(i/(steps.length-1)*100)+'%';back.style.visibility=i===0||i===steps.length-1?'hidden':'visible';next.textContent=i===3?'보내기':i===4?'닫기':'다음';document.querySelector('.tf-hint').style.display=i===4?'none':'';const f=steps[i].querySelector('input,textarea');f&&setTimeout(()=>f.focus(),30)}
+async function submit(){if(sent)return;sent=true;next.disabled=true;const fd=new FormData(form);try{await fetch('https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/formResponse',{method:'POST',mode:'no-cors',body:fd})}catch(e){}go(4);next.disabled=false}
+next.onclick=()=>{if(i===4)return close();if(i===0&&!form.querySelector('input[name="entry.496477098"]:checked')){steps[0].classList.add('shake');setTimeout(()=>steps[0].classList.remove('shake'),400);return}if(i===3)return submit();go(i+1)};
+back.onclick=()=>go(i-1);
+form.addEventListener('keydown',e=>{if(e.key==='Enter'&&!(e.target.tagName==='TEXTAREA'&&!e.metaKey&&!e.ctrlKey)){e.preventDefault();next.click()}});
+form.querySelectorAll('.tf-opt').forEach(b=>b.addEventListener('click',()=>{form.querySelectorAll('.tf-opt').forEach(x=>x.classList.remove('on'));b.classList.add('on');b.querySelector('input').checked=true;setTimeout(()=>go(1),280)}));
+document.querySelectorAll('[data-feedback]').forEach(a=>a.addEventListener('click',open));document.getElementById('fbclose').onclick=close;m.addEventListener('click',e=>{if(e.target===m)close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()})})();
 </script>
 
 <script id="js-menu-rev">
