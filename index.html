@@ -196,8 +196,8 @@ footer{background:#000;color:#fff;padding:70px var(--pad) 40px}
 </style>
 </head>
 <body>
-<div class="mockbar">MOCKUP v0.4 · 탭샵바 2027 캠페인 "WE'RE TAPPING INTO…" 웹 시안입니다. 실제 사이트가 아니며 의견을 모으는 중이에요. <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform" target="_blank" rel="noopener" data-feedback>의견 보내기 →</a></div>
-<a class="fab" href="https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform" target="_blank" rel="noopener" data-feedback>의견 보내기</a>
+<div class="mockbar">MOCKUP v0.4 · 탭샵바 2027 캠페인 "WE'RE TAPPING INTO…" 웹 시안입니다. 실제 사이트가 아니며 의견을 모으는 중이에요. <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform" rel="noopener" data-feedback>의견 보내기 →</a></div>
+<a class="fab" href="https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform" rel="noopener" data-feedback>의견 보내기</a>
 <div class="wrap">
 <header>
   <a href="#top" aria-label="TAP SHOP BAR 홈"><img class="logo" src="assets/wordmark.png" alt="TAP SHOP BAR"></a>
@@ -356,7 +356,7 @@ window.__errors=[];addEventListener('error',e=>__errors.push(e.message));
 </script>
 <div class="fbmodal" id="fbmodal" hidden><div class="fbbox"><button class="fbclose" id="fbclose" aria-label="닫기">×</button><iframe id="fbframe" title="탭샵바 웹 시안 의견" loading="lazy"></iframe><div class="fbfoot">창이 안 보이면 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform" target="_blank" rel="noopener">새 창에서 열기 →</a></div></div></div>
 <script>
-(()=>{const m=document.getElementById('fbmodal'),fr=document.getElementById('fbframe'),src='https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform?embedded=true';const open=e=>{if(matchMedia('(max-width:860px)').matches)return;e.preventDefault();if(!fr.src)fr.src=src;m.hidden=false;document.body.style.overflow='hidden'};const close=()=>{m.hidden=true;document.body.style.overflow=''};document.querySelectorAll('[data-feedback]').forEach(a=>a.addEventListener('click',open));document.getElementById('fbclose').onclick=close;m.addEventListener('click',e=>{if(e.target===m)close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()})})();
+(()=>{const m=document.getElementById('fbmodal'),fr=document.getElementById('fbframe'),src='https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform?embedded=true';const open=e=>{if(matchMedia('(max-width:860px)').matches){e.currentTarget.target='_blank';return;}e.preventDefault();if(!fr.src)fr.src=src;m.hidden=false;document.body.style.overflow='hidden'};const close=()=>{m.hidden=true;document.body.style.overflow=''};document.querySelectorAll('[data-feedback]').forEach(a=>a.addEventListener('click',open));document.getElementById('fbclose').onclick=close;m.addEventListener('click',e=>{if(e.target===m)close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()})})();
 </script>
 </body>
 </html>
