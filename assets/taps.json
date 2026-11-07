@@ -1,0 +1,329 @@
+{
+ "updated": "2026-11-07",
+ "mode": "sample",
+ "note": "샘플 데이터: pos.tsb.wine 주류 카탈로그(11/7)에 등록된 와인명·병 가격 기준. 매장별 실제 탭 배치와 잔 가격은 POS 연동 후 자동으로 바뀝니다.",
+ "stores": [
+  {
+   "id": "cheonggye",
+   "name": "청계 · 삼일빌딩",
+   "taps": 64,
+   "wines": [
+    {
+     "ko": "샤또 포메이",
+     "en": "Château Fomey",
+     "origin": "FRANCE",
+     "cat": "Red",
+     "bottle": null
+    },
+    {
+     "ko": "레 칼케르 소비뇽 블랑",
+     "en": "Les Calcaires Sauvignon Blanc",
+     "origin": "FRANCE",
+     "cat": "Sauvignon Blanc",
+     "bottle": null
+    },
+    {
+     "ko": "덕혼 디코이 카베르네 소비뇽",
+     "en": "Duckhorn Decoy Cabernet Sauvignon",
+     "origin": "USA",
+     "cat": "Red",
+     "bottle": null
+    },
+    {
+     "ko": "케이머스 카베르네 소비뇽",
+     "en": "Caymus Cabernet Sauvignon",
+     "origin": "USA",
+     "cat": "Premium",
+     "bottle": null
+    },
+    {
+     "ko": "샤또 메종 블랑쉬",
+     "en": "Château Maison Blanche",
+     "origin": "FRANCE",
+     "cat": "Red",
+     "bottle": 38000
+    },
+    {
+     "ko": "폴 자불레 지공다스 피에르 애기유",
+     "en": "Paul Jaboulet Aîné Gigondas Pierre Aiguille",
+     "origin": "FRANCE",
+     "cat": "Red",
+     "bottle": 52000
+    },
+    {
+     "ko": "빌라 안티노리 로쏘",
+     "en": "Villa Antinori Rosso",
+     "origin": "ITALY",
+     "cat": "Red",
+     "bottle": 32000
+    },
+    {
+     "ko": "프루노토 바롤로",
+     "en": "Prunotto Barolo",
+     "origin": "ITALY",
+     "cat": "Premium",
+     "bottle": 70000
+    },
+    {
+     "ko": "꼬또 데 이마스 그랑 리제르바",
+     "en": "Coto de Imaz Gran Reserva",
+     "origin": "SPAIN",
+     "cat": "Red",
+     "bottle": 48000
+    },
+    {
+     "ko": "카사노바 디 네리 로쏘 디 몬탈치노",
+     "en": "Casanova di Neri Rosso di Montalcino",
+     "origin": "ITALY",
+     "cat": "Red",
+     "bottle": 51000
+    },
+    {
+     "ko": "브레드 앤 버터 피노 누아",
+     "en": "Bread & Butter Pinot Noir",
+     "origin": "USA",
+     "cat": "Red",
+     "bottle": 36000
+    },
+    {
+     "ko": "토후 소비뇽 블랑",
+     "en": "Tohu Sauvignon Blanc",
+     "origin": "NEW ZEALAND",
+     "cat": "Sauvignon Blanc",
+     "bottle": null
+    }
+   ]
+  },
+  {
+   "id": "sangam",
+   "name": "상암",
+   "taps": 48,
+   "wines": [
+    {
+     "ko": "우나니메 말벡",
+     "en": "Unánime Malbec",
+     "origin": "ARGENTINA",
+     "cat": "Red",
+     "bottle": 52000
+    },
+    {
+     "ko": "펜리 에스테이트 피닉스 카베르네 소비뇽",
+     "en": "Penley Estate Phoenix Cabernet Sauvignon",
+     "origin": "AUSTRALIA",
+     "cat": "Red",
+     "bottle": 31900
+    },
+    {
+     "ko": "꼬얌",
+     "en": "Emiliana Coyam",
+     "origin": "CHILE",
+     "cat": "Red",
+     "bottle": 47000
+    },
+    {
+     "ko": "1865 셀렉티드 빈야드 카베르네 소비뇽",
+     "en": "1865 Selected Vineyards Cabernet Sauvignon",
+     "origin": "CHILE",
+     "cat": "Red",
+     "bottle": 47900
+    },
+    {
+     "ko": "캐논볼 카베르네 소비뇽",
+     "en": "Cannonball Cabernet Sauvignon",
+     "origin": "USA",
+     "cat": "Red",
+     "bottle": 30000
+    },
+    {
+     "ko": "브레드 앤 버터 피노 누아",
+     "en": "Bread & Butter Pinot Noir",
+     "origin": "USA",
+     "cat": "Red",
+     "bottle": 36000
+    },
+    {
+     "ko": "토후 소비뇽 블랑",
+     "en": "Tohu Sauvignon Blanc",
+     "origin": "NEW ZEALAND",
+     "cat": "Sauvignon Blanc",
+     "bottle": null
+    },
+    {
+     "ko": "레 칼케르 소비뇽 블랑",
+     "en": "Les Calcaires Sauvignon Blanc",
+     "origin": "FRANCE",
+     "cat": "Sauvignon Blanc",
+     "bottle": null
+    },
+    {
+     "ko": "발렌시소 리제르바",
+     "en": "Valenciso Reserva",
+     "origin": "SPAIN",
+     "cat": "Red",
+     "bottle": 48000
+    },
+    {
+     "ko": "마스 라 플라나",
+     "en": "Torres Mas La Plana",
+     "origin": "SPAIN",
+     "cat": "Premium",
+     "bottle": 128000
+    }
+   ]
+  },
+  {
+   "id": "magok",
+   "name": "마곡",
+   "taps": 40,
+   "wines": [
+    {
+     "ko": "덕혼 디코이 카베르네 소비뇽",
+     "en": "Duckhorn Decoy Cabernet Sauvignon",
+     "origin": "USA",
+     "cat": "Red",
+     "bottle": null
+    },
+    {
+     "ko": "이스까이 말벡 카베르네 프랑",
+     "en": "Trapiche Iscay Malbec Cabernet Franc",
+     "origin": "ARGENTINA",
+     "cat": "Premium",
+     "bottle": 88000
+    },
+    {
+     "ko": "마르케스 데 리스칼 그랑 리제르바",
+     "en": "Marqués de Riscal Gran Reserva",
+     "origin": "SPAIN",
+     "cat": "Premium",
+     "bottle": 99000
+    },
+    {
+     "ko": "꼬또 데 이마스 그랑 리제르바",
+     "en": "Coto de Imaz Gran Reserva",
+     "origin": "SPAIN",
+     "cat": "Red",
+     "bottle": 48000
+    },
+    {
+     "ko": "카사노바 디 네리 로쏘 디 몬탈치노",
+     "en": "Casanova di Neri Rosso di Montalcino",
+     "origin": "ITALY",
+     "cat": "Red",
+     "bottle": 51000
+    },
+    {
+     "ko": "프루노토 바롤로",
+     "en": "Prunotto Barolo",
+     "origin": "ITALY",
+     "cat": "Premium",
+     "bottle": 70000
+    },
+    {
+     "ko": "토후 소비뇽 블랑",
+     "en": "Tohu Sauvignon Blanc",
+     "origin": "NEW ZEALAND",
+     "cat": "Sauvignon Blanc",
+     "bottle": null
+    },
+    {
+     "ko": "레 칼케르 소비뇽 블랑",
+     "en": "Les Calcaires Sauvignon Blanc",
+     "origin": "FRANCE",
+     "cat": "Sauvignon Blanc",
+     "bottle": null
+    },
+    {
+     "ko": "우나니메 말벡",
+     "en": "Unánime Malbec",
+     "origin": "ARGENTINA",
+     "cat": "Red",
+     "bottle": 52000
+    },
+    {
+     "ko": "꼬얌",
+     "en": "Emiliana Coyam",
+     "origin": "CHILE",
+     "cat": "Red",
+     "bottle": 47000
+    }
+   ]
+  },
+  {
+   "id": "dongdaemun",
+   "name": "동대문 · 두타",
+   "taps": 48,
+   "wines": [
+    {
+     "ko": "케이머스 카베르네 소비뇽",
+     "en": "Caymus Cabernet Sauvignon",
+     "origin": "USA",
+     "cat": "Premium",
+     "bottle": null
+    },
+    {
+     "ko": "샤또 메종 블랑쉬",
+     "en": "Château Maison Blanche",
+     "origin": "FRANCE",
+     "cat": "Red",
+     "bottle": 38000
+    },
+    {
+     "ko": "폴 자불레 지공다스 피에르 애기유",
+     "en": "Paul Jaboulet Aîné Gigondas Pierre Aiguille",
+     "origin": "FRANCE",
+     "cat": "Red",
+     "bottle": 52000
+    },
+    {
+     "ko": "빌라 안티노리 로쏘",
+     "en": "Villa Antinori Rosso",
+     "origin": "ITALY",
+     "cat": "Red",
+     "bottle": 32000
+    },
+    {
+     "ko": "캐논볼 카베르네 소비뇽",
+     "en": "Cannonball Cabernet Sauvignon",
+     "origin": "USA",
+     "cat": "Red",
+     "bottle": 30000
+    },
+    {
+     "ko": "펜리 에스테이트 피닉스 카베르네 소비뇽",
+     "en": "Penley Estate Phoenix Cabernet Sauvignon",
+     "origin": "AUSTRALIA",
+     "cat": "Red",
+     "bottle": 31900
+    },
+    {
+     "ko": "1865 셀렉티드 빈야드 카베르네 소비뇽",
+     "en": "1865 Selected Vineyards Cabernet Sauvignon",
+     "origin": "CHILE",
+     "cat": "Red",
+     "bottle": 47900
+    },
+    {
+     "ko": "토후 소비뇽 블랑",
+     "en": "Tohu Sauvignon Blanc",
+     "origin": "NEW ZEALAND",
+     "cat": "Sauvignon Blanc",
+     "bottle": null
+    },
+    {
+     "ko": "레 칼케르 소비뇽 블랑",
+     "en": "Les Calcaires Sauvignon Blanc",
+     "origin": "FRANCE",
+     "cat": "Sauvignon Blanc",
+     "bottle": null
+    },
+    {
+     "ko": "마스 라 플라나",
+     "en": "Torres Mas La Plana",
+     "origin": "SPAIN",
+     "cat": "Premium",
+     "bottle": 128000
+    }
+   ]
+  }
+ ]
+}
