@@ -188,11 +188,16 @@ footer{background:#000;color:#fff;padding:70px var(--pad) 40px}
 
 .mockbar{background:#000;color:#fff;font-size:12px;font-weight:600;padding:10px var(--pad);display:flex;gap:14px;align-items:center;flex-wrap:wrap;line-height:1.4}.mockbar a{color:var(--yellow);font-weight:800;border-bottom:1px solid var(--yellow)}
 .fab{position:fixed;right:18px;bottom:18px;z-index:50;background:var(--yellow);color:#000;font-size:13px;font-weight:800;padding:14px 18px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+
+.fbmodal{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px}.fbmodal[hidden]{display:none}
+.fbbox{background:#fff;width:min(720px,100%);height:min(86vh,900px);position:relative;border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.fbbox iframe{flex:1;width:100%;border:0}.fbclose{position:absolute;right:10px;top:8px;width:36px;height:36px;border:0;background:#000;color:#fff;border-radius:50%;font-size:20px;z-index:2}
+.fbfoot{font-size:12px;padding:10px 16px;border-top:1px solid #eee;color:#555}.fbfoot a{font-weight:800;border-bottom:1px solid}
 </style>
 </head>
 <body>
-<div class="mockbar">MOCKUP v0.4 · 탭샵바 2027 캠페인 "WE'RE TAPPING INTO…" 웹 시안입니다. 실제 사이트가 아니며 의견을 모으는 중이에요. <a href="mailto:hello@tsb.wine?subject=%5B%ED%83%AD%EC%83%B5%EB%B0%94%20%EC%9B%B9%20%EC%8B%9C%EC%95%88%5D%20%EC%9D%98%EA%B2%AC&body=%EC%A2%8B%EC%95%98%EB%8D%98%20%EC%A0%90%3A%0A%0A%EC%95%84%EC%89%AC%EC%9A%B4%20%EC%A0%90%3A%0A%0A%EC%B2%AB%20%ED%99%94%EB%A9%B4%20%EB%AC%B8%EA%B5%AC%20%EC%A4%91%20%EC%A0%9C%EC%9D%BC%20%EB%81%8C%EB%A6%B0%20%EA%B2%83%3A%0A">의견 보내기 →</a></div>
-<a class="fab" href="mailto:hello@tsb.wine?subject=%5B%ED%83%AD%EC%83%B5%EB%B0%94%20%EC%9B%B9%20%EC%8B%9C%EC%95%88%5D%20%EC%9D%98%EA%B2%AC&body=%EC%A2%8B%EC%95%98%EB%8D%98%20%EC%A0%90%3A%0A%0A%EC%95%84%EC%89%AC%EC%9A%B4%20%EC%A0%90%3A%0A%0A%EC%B2%AB%20%ED%99%94%EB%A9%B4%20%EB%AC%B8%EA%B5%AC%20%EC%A4%91%20%EC%A0%9C%EC%9D%BC%20%EB%81%8C%EB%A6%B0%20%EA%B2%83%3A%0A">의견 보내기</a>
+<div class="mockbar">MOCKUP v0.4 · 탭샵바 2027 캠페인 "WE'RE TAPPING INTO…" 웹 시안입니다. 실제 사이트가 아니며 의견을 모으는 중이에요. <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform" target="_blank" rel="noopener" data-feedback>의견 보내기 →</a></div>
+<a class="fab" href="https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform" target="_blank" rel="noopener" data-feedback>의견 보내기</a>
 <div class="wrap">
 <header>
   <a href="#top" aria-label="TAP SHOP BAR 홈"><img class="logo" src="assets/wordmark.png" alt="TAP SHOP BAR"></a>
@@ -348,6 +353,10 @@ window.__errors=[];addEventListener('error',e=>__errors.push(e.message));
  fv.addEventListener('canplay',()=>{document.querySelector('.film .ph').style.opacity='0'});
  const tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
 })();
+</script>
+<div class="fbmodal" id="fbmodal" hidden><div class="fbbox"><button class="fbclose" id="fbclose" aria-label="닫기">×</button><iframe id="fbframe" title="탭샵바 웹 시안 의견" loading="lazy"></iframe><div class="fbfoot">창이 안 보이면 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform" target="_blank" rel="noopener">새 창에서 열기 →</a></div></div></div>
+<script>
+(()=>{const m=document.getElementById('fbmodal'),fr=document.getElementById('fbframe'),src='https://docs.google.com/forms/d/e/1FAIpQLSeukQhPRDycD0oPfU6WTVsOnU_z7uxrBmj9o39ItcEgjcT8Jg/viewform?embedded=true';const open=e=>{if(matchMedia('(max-width:860px)').matches)return;e.preventDefault();if(!fr.src)fr.src=src;m.hidden=false;document.body.style.overflow='hidden'};const close=()=>{m.hidden=true;document.body.style.overflow=''};document.querySelectorAll('[data-feedback]').forEach(a=>a.addEventListener('click',open));document.getElementById('fbclose').onclick=close;m.addEventListener('click',e=>{if(e.target===m)close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()})})();
 </script>
 </body>
 </html>
