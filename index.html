@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ko" data-season="bi" data-font="bi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="탭샵바 마케팅팀">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="TAP SHOP BAR · WE'RE TAPPING INTO… (웹 시안)">
+<meta property="og:description" content="탭샵바 2027 캠페인 웹 시안. 의견을 모으는 중입니다.">
+<meta property="og:image" content="assets/touch.jpg">
+<title>TAP SHOP BAR | wine is second americano · WE'RE TAPPING INTO… (v0.4 목업)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@800;900&family=League+Spartan:wght@800;900&family=Poppins:wght@800;900&family=Hammersmith+One&family=Outfit:wght@800;900&display=swap">
+<style>
+@font-face{font-family:Maru;src:url(assets/MaruBuri-Regular.woff2) format('woff2');font-display:swap}
+:root{--blue:#156DFF;--blue-deep:#0B4FCC;--navy:#141B33;--wine:#4A0B18;--red:#F43131;--yellow:#FFC100;--cream:#FFFDFC;--ink:#0E0E0E;--grey:#F1F1EF;--pad:32px;
+ --bg:#F2EFE9;--hl:var(--red);--block-a:var(--blue);--block-a-accent:var(--yellow);--block-b:var(--red);--em:var(--blue);--pine:#0F2A20}
+html[data-season="winter"]{--bg:#F4F1EC;--hl:var(--wine);--block-a:var(--pine);--block-a-accent:var(--yellow);--block-b:var(--wine);--em:var(--pine)}
+html[data-season="glass"]{--bg:#FFFDFC;--hl:var(--navy);--block-a:var(--wine);--block-a-accent:var(--yellow);--block-b:var(--navy);--em:var(--wine)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo",system-ui,sans-serif;font-weight:500;letter-spacing:-.01em;line-height:1.42;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;color:inherit;cursor:pointer}
+.disp{font-family:Impact,"Arial Narrow","Helvetica Neue",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.005em;line-height:.9}
+.ko-t{font-weight:800;letter-spacing:-.04em;line-height:1.3}
+.wrap{padding:0 var(--pad)}
+.kicker{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin:0 0 26px}
+.btn{background:#000;color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;padding:20px 48px;border:0;display:inline-block;text-align:center}.btn:hover{background:var(--em)}
+.btn.ghost{background:transparent;border:2px solid currentColor}
+html[data-font="jost"] .disp{font-family:Jost,sans-serif;font-weight:900;letter-spacing:-.03em;text-transform:uppercase}
+html[data-font="spartan"] .disp{font-family:"League Spartan",sans-serif;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}
+html[data-font="poppins"] .disp{font-family:Poppins,sans-serif;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}
+html[data-font="hammer"] .disp{font-family:"Hammersmith One",sans-serif;font-weight:400;letter-spacing:-.03em;text-transform:uppercase}
+html[data-font="outfit"] .disp{font-family:Outfit,sans-serif;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}
+html:not([data-font="impact"]) .hl{font-size:clamp(46px,7.9vw,140px);line-height:1.0}
+html:not([data-font="impact"]) .loc h2{font-size:clamp(40px,6.6vw,120px)}html:not([data-font="impact"]) .final h2{font-size:clamp(44px,8vw,150px)}html:not([data-font="impact"]) .y27 h2{font-size:clamp(44px,7.4vw,140px)}
+html[data-font="hammer"] .hl{font-size:clamp(44px,7.4vw,130px)}
+
+html[data-font="hg"] .disp{font-family:"HGTallGGothicssi Pro","HGTallGGothicssi",sans-serif;font-weight:900;letter-spacing:.005em;text-transform:uppercase}
+html[data-font="hg"] .hl{font-size:clamp(60px,11.2vw,196px);line-height:.98}
+html[data-font="spot"] .disp{font-family:"Typo_Spotlight",sans-serif;font-weight:400;letter-spacing:0;text-transform:uppercase}
+html[data-font="spot"] .hl{font-size:clamp(56px,9.4vw,166px);line-height:1.02}
+
+html[data-font="gill"] .disp{font-family:"GillSans-Bold","Gill Sans",sans-serif;font-weight:700;letter-spacing:-.01em;text-transform:uppercase}
+html[data-font="gill"] .hl{font-size:clamp(52px,8.9vw,158px);line-height:1.0}
+html[data-font="gillu"] .disp{font-family:"GillSans-UltraBold","Gill Sans",sans-serif;font-weight:900;letter-spacing:-.02em;text-transform:uppercase}
+html[data-font="gillu"] .hl{font-size:clamp(46px,7.6vw,134px);line-height:1.02}
+html[data-font="futura"] .disp{font-family:"Futura-Bold",Futura,sans-serif;font-weight:700;letter-spacing:-.01em;text-transform:uppercase}
+html[data-font="futura"] .hl{font-size:clamp(50px,8.6vw,152px);line-height:1.0}
+.btn.ghost{color:#000}.final .btn.ghost{color:#fff}
+@media(max-width:860px){html:not([data-font="impact"]) .hl{font-size:11.6vw}}
+
+/* header */
+header{height:104px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+header .logo{width:220px}
+.hnav{display:flex;align-items:center;gap:22px;font-size:13px;font-weight:700}
+.hnav .lang span{opacity:.4;margin:0 6px}
+.hnav .applink{border-bottom:2px solid #000;padding-bottom:2px}
+.menu{width:44px;height:28px;background:none;border:0;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0}.menu i{display:block;height:2px;background:#000}
+/* hero */
+.hero{position:relative;padding:26px 0 36px;display:block}
+.intro{font-family:Maru,serif;font-size:clamp(24px,3.3vw,52px);line-height:1.25;max-width:980px;margin:0 0 28px;letter-spacing:-.03em;font-weight:400}.intro em{font-style:italic;color:var(--em)}
+.hl{color:var(--hl);font-size:clamp(56px,9.7vw,172px);margin:0;position:relative;z-index:2;white-space:nowrap;line-height:1.02}
+html[data-font="bi"] .disp{font-family:"Pretendard Variable",Pretendard,sans-serif;font-weight:900;letter-spacing:-.05em;text-transform:uppercase}
+html[data-font="bi"] .hl{font-size:clamp(46px,7.9vw,140px);line-height:1.0}
+html[data-font="bi"] .marq span,html[data-font="bi"] .loc h2,html[data-font="bi"] .y27 h2,html[data-font="bi"] .final h2,html[data-font="bi"] .menu-sec h2{letter-spacing:-.05em}
+html[data-font="bi"] .loc h2{font-size:clamp(40px,6.6vw,120px)}html[data-font="bi"] .final h2{font-size:clamp(44px,8vw,150px)}html[data-font="bi"] .y27 h2{font-size:clamp(44px,7.4vw,140px)}
+.hl .ln{display:block}
+#cw{transition:opacity .5s ease-in-out;opacity:1}
+#cw.c1{color:var(--red)}#cw.c2{color:var(--blue)}#cw.c3{color:var(--yellow)}
+html[data-season="winter"] #cw.c1,html[data-season="winter"] #cw.c2,html[data-season="winter"] #cw.c3{color:var(--pine)}
+html[data-season="glass"] #cw.c1,html[data-season="glass"] #cw.c2,html[data-season="glass"] #cw.c3{color:var(--wine)}
+.ctaRow{display:flex;align-items:center;gap:26px;margin-top:48px;flex-wrap:wrap;position:relative;z-index:2}
+.ctaRow .ko{font-size:20px;font-weight:700;letter-spacing:-.03em}
+.ctaRow .sub{font-size:14px;font-weight:500;color:#555;margin-top:4px}
+.chev{text-align:center;color:var(--hl);font-size:34px;padding:54px 0 0;line-height:1}
+/* dancer */
+.dancer{position:absolute;right:calc(var(--pad) - 6px);bottom:24px;height:min(74vh,700px);max-height:calc(100vh - 220px);aspect-ratio:646/802;z-index:1;pointer-events:none}
+.dancer canvas,.dancer img{width:100%;height:100%;object-fit:contain;display:block}
+.dancer img{display:none}.dancer.fallback img{display:block}.dancer.fallback canvas{display:none}
+.dancer .lbl{position:absolute;left:0;bottom:-6px;font-size:10px;letter-spacing:.14em;font-weight:800;background:var(--yellow);padding:6px 9px;color:#000}
+/* film */
+.film{position:relative;height:min(62vw,800px);min-height:400px;overflow:hidden;background:#000}
+.film video,.film img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.film .tag{position:absolute;left:var(--pad);bottom:32px;color:#fff;font-size:12px;letter-spacing:.14em;font-weight:800;z-index:2}
+.film .badge{position:absolute;left:var(--pad);top:32px;z-index:2;background:var(--yellow);color:#000;font-size:11px;font-weight:800;letter-spacing:.1em;padding:8px 12px}
+.film .ctl{position:absolute;right:var(--pad);bottom:26px;z-index:2;background:#fff;border:0;font-size:12px;font-weight:800;letter-spacing:.06em;padding:12px 18px}
+.film .slogan{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(60vw,760px);z-index:2;filter:drop-shadow(0 2px 14px rgba(0,0,0,.35))}
+/* app / our way */
+.app{padding:120px var(--pad) 100px;display:grid;grid-template-columns:1.05fr 1fr;gap:6vw;align-items:center}
+.new{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;margin-bottom:22px}.new b{background:var(--yellow);color:#000;font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px;letter-spacing:.06em}
+.app h2{font-size:clamp(34px,4.4vw,64px);margin:0 0 18px}
+.app p.lead{font-size:18px;line-height:1.42;color:#333;margin:0 0 26px;max-width:520px}
+.benefits{list-style:none;padding:0;margin:0 0 30px;border-top:2px solid #000}
+.benefits li{padding:18px 0;border-bottom:1px solid #d9d9d9;display:grid;grid-template-columns:22px 1fr;gap:14px;align-items:start}
+.benefits i{width:14px;height:14px;border-radius:50%;background:var(--red);display:block;margin-top:5px}.benefits li:nth-child(2) i{background:var(--blue)}
+.benefits strong{display:block;font-size:17px;font-weight:800;letter-spacing:-.03em}.benefits small{font-size:13px;color:#666;font-weight:500}
+.store-btns{display:flex;gap:12px;flex-wrap:wrap}
+.app .pic{height:62vh;min-height:360px;overflow:hidden}.app .pic img{width:100%;height:100%;object-fit:cover}
+/* features */
+.feat{padding:0 var(--pad) 110px}
+.feat .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.feat .card{border-top:3px solid #000;padding-top:18px}
+.feat .card .n{font-size:11px;font-weight:800;letter-spacing:.16em;margin-bottom:60px;display:flex;justify-content:space-between}
+.feat .card .n i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.feat .card:nth-child(1) i{background:var(--red)}.feat .card:nth-child(2) i{background:var(--blue)}.feat .card:nth-child(3) i{background:var(--yellow)}.feat .card:nth-child(4) i{background:#000}
+.feat h3{font-size:clamp(26px,2.6vw,40px);margin:0 0 8px}.feat p{margin:0;font-size:15px;color:#444}
+/* menu rail */
+.menu-sec{padding:0 0 110px}
+.menu-sec .head{padding:0 var(--pad);display:flex;justify-content:space-between;align-items:end;margin-bottom:34px}
+.menu-sec h2{font-size:clamp(42px,7vw,124px);margin:0}
+.rail{display:flex;gap:20px;overflow-x:auto;padding:0 var(--pad);scroll-snap-type:x mandatory;scrollbar-width:none}.rail::-webkit-scrollbar{display:none}
+.rail a{flex:0 0 min(34vw,420px);scroll-snap-align:start}
+.rail .ph{aspect-ratio:3/4;overflow:hidden;background:#ddd}.rail img{width:100%;height:100%;object-fit:cover;transition:transform .8s}.rail a:hover img{transform:scale(1.05)}
+.rail .cap{display:flex;justify-content:space-between;font-size:15px;font-weight:700;padding:14px 0;border-bottom:2px solid #000}
+/* locations */
+.loc{background:var(--block-a);color:#fff;padding:120px var(--pad) 100px}
+.loc h2{font-size:clamp(46px,8.2vw,150px);margin:0 0 20px}.loc h2 span{color:var(--block-a-accent)}
+.loc p.lead{font-size:18px;max-width:640px;margin:0 0 60px;opacity:.92}
+.stores{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;border-top:1px solid rgba(255,255,255,.5)}
+.store{padding:24px 0;border-bottom:1px solid rgba(255,255,255,.5);font-size:14px;line-height:1.5}
+.store .en{font-size:11px;letter-spacing:.14em;font-weight:800;opacity:.7;margin-bottom:12px;display:block}
+.store strong{display:block;font-size:22px;font-weight:800;letter-spacing:-.03em;margin-bottom:8px}
+.store .soon{display:inline-block;background:var(--block-a-accent);color:#000;font-size:11px;font-weight:800;padding:3px 8px;margin-bottom:8px}
+.store .links{margin-top:14px;display:flex;flex-direction:column;gap:6px}.store .links a{border-bottom:1px solid rgba(255,255,255,.6);align-self:flex-start;font-weight:700}
+.rooms{margin-top:70px;display:grid;grid-template-columns:1fr 2fr;gap:5vw;align-items:start}
+.rooms h3{font-size:clamp(34px,4vw,60px);margin:0 0 12px}.rooms p{margin:0;font-size:15px;opacity:.9;max-width:420px}
+.rooms .list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rooms .r{border-top:2px solid #fff;padding-top:14px;font-size:14px;line-height:1.5}.rooms .r strong{display:block;font-size:17px;font-weight:800;margin-bottom:6px}.rooms .r a{display:inline-block;margin-top:12px;border-bottom:1px solid #fff;font-weight:700}
+/* taps marquee */
+.taps{padding:80px 0 90px;border-top:2px solid #000}.taps .kicker{padding:0 var(--pad);margin-bottom:30px}
+.marq{overflow:hidden;white-space:nowrap}.marq .track{display:inline-flex;gap:60px;padding-left:60px;animation:marq 52s linear infinite}@keyframes marq{to{transform:translateX(-50%)}}
+.marq span{font-size:clamp(40px,6vw,96px)}.marq span:nth-child(4n+1){color:var(--blue)}.marq span:nth-child(4n+3){color:var(--red)}.marq .dot{color:var(--yellow)}
+html[data-season="winter"] .marq span:nth-child(4n+1){color:var(--pine)}html[data-season="winter"] .marq span:nth-child(4n+3){color:var(--wine)}
+/* 2027 */
+.y27{background:#fff;padding:120px var(--pad)}
+.y27 .top{display:grid;grid-template-columns:1.2fr 1fr;gap:5vw;align-items:end;margin-bottom:70px}
+.y27 h2{font-size:clamp(50px,9vw,170px);margin:0;color:var(--hl)}
+.y27 .top p{font-size:18px;margin:0;max-width:460px}
+.y27 .top p b{display:block;font-size:24px;font-weight:800;letter-spacing:-.04em;margin-bottom:10px}
+.dev{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.dev .d{border-top:3px solid #000;padding-top:18px}
+.dev .d .n{font-size:11px;letter-spacing:.16em;font-weight:800;margin-bottom:50px}
+.dev h3{font-size:clamp(28px,3vw,46px);margin:0 0 10px}.dev p{margin:0;font-size:15px;color:#444}
+.y27 .cal{margin-top:70px;border-top:2px solid #000;display:grid;grid-template-columns:repeat(4,1fr)}
+.y27 .cal div{padding:22px 0;border-bottom:1px solid #ddd;font-size:14px}.y27 .cal div b{display:block;font-size:12px;letter-spacing:.16em;margin-bottom:8px}
+/* final */
+.final{background:var(--block-b);color:#fff;padding:130px var(--pad)}
+.final h2{font-size:clamp(50px,10vw,180px);margin:0 0 30px}
+.final p{font-size:18px;max-width:600px;margin:0 0 44px}.final p.ko{font-size:24px;font-weight:800;letter-spacing:-.04em;margin-bottom:10px}
+.final .btn:hover{background:#fff;color:#000}.final .btn.ghost{margin-left:12px}
+/* footer */
+footer{background:#000;color:#fff;padding:70px var(--pad) 40px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:60px}
+.fgrid h4{font-size:11px;letter-spacing:.2em;margin:0 0 20px;font-weight:800}.fgrid a{display:block;font-size:14px;margin-bottom:12px}.fgrid a:hover{color:var(--yellow)}
+.fgrid .get{font-size:clamp(22px,2.4vw,34px);font-weight:800;letter-spacing:-.04em;line-height:1.2;margin-bottom:18px}
+.fgrid .slogan{width:280px;max-width:100%;margin:26px 0 10px}
+.legal{font-size:12px;line-height:1.8;opacity:.75;border-top:1px solid #333;padding-top:24px}
+.warn{font-size:11px;line-height:1.9;opacity:.75;margin-top:16px;max-width:1000px}
+.note{font-size:10px;opacity:.5;line-height:1.8;margin-top:14px}
+.copy{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.1em;margin-top:30px;align-items:center;flex-wrap:wrap;gap:10px}
+.season{display:flex;gap:6px}.season button{background:transparent;border:1px solid #444;color:#aaa;font-size:10px;padding:5px 9px;letter-spacing:.06em}.season button.on{color:#000;background:#fff}
+.paused video{opacity:.999}
+/* mobile */
+@media(max-width:860px){
+ :root{--pad:20px}
+ header{height:78px}header .logo{width:160px}.hnav .lang,.hnav .applink{display:none}
+ .hero{padding:14px 0 36px;min-height:auto;display:block}
+ .intro{font-size:22px;margin-bottom:22px}
+ .hl{font-size:14.2vw;line-height:1.02;white-space:normal}html[data-font="bi"] .hl{font-size:11.6vw}
+ .dancer{position:relative;right:auto;bottom:auto;height:auto;width:62vw;margin:18px 0 0 auto;aspect-ratio:646/802}
+ .dancer .lbl{left:auto;right:0;bottom:8px}
+ .mob-row{display:flex;align-items:flex-end;gap:10px}
+ .mob-row .ctaRow{margin-top:0;flex:1;flex-direction:column;align-items:flex-start;gap:14px}
+ .ctaRow .ko{font-size:17px}.btn{padding:16px 28px;font-size:13px}
+ .chev{padding-top:22px}
+ .film{height:120vw;min-height:0}.film .slogan{width:80vw}
+ .app{grid-template-columns:1fr;padding:70px var(--pad) 50px;gap:34px}.app .pic{height:70vw;min-height:0}
+ .feat{padding-bottom:70px}.feat .grid{grid-template-columns:1fr 1fr;gap:18px}.feat .card .n{margin-bottom:28px}
+ .menu-sec{padding-bottom:70px}.menu-sec .head{display:block;margin-bottom:22px}.rail a{flex-basis:70vw}
+ .loc{padding:70px var(--pad)}.loc p.lead{font-size:15px;margin-bottom:34px}.stores{grid-template-columns:1fr 1fr;gap:16px}
+ .rooms{grid-template-columns:1fr;gap:26px;margin-top:50px}.rooms .list{grid-template-columns:1fr;gap:16px}
+ .taps{padding:50px 0 60px}.marq span{font-size:14vw}
+ .y27{padding:70px var(--pad)}.y27 .top{grid-template-columns:1fr;gap:22px;margin-bottom:40px}.dev{grid-template-columns:1fr;gap:20px}.dev .d .n{margin-bottom:24px}.y27 .cal{grid-template-columns:1fr 1fr}
+ .final{padding:80px var(--pad)}.final p{font-size:15px}.final p.ko{font-size:20px}.final .btn.ghost{margin:12px 0 0}
+ footer{padding:50px var(--pad) 30px}.fgrid{grid-template-columns:1fr 1fr;gap:28px}.fgrid>div:first-child{grid-column:1/-1}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+.mockbar{background:#000;color:#fff;font-size:12px;font-weight:600;padding:10px var(--pad);display:flex;gap:14px;align-items:center;flex-wrap:wrap;line-height:1.4}.mockbar a{color:var(--yellow);font-weight:800;border-bottom:1px solid var(--yellow)}
+.fab{position:fixed;right:18px;bottom:18px;z-index:50;background:var(--yellow);color:#000;font-size:13px;font-weight:800;padding:14px 18px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+</style>
+</head>
+<body>
+<div class="mockbar">MOCKUP v0.4 · 탭샵바 2027 캠페인 "WE'RE TAPPING INTO…" 웹 시안입니다. 실제 사이트가 아니며 의견을 모으는 중이에요. <a href="mailto:hello@tsb.wine?subject=%5B%ED%83%AD%EC%83%B5%EB%B0%94%20%EC%9B%B9%20%EC%8B%9C%EC%95%88%5D%20%EC%9D%98%EA%B2%AC&body=%EC%A2%8B%EC%95%98%EB%8D%98%20%EC%A0%90%3A%0A%0A%EC%95%84%EC%89%AC%EC%9A%B4%20%EC%A0%90%3A%0A%0A%EC%B2%AB%20%ED%99%94%EB%A9%B4%20%EB%AC%B8%EA%B5%AC%20%EC%A4%91%20%EC%A0%9C%EC%9D%BC%20%EB%81%8C%EB%A6%B0%20%EA%B2%83%3A%0A">의견 보내기 →</a></div>
+<a class="fab" href="mailto:hello@tsb.wine?subject=%5B%ED%83%AD%EC%83%B5%EB%B0%94%20%EC%9B%B9%20%EC%8B%9C%EC%95%88%5D%20%EC%9D%98%EA%B2%AC&body=%EC%A2%8B%EC%95%98%EB%8D%98%20%EC%A0%90%3A%0A%0A%EC%95%84%EC%89%AC%EC%9A%B4%20%EC%A0%90%3A%0A%0A%EC%B2%AB%20%ED%99%94%EB%A9%B4%20%EB%AC%B8%EA%B5%AC%20%EC%A4%91%20%EC%A0%9C%EC%9D%BC%20%EB%81%8C%EB%A6%B0%20%EA%B2%83%3A%0A">의견 보내기</a>
+<div class="wrap">
+<header>
+  <a href="#top" aria-label="TAP SHOP BAR 홈"><img class="logo" src="assets/wordmark.png" alt="TAP SHOP BAR"></a>
+  <nav class="hnav" aria-label="상단 메뉴">
+    <span class="lang"><a href="#">KO</a><span>|</span><a href="#" style="opacity:.5">EN</a></span>
+    <a class="applink" href="#app">앱 다운로드</a>
+    <button class="menu" aria-label="메뉴 열기"><i></i><i></i><i></i></button>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div>
+    <p class="intro">It's not just about <em>what you drink</em>, it's about <em>how you choose it</em>.</p>
+    <h1 class="hl disp" aria-label="TAP SHOP BAR, we're tapping into your taste.">
+      <span class="ln">TAP SHOP BAR,</span>
+      <span class="ln">WE'RE TAPPING</span>
+      <span class="ln">INTO <span id="cw" class="c1">YOUR TASTE</span></span>
+    </h1>
+    <div>
+      <div class="ctaRow">
+        <a class="btn" href="#app">SEE HOW</a>
+        <div><div class="ko">탭으로 만나는 나의 취향.</div><div class="sub">와인을 커피처럼. 한 잔씩, 내 손으로.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="chev" aria-hidden="true">⌄</div>
+</section>
+</div>
+
+<section class="film" id="film" aria-label="브랜드 필름">
+  <span class="badge">WE'RE TAPPING INTO…</span>
+  <img class="ph" src="assets/space.jpg" alt="">
+  <video id="fvid" src="assets/duo_B.mp4" muted loop playsinline autoplay preload="metadata" aria-label="wine is second americano 브랜드 필름"></video>
+  <img class="slogan" src="assets/slogan.png" alt="wine is second americano">
+  <span class="tag">TAP SHOP BAR · BRAND FILM · SOUND OFF</span>
+  <button class="ctl" id="fctl" aria-pressed="false">일시정지</button>
+</section>
+
+<section class="app" id="app">
+  <div>
+    <div class="new"><b>NEW</b> TAP SHOP BAR 앱 10.20 정식 런칭</div>
+    <h2 class="ko-t">와인을 쉽고<br>즐겁게 만나는 방법.</h2>
+    <p class="lead">앱으로 주문하고, QR로 탭에서 바로 결제하세요. 마신 와인은 마이셀러에 쌓입니다.</p>
+    <ul class="benefits">
+      <li><i></i><div><strong>앱 결제 30% 할인 쿠폰</strong><small>앱 설치 시 1회 · 2026.11.30까지 · Wallet 충전 제외</small></div></li>
+      <li><i></i><div><strong>VIP는 매일 아메리카노 한 잔 무료</strong><small>최근 30일 10만원 이상 결제 시 VIP · 결제 금액 10% 포인트 적립 · 커피(에스프레소·아메리카노) 당일만 사용</small></div></li>
+    </ul>
+    <div class="store-btns">
+      <a class="btn" href="https://apps.apple.com/kr/app/tapshopbar/id6759531852" target="_blank" rel="noopener">App Store</a>
+      <a class="btn ghost" href="https://play.google.com/store/apps/details?id=wine.tsb.app" target="_blank" rel="noopener">Google Play</a>
+    </div>
+  </div>
+  <div class="pic"><img src="assets/app_qr.jpg" alt="탭 화면을 터치하는 손"></div>
+</section>
+
+<section class="feat" aria-label="앱 기능">
+  <div class="grid">
+    <div class="card"><div class="n"><span><i></i> APP / 01</span><span>QR</span></div><h3 class="ko-t">QR로 탭 결제</h3><p>앱 QR 하나로 탭에서 바로</p></div>
+    <div class="card"><div class="n"><span><i></i> APP / 02</span><span>CELLAR</span></div><h3 class="ko-t">마이셀러</h3><p>마신 와인이 쌓이는 나만의 셀러</p></div>
+    <div class="card"><div class="n"><span><i></i> APP / 03</span><span>TASTE</span></div><h3 class="ko-t">취향 추천</h3><p>다음 한 잔은 앱이 골라줘요</p></div>
+    <div class="card"><div class="n"><span><i></i> APP / 04</span><span>PICKUP</span></div><h3 class="ko-t">주문 · 픽업</h3><p>미리 주문하고 바로 받아가기</p></div>
+  </div>
+</section>
+
+<section class="menu-sec" id="menu">
+  <div class="head"><h2 class="disp">On the table</h2><a class="btn ghost" href="https://tsb.wine/#menu-rail" target="_blank" rel="noopener">MENU</a></div>
+  <div class="rail">
+    <a href="#"><div class="ph"><img src="assets/menu_steak.jpg" alt="프라임 채끝 스테이크"></div><div class="cap"><span>프라임 채끝 스테이크</span><span>01</span></div></a>
+    <a href="#"><div class="ph"><img src="assets/menu_pasta.jpg" alt="엔쵸비 쉬림프 파스타"></div><div class="cap"><span>엔쵸비 쉬림프 파스타</span><span>02</span></div></a>
+    <a href="#"><div class="ph"><img src="assets/menu_oyster.jpg" alt="삼배체 생굴"></div><div class="cap"><span>삼배체 생굴</span><span>03</span></div></a>
+    <a href="#"><div class="ph"><img src="assets/menu_burrata.jpg" alt="하몽 부라타"></div><div class="cap"><span>하몽 부라타</span><span>04</span></div></a>
+  </div>
+</section>
+
+<section class="loc" id="locations">
+  <p class="kicker">Our locations</p>
+  <h2 class="disp">From Cheonggye<br>to <span>Dongdaemun</span></h2>
+  <p class="lead">청계, 상암, 마곡, 동대문. 그리고 곧 서여의도. 점심 커피부터 늦은 와인까지, 우리 동네의 탭샵바.</p>
+  <div class="stores">
+    <div class="store"><span class="en">CHEONGGYE</span><strong>청계 · 삼일빌딩점</strong>청계천 옆, 퇴근길 한 잔<br>0507-1331-4095<div class="links"><a href="https://map.naver.com/p/search/%ED%83%AD%EC%83%B5%EB%B0%94%20%EC%B2%AD%EA%B3%84" target="_blank" rel="noopener">지도 보기</a></div></div>
+    <div class="store"><span class="en">SANGAM</span><strong>상암</strong>DMC, 점심부터 저녁까지<br>0507-1312-0267 · 단체 예약은 매장 문의<div class="links"><a href="https://map.naver.com/p/search/%ED%83%AD%EC%83%B5%EB%B0%94%20%EC%83%81%EC%95%94" target="_blank" rel="noopener">지도 보기</a></div></div>
+    <div class="store"><span class="en">MAGOK</span><strong>마곡</strong>VL르웨스트 · 룸 예약 가능 (최대 8인)<br>9인 이상·단체는 매장 문의 0507-1425-8809<div class="links"><a href="https://naver.me/GwfJltAG" target="_blank" rel="noopener">지도 보기</a></div></div>
+    <div class="store"><span class="en">DONGDAEMUN</span><strong>동대문 · 두타</strong>두타몰, 쇼핑 끝에 한 잔<br>0507-1385-7973<div class="links"><a href="https://map.naver.com/p/search/%ED%83%AD%EC%83%B5%EB%B0%94%20%EB%8F%99%EB%8C%80%EB%AC%B8" target="_blank" rel="noopener">지도 보기</a></div></div>
+    <div class="store"><span class="en">SEO-YEOUIDO</span><span class="soon">오픈 준비 중</span><strong>서여의도 · 파라곤 디아케이드</strong>지하 2층 · 룸 3개<br>오픈 예정</div>
+  </div>
+  <div class="rooms">
+    <div><h3 class="disp">Rooms</h3><p>모임, 회식, 생일, 시음회. 프라이빗하게 즐기세요. 예약은 네이버 예약으로 바로 연결됩니다. 매장 전체 대관은 대관 문의를 이용해 주세요.</p></div>
+    <div class="list">
+      <div class="r"><strong>동대문 · 두타</strong>프라이빗 룸 · 6~8인<br>기본 이용 3시간 · 0507-1385-7973<br><a href="https://m.booking.naver.com/booking/6/bizes/1125285/items/6052917" target="_blank" rel="noopener">방 예약하기</a></div>
+      <div class="r"><strong>마곡</strong>룸 · 최대 8인 예약<br>9인 이상·단체는 매장 문의 0507-1425-8809<br><a href="https://m.booking.naver.com/booking/6/bizes/1713764/items/7996202" target="_blank" rel="noopener">방 예약하기</a></div>
+      <div class="r"><strong>청계 · 삼일빌딩</strong>B홀 테이블 · 6~8인<br>단체석은 매장 문의 0507-1331-4095<br><a href="https://m.booking.naver.com/booking/6/bizes/1180715/items/6096170" target="_blank" rel="noopener">B홀 테이블 예약하기</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="taps" aria-label="탭 카테고리">
+  <p class="kicker">On tap right now · 64 wines</p>
+  <div class="marq"><div class="track disp" id="track"><span>France</span><span class="dot">·</span><span>Italy</span><span class="dot">·</span><span>USA</span><span class="dot">·</span><span>Spain</span><span class="dot">·</span><span>Australia</span><span class="dot">·</span><span>Chablis</span><span class="dot">·</span><span>Sauvignon Blanc</span><span class="dot">·</span><span>Rosé &amp; Natural</span><span class="dot">·</span><span>Sweet Wines</span><span class="dot">·</span><span>Whiskey</span><span class="dot">·</span><span>Premium</span><span class="dot">·</span><span>Food Pairing</span><span class="dot">·</span></div></div>
+</section>
+
+<section class="y27" id="bytheglass">
+  <div class="top">
+    <div><p class="kicker">2027 annual theme · from 1 January</p><h2 class="disp">By the<br>Glass</h2></div>
+    <p><b>한 병을 고르기 전에, 한 잔씩 마셔 본다.</b>탭샵바가 가장 잘하는 일을 1년짜리 이야기로. 매달 큰 행사 하나와 수입사 시음회 Glass Night 하나, 1년에 와야 할 이유 24개.</p>
+  </div>
+  <div class="dev">
+    <div class="d"><div class="n">01 · 이달의 잔</div><h3 class="ko-t">매달 한 잔, 전 지점 공통</h3><p>그 달 Glass Night 수입사 와인에서 고른 이달의 잔.</p></div>
+    <div class="d"><div class="n">02 · 패스포트</div><h3 class="ko-t">12칸을 채우면 Best Glass</h3><p>이달의 잔을 마시면 앱 스탬프 1칸. 12월 Best Glass 초대.</p></div>
+    <div class="d"><div class="n">03 · 마이셀러</div><h3 class="ko-t">마신 잔이 쌓인다</h3><p>탭으로 마신 잔이 앱 마이셀러에 자동 기록. 마음에 든 잔은 병으로.</p></div>
+  </div>
+  <div class="cal">
+    <div><b>12.26</b>By the Glass 티저 시작</div>
+    <div><b>12.28 – 30</b>Last Glass Night 2026</div>
+    <div><b>2027.1.1</b>런칭 · 패스포트 시작</div>
+    <div><b>매달</b>큰 행사 1 + Glass Night 1</div>
+  </div>
+</section>
+
+<section class="final" id="events">
+  <p class="kicker">Private events</p>
+  <h2 class="disp">Your taste.<br>Your tap.</h2>
+  <p class="ko">가까운 탭샵바에서 만나요.</p>
+  <p>모임·회식·시음회는 룸 예약으로, 매장 전체 대관은 대관 문의로. 매장 위치와 운영 정보는 공식 홈페이지에서 확인해 주세요.</p>
+  <a class="btn" href="https://tsb.wine/" target="_blank" rel="noopener">FIND A STORE</a>
+  <a class="btn ghost" href="https://tsb.wine/party/" target="_blank" rel="noopener">대관 문의</a>
+</section>
+
+<footer>
+  <div class="fgrid">
+    <div><h4>GET THE APP</h4><div class="get">앱 다운로드하고<br>적립 시작하기 →</div><a href="https://apps.apple.com/kr/app/tapshopbar/id6759531852" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=wine.tsb.app" target="_blank" rel="noopener">Google Play</a><img class="slogan" src="assets/slogan.png" alt="wine is second americano"><div style="font-size:14px;font-weight:700">와인을 커피처럼.</div></div>
+    <div><h4>COMPANY</h4><a href="#menu">Menu</a><a href="#locations">Locations</a><a href="https://tsb.wine/reservation/" target="_blank" rel="noopener">예약</a><a href="https://tsb.wine/party/" target="_blank" rel="noopener">Private Events</a><a href="#film">About us</a><a href="https://tsb.wine/franchise" target="_blank" rel="noopener">Franchise</a></div>
+    <div><h4>SUPPORT</h4><a href="https://tsb.wine/help.html" target="_blank" rel="noopener">Help Centre</a><a href="https://tsb.wine/partnerships.html" target="_blank" rel="noopener">Partnerships</a><a href="https://tsb.wine/press.html" target="_blank" rel="noopener">Press</a></div>
+    <div><h4>SOCIALS</h4><a href="https://www.instagram.com/tap.shop.bar/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@TSBKorea" target="_blank" rel="noopener">YouTube</a><a href="https://pf.kakao.com/_xjHlbxj" target="_blank" rel="noopener">KakaoTalk</a></div>
+  </div>
+  <div class="legal">(주) 탭샵바 · 대표이사: 나기정 · 사업자등록번호: 235-87-02963 · 통신판매업 신고번호: 2026-서울마포-2695<br>주소: 서울특별시 마포구 양화로 73-1 이스턴빌딩 4층 · 호스팅: Amazon Web Services (서울 리전) · 고객센터: info@tsb.wine (10:00~18:00)<br>음주는 만 19세 이상.</div>
+  <p class="warn">경고: 지나친 음주는 뇌졸중, 기억력 손상이나 치매를 유발합니다. 임신 중 음주는 기형아 출생 위험을 높입니다. 음주운전은 자신과 다른 사람의 생명을 위태롭게 할 수 있습니다.</p>
+  <p class="note">MKT-012 · 검토용 웹 목업 v0.4 · tsb.wine(2026-11-07 기준) 내용·Pretendard·행간 유지 + BARFLY 구성 + TSB BI 3색. 브랜드 필름은 tsb.wine duo_B.mp4. 2027 By the Glass 내용은 MKT-008 v0.2(승인 전) 기준. 공개 배포·추가 문구 미승인.</p>
+  <div class="copy"><span>©TAP SHOP BAR 2026</span><div class="season" aria-label="시즌 색 미리보기"><button data-s="bi" class="on">BI 3색</button><button data-s="winter">Winter in Wine</button><button data-s="glass">By the Glass</button></div><div class="season" aria-label="헤드라인 글꼴 미리보기"><button data-f="bi" class="on">Pretendard Black (기본)</button><button data-f="jost">Jost 900</button><button data-f="spartan">League Spartan</button><button data-f="poppins">Poppins</button><button data-f="outfit">Outfit</button><button data-f="hammer">Hammersmith (Johnston계)</button><button data-f="impact">컨덴스드(A)</button></div><span>WE'RE TAPPING INTO… / DESIGN STUDY 04</span></div>
+</footer>
+
+<script>
+window.__errors=[];addEventListener('error',e=>__errors.push(e.message));
+(()=>{
+ /* BARFLY-style word swap: fade out .5s → swap → fade in .5s → hold ~1s (observed cycle ≈2.0s) */
+ const words=[['YOUR TASTE','c1'],['EVERYDAY','c2'],['SEOUL','c3'],['64 WINES','c1'],['YOUR CELLAR','c2'],['THE GLASS','c3']];
+ const cw=document.getElementById('cw');let i=0;const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ function cycle(){cw.style.opacity='0';setTimeout(()=>{i=(i+1)%words.length;cw.textContent=words[i][0];cw.className=words[i][1];cw.style.opacity='1';setTimeout(cycle,1000+500)},500)}
+ if(!reduce)setTimeout(cycle,1500);
+ /* season preview */
+ document.querySelectorAll('.season button[data-s]').forEach(b=>b.onclick=()=>{document.documentElement.dataset.season=b.dataset.s;document.querySelectorAll('.season button[data-s]').forEach(x=>x.classList.toggle('on',x===b))});document.querySelectorAll('.season button[data-f]').forEach(b=>b.onclick=()=>{document.documentElement.dataset.font=b.dataset.f;document.querySelectorAll('.season button[data-f]').forEach(x=>x.classList.toggle('on',x===b))});const fq=new URLSearchParams(location.search).get('font');if(fq&&document.querySelector('[data-f='+fq+']'))document.querySelector('[data-f='+fq+']').click();
+ /* film control */
+ const fv=document.getElementById('fvid'),fc=document.getElementById('fctl');fc.onclick=()=>{if(fv.paused){fv.play();fc.textContent='일시정지';fc.setAttribute('aria-pressed','false')}else{fv.pause();fc.textContent='재생';fc.setAttribute('aria-pressed','true')}};
+ fv.addEventListener('canplay',()=>{document.querySelector('.film .ph').style.opacity='0'});
+ const tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
+})();
+</script>
+</body>
+</html>
