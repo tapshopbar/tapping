@@ -80,7 +80,7 @@ html[data-season="glass"] #cw.c1,html[data-season="glass"] #cw.c2,html[data-seas
 .dancer .lbl{position:absolute;left:0;bottom:-6px;font-size:10px;letter-spacing:.14em;font-weight:800;background:var(--yellow);padding:6px 9px;color:#000}
 /* film */
 .film{position:relative;height:min(62vw,800px);min-height:400px;overflow:hidden;background:#000}
-.film video,.film img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.film video,.film img.ph,.film img.still{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.film img.still{object-position:50% 22%;transform:scale(1.04);animation:kb 18s ease-in-out infinite alternate}.film img.still.paused{animation-play-state:paused}@keyframes kb{from{object-position:50% 22%}to{object-position:50% 72%}}@media (prefers-reduced-motion:reduce){.film img.still{animation:none}}
 .film .tag{position:absolute;left:var(--pad);bottom:32px;color:#fff;font-size:12px;letter-spacing:.14em;font-weight:800;z-index:2}
 .film .badge{position:absolute;left:var(--pad);top:32px;z-index:2;background:var(--yellow);color:#000;font-size:11px;font-weight:800;letter-spacing:.1em;padding:8px 12px}
 .film .ctl{position:absolute;right:var(--pad);bottom:26px;z-index:2;background:#fff;border:0;font-size:12px;font-weight:800;letter-spacing:.06em;padding:12px 18px}
@@ -307,7 +307,7 @@ html[data-season="winter"] .rev{background:var(--wine)}html[data-season="glass"]
 <section class="film" id="film" aria-label="브랜드 필름">
   <span class="badge">WE'RE TAPPING INTO…</span>
   <img class="ph" src="assets/space.jpg" alt="">
-  <video id="fvid" src="assets/duo.mp4" muted loop playsinline autoplay preload="metadata" aria-label="wine is second americano 브랜드 필름"></video>
+  <img id="fvid" class="still" src="assets/duo_mix.jpg" alt="두 사람이 와인 잔을 들고 웃는 브랜드 컷 (회색 니트·네이비 바지, 네이비 니트·회색 바지)">
   <img class="slogan" src="assets/slogan.png" alt="wine is second americano">
   <span class="tag">TAP SHOP BAR · BRAND FILM · SOUND OFF</span>
   <button class="ctl" id="fctl" aria-pressed="false">일시정지</button>
@@ -438,7 +438,7 @@ html[data-season="winter"] .rev{background:var(--wine)}html[data-season="glass"]
   </div>
   <div class="legal">(주) 탭샵바 · 대표이사: 나기정 · 사업자등록번호: 235-87-02963 · 통신판매업 신고번호: 2026-서울마포-2695<br>주소: 서울특별시 마포구 양화로 73-1 이스턴빌딩 4층 · 호스팅: Amazon Web Services (서울 리전) · 고객센터: info@tsb.wine (10:00~18:00)<br>음주는 만 19세 이상.</div>
   <p class="warn">경고: 지나친 음주는 뇌졸중, 기억력 손상이나 치매를 유발합니다. 임신 중 음주는 기형아 출생 위험을 높입니다. 음주운전은 자신과 다른 사람의 생명을 위태롭게 할 수 있습니다.</p>
-  <p class="note">MKT-012 · 검토용 웹 목업 v0.4 · tsb.wine(2026-11-07 기준) 내용·Pretendard·행간 유지 + BARFLY 구성 + TSB BI 3색. 브랜드 필름은 tsb.wine duo.mp4(두 사람 옷색 다른 원본). 2027 By the Glass 내용은 MKT-008 v0.2(승인 전) 기준. 공개 배포·추가 문구 미승인.</p>
+  <p class="note">MKT-012 · 검토용 웹 목업 v0.4 · tsb.wine(2026-11-07 기준) 내용·Pretendard·행간 유지 + BARFLY 구성 + TSB BI 3색. 브랜드 컷은 duo_mix.jpg(회색 니트+네이비 바지 / 네이비 니트+회색 바지, 사진 모션). 2027 By the Glass 내용은 MKT-008 v0.2(승인 전) 기준. 공개 배포·추가 문구 미승인.</p>
   <div class="copy"><span>©TAP SHOP BAR 2026</span><div class="season" aria-label="시즌 색 미리보기"><button data-s="bi" class="on">BI 3색</button><button data-s="winter">Winter in Wine</button><button data-s="glass">By the Glass</button></div><div class="season" aria-label="헤드라인 글꼴 미리보기"><button data-f="bi" class="on">Pretendard Black (기본)</button><button data-f="jost">Jost 900</button><button data-f="spartan">League Spartan</button><button data-f="poppins">Poppins</button><button data-f="outfit">Outfit</button><button data-f="hammer">Hammersmith (Johnston계)</button><button data-f="impact">컨덴스드(A)</button></div><span>WE'RE TAPPING INTO… / DESIGN STUDY 04</span></div>
 </footer>
 
@@ -454,8 +454,8 @@ window.__errors=[];addEventListener('error',e=>__errors.push(e.message));
  /* season preview */
  document.querySelectorAll('.season button[data-s]').forEach(b=>b.onclick=()=>{document.documentElement.dataset.season=b.dataset.s;document.querySelectorAll('.season button[data-s]').forEach(x=>x.classList.toggle('on',x===b))});document.querySelectorAll('.season button[data-f]').forEach(b=>b.onclick=()=>{document.documentElement.dataset.font=b.dataset.f;document.querySelectorAll('.season button[data-f]').forEach(x=>x.classList.toggle('on',x===b))});const fq=new URLSearchParams(location.search).get('font');if(fq&&document.querySelector('[data-f='+fq+']'))document.querySelector('[data-f='+fq+']').click();
  /* film control */
- const fv=document.getElementById('fvid'),fc=document.getElementById('fctl');fc.onclick=()=>{if(fv.paused){fv.play();fc.textContent='일시정지';fc.setAttribute('aria-pressed','false')}else{fv.pause();fc.textContent='재생';fc.setAttribute('aria-pressed','true')}};
- fv.addEventListener('canplay',()=>{document.querySelector('.film .ph').style.opacity='0'});
+ const fv=document.getElementById('fvid'),fc=document.getElementById('fctl');fc.onclick=()=>{const isImg=fv.tagName==='IMG';const paused=isImg?fv.classList.contains('paused'):fv.paused;if(paused){isImg?fv.classList.remove('paused'):fv.play();fc.textContent='일시정지';fc.setAttribute('aria-pressed','false')}else{isImg?fv.classList.add('paused'):fv.pause();fc.textContent='재생';fc.setAttribute('aria-pressed','true')}};
+ const hidePh=()=>{document.querySelector('.film .ph').style.opacity='0'};fv.addEventListener('canplay',hidePh);fv.addEventListener('load',hidePh);if(fv.tagName==='IMG'&&fv.complete)hidePh();
  const tr=document.getElementById('track');if(tr)tr.innerHTML+=tr.innerHTML;
 })();
 </script>
@@ -463,8 +463,8 @@ window.__errors=[];addEventListener('error',e=>__errors.push(e.message));
  <div class="tf"><button class="fbclose" id="fbclose" aria-label="닫기">×</button>
   <div class="tf-prog"><i id="tf-bar"></i></div>
   <form id="tf" novalidate>
-   <section class="tf-step" data-step="0"><div class="tf-q"><span class="tf-n">1 →</span> 첫 화면에서 <b>INTO</b> 뒤에 바뀌는 문구 중<br>제일 끌린 것은?</div><div class="tf-opts"><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="YOUR TASTE"><span class="k">A</span>YOUR TASTE</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="EVERYDAY"><span class="k">B</span>EVERYDAY</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="SEOUL"><span class="k">C</span>SEOUL</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="64 WINES"><span class="k">D</span>64 WINES</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="YOUR CELLAR"><span class="k">E</span>YOUR CELLAR</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="THE GLASS"><span class="k">F</span>THE GLASS</label></div></section>
-   <section class="tf-step" data-step="1" hidden><div class="tf-q"><span class="tf-n">2 →</span> 좋았던 점은 무엇인가요?</div><textarea name="entry.1400456696" rows="3" placeholder="여기에 입력..."></textarea></section>
+   <section class="tf-step" data-step="0"><div class="tf-q"><span class="tf-n">1 →</span> 첫 화면에서 <b>INTO</b> 뒤에 바뀌는 문구 중<br>제일 끌린 것은?</div><div class="tf-opts"><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="YOUR TASTE"><span class="k">A</span>YOUR TASTE</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="EVERYDAY"><span class="k">B</span>EVERYDAY</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="SEOUL"><span class="k">C</span>SEOUL</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="64 WINES"><span class="k">D</span>64 WINES</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="THE CELLAR"><span class="k">E</span>THE CELLAR</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="THE GLASS"><span class="k">F</span>THE GLASS</label><label class="tf-opt" tabindex="0"><input type="radio" name="entry.496477098" value="없음"><span class="k">G</span>없음 (끌리는 게 없어요)</label></div></section>
+   <section class="tf-step" data-step="1" hidden><div class="tf-q"><span class="tf-n">2 →</span> 웹사이트에서 좋았던 점은 무엇인가요?<small>색, 문구, 사진, 구성 무엇이든</small></div><textarea name="entry.1400456696" rows="3" placeholder="여기에 입력..."></textarea></section>
    <section class="tf-step" data-step="2" hidden><div class="tf-q"><span class="tf-n">3 →</span> 아쉬운 점이나 바꾸고 싶은 것은요?<small>색, 문구, 글꼴, 사진, 구성 무엇이든</small></div><textarea name="entry.161839203" rows="3" placeholder="여기에 입력..."></textarea></section>
    <section class="tf-step" data-step="3" hidden><div class="tf-q"><span class="tf-n">4 →</span> 이름 또는 연락처 <small>선택 · 답장 드릴 때만 씁니다</small></div><input type="text" name="entry.106472073" placeholder="예: 홍길동 / 010-0000-0000"></section>
    <section class="tf-step tf-done" data-step="4" hidden><div class="tf-q">고마워요.<br><b>의견이 전달됐어요.</b></div><p class="tf-sub">탭샵바 마케팅팀이 읽고 다음 시안에 반영할게요.</p></section>
