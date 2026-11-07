@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="author" content="탭샵바 마케팅팀">
+<title>탭샵바 · 매장 탭 사진 올리기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+:root{--wine:#4A0B18;--wine2:#6E1426;--ink:#0E0E0E;--cream:#FFFDFC;--grey:#F1F1EF;--yellow:#FFC100;--blue:#156DFF;--red:#F43131}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--cream);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;letter-spacing:-.01em}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px 80px}
+header{padding:22px 0 6px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:900;font-size:17px;letter-spacing:-.02em}
+.logo small{display:block;font-size:10px;font-weight:800;letter-spacing:.14em;color:#777;margin-top:2px}
+.store-badge{font-size:12px;font-weight:800;letter-spacing:.06em;background:var(--ink);color:#fff;padding:7px 11px;border-radius:999px}
+h1{font-size:30px;line-height:1.12;letter-spacing:-.045em;margin:26px 0 12px;font-weight:900}
+h1 span{color:var(--wine)}
+.lead{font-size:15px;line-height:1.65;color:#333;margin:0 0 14px}
+.lead a{color:var(--wine);font-weight:800}
+.why{background:#fff;border:1px solid #e8e5e0;border-radius:14px;padding:16px 18px;margin:18px 0 26px;font-size:14px;line-height:1.6;color:#333}
+.why b{color:var(--ink)}
+.why .img{display:block;width:100%;border-radius:10px;margin:12px 0 4px;aspect-ratio:16/9;object-fit:cover;object-position:50% 55%}
+.why .cap{font-size:12px;color:#777}
+h2{font-size:13px;font-weight:800;letter-spacing:.12em;color:#777;margin:28px 0 10px}
+.card{background:#fff;border:1px solid #e8e5e0;border-radius:14px;padding:4px 18px}
+.row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid #eee;font-size:14px;line-height:1.55}
+.row:last-child{border-bottom:0}
+.row .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center;margin-top:1px}
+.row .n.w{background:var(--wine)}
+.row b{font-weight:800}
+.row small{display:block;color:#666;font-size:13px;margin-top:2px}
+.warn{background:#FFF7E0;border:1px solid #F3DFA0;border-radius:10px;padding:10px 12px;font-size:13px;line-height:1.5;margin:12px 0 0}
+/* uploader */
+.up{margin-top:28px;background:var(--ink);color:#fff;border-radius:18px;padding:22px 20px}
+.up h3{margin:0 0 6px;font-size:20px;letter-spacing:-.04em;font-weight:900}
+.up p{margin:0 0 16px;font-size:13px;color:#bbb;line-height:1.5}
+.who{width:100%;border:0;border-bottom:1.5px solid #555;background:transparent;color:#fff;font:inherit;font-size:15px;padding:8px 0;margin:0 0 16px;outline:0}
+.who::placeholder{color:#777}
+.pick{display:block;width:100%;border:2px dashed #666;border-radius:14px;padding:26px 16px;text-align:center;cursor:pointer;color:#fff;transition:border-color .2s,background .2s}
+.pick:hover{border-color:var(--yellow);background:#161616}
+.pick b{display:block;font-size:17px;font-weight:900;letter-spacing:-.02em}
+.pick span{display:block;font-size:12px;color:#aaa;margin-top:6px}
+.pick input{display:none}
+.list{list-style:none;padding:0;margin:14px 0 0;max-height:280px;overflow:auto}
+.list li{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #222;font-size:13px}
+.list img{width:44px;height:44px;object-fit:cover;border-radius:6px;background:#333;flex:none}
+.list .nm{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#ddd}
+.list .st{flex:none;font-size:11px;font-weight:800;letter-spacing:.06em;color:#999}
+.list .st.ok{color:#7CE38B}.list .st.err{color:#FF7A7A}.list .st.ing{color:var(--yellow)}
+.bar{height:6px;background:#333;border-radius:999px;overflow:hidden;margin:16px 0 10px;display:none}
+.bar i{display:block;height:100%;width:0;background:var(--yellow);transition:width .3s}
+.go{width:100%;border:0;border-radius:12px;padding:16px;font:inherit;font-size:16px;font-weight:900;letter-spacing:-.01em;background:var(--yellow);color:#000;cursor:pointer;margin-top:14px}
+.go:disabled{background:#444;color:#999;cursor:default}
+.status{font-size:13px;color:#bbb;margin:12px 0 0;min-height:18px;line-height:1.5}
+.count{font-size:12px;color:#999;margin:14px 0 0;letter-spacing:.04em}
+.count b{color:#fff}
+.done{display:none;margin-top:18px;background:#1b1b1b;border:1px solid #333;border-radius:12px;padding:16px;font-size:14px;line-height:1.6}
+.done b{color:var(--yellow)}
+.thanks{margin:34px 0 0;text-align:center;font-size:14px;color:#555;line-height:1.7}
+.thanks b{color:var(--ink)}
+.foot{margin-top:40px;font-size:11px;color:#999;letter-spacing:.1em;font-weight:800;text-align:center}
+.picker{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.picker a{display:block;text-align:center;background:#fff;border:1.5px solid #ddd;border-radius:12px;padding:20px 10px;font-weight:800;color:var(--ink);text-decoration:none;font-size:15px}
+.picker a:hover{border-color:var(--ink)}
+@media (max-width:420px){h1{font-size:27px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo">TAP SHOP BAR<small>매장 탭 사진 올리기</small></div>
+  <div class="store-badge" id="badge">매장 선택</div>
+</header>
+
+<div id="nostore" style="display:none">
+  <h1>어느 매장이세요?</h1>
+  <p class="lead">매장을 고르면 그 매장 전용 업로드 페이지로 갑니다.</p>
+  <div class="picker" id="picker"></div>
+</div>
+
+<div id="main" style="display:none">
+<h1><span id="greet-store"></span> 점장님,<br>먼저 <span>고맙습니다.</span></h1>
+<p class="lead">바쁘신데 사진까지 부탁드려서 죄송하고, 또 고마워요. 아래 순서대로 찍어서 이 페이지에서 바로 올려 주시면 끝이에요. 로그인도 앱 설치도 필요 없어요.</p>
+
+<div class="why">
+  <b>왜 찍는 건가요?</b><br>
+  홈페이지에 <b>우리 매장 탭 기계를 사진으로 보여주고, 손님이 기계를 누르면 그 안에 어떤 와인이 있는지 보이는 화면</b>을 만들고 있어요. 청계 사진으로 먼저 만들어 본 시안이 아래 사진이에요. 지금 올려 주시는 사진이 그대로 <b id="greet-store2"></b> 화면이 됩니다.
+  <a href="../cheonggye/" target="_blank" rel="noopener"><img class="img" src="../assets/island.jpg" alt="청계 탭 아일랜드 시안"></a>
+  <span class="cap">▲ 눌러서 청계 시안 보기 (기계를 누르면 가까이, 병을 누르면 와인 설명)</span>
+</div>
+
+<h2>언제 · 어떻게</h2>
+<div class="card">
+  <div class="row"><div class="n">1</div><div><b>오픈 전이나 마감 후, 손님 없을 때</b><small>매장 조명 전부 켜고, 기계 화면도 켜진 상태로</small></div></div>
+  <div class="row"><div class="n">2</div><div><b>폰은 가로로, 1x 기본 카메라</b><small>0.5x 광각은 휘어져서 못 써요 · 플래시 끄기 · 라이브포토 끄기</small></div></div>
+  <div class="row"><div class="n">3</div><div><b>유리에 내 모습이 비치면 반 걸음 옆으로</b><small>정면보다 아주 살짝 비스듬히 서면 반사가 줄어요</small></div></div>
+</div>
+
+<h2>뭘 찍나 (이 순서대로)</h2>
+<div class="card">
+  <div class="row"><div class="n w">A</div><div><b>탭 벽 전체가 한 장에</b><small>정면에서 2~3m 떨어져서 1장</small></div></div>
+  <div class="row"><div class="n w">B</div><div><b>기계 한 대씩 정면 1장</b><small>왼쪽 기계부터 오른쪽으로 순서대로</small></div></div>
+  <div class="row"><div class="n w">C</div><div><b>기계 한 대씩 안에 든 병 라벨이 읽히게 가까이 1장</b><small>역시 왼쪽부터 순서대로 · 라벨 글자가 읽히면 성공</small></div></div>
+  <div class="row" id="row-360" style="display:none"><div class="n w">D</div><div><b>청계만: 아일랜드 한 바퀴 36장</b><small>둘레를 돌면서 한 걸음(약 10도)마다 1장 · 거리 2~3m · 가슴 높이 · 아일랜드 가운데를 항상 화면 중앙에. 36장이 있으면 홈페이지에서 진짜로 빙글 돌아가요.</small></div></div>
+</div>
+<div class="warn">찍은 순서가 그대로 기계 번호가 돼요. 그래서 <b>꼭 왼쪽 → 오른쪽 순서로</b> 부탁드려요. 중간에 실수하면 다시 찍어서 올리셔도 돼요, 제가 정리할게요.</div>
+
+<div class="up">
+  <h3>사진 올리기</h3>
+  <p>갤러리에서 한 번에 여러 장 선택하면 돼요. 찍은 시간 순서대로 자동 정렬해서 올라갑니다. 원본 화질 그대로.</p>
+  <input class="who" id="who" placeholder="올리는 분 이름 (선택)" maxlength="12">
+  <label class="pick"><input type="file" id="files" accept="image/*" multiple><b>사진 고르기</b><span>여러 장 한 번에 선택 가능 · 사진당 최대 약 30MB</span></label>
+  <ul class="list" id="list"></ul>
+  <div class="bar" id="bar"><i id="bari"></i></div>
+  <button class="go" id="go" disabled>올리기</button>
+  <div class="status" id="status"></div>
+  <div class="count" id="count"></div>
+  <div class="done" id="done"></div>
+</div>
+
+<p class="thanks">다 올리셨으면 끝이에요. <b>정말 고맙습니다.</b><br>애매한 게 있으면 사진 한 장만 먼저 올려 주세요. 보고 바로 답드릴게요.<br>hello@tsb.wine</p>
+</div>
+
+<div class="foot">TAP SHOP BAR · 매장 탭 사진 수집 · 2026.11</div>
+</div>
+
+<script>
+(()=>{
+const API='https://script.google.com/macros/s/AKfycbx6Hdlk4ixZbrloTSoCyXDpp5CCN-2QFUerXXlyITJuhpyEG1RZ-IiSKnWNCAX6vxR5hQ/exec';
+const KEY='tsb2611';
+const STORES={cheonggye:'청계',sangam:'상암',magok:'마곡',dongdaemun:'동대문'};
+const qs=new URLSearchParams(location.search);
+const s=qs.get('s');
+const $=id=>document.getElementById(id);
+if(!STORES[s]){
+  $('nostore').style.display='block';
+  $('picker').innerHTML=Object.entries(STORES).map(([k,v])=>`<a href="?s=${k}&k=${KEY}">${v}</a>`).join('');
+  return;
+}
+$('main').style.display='block';
+$('badge').textContent=STORES[s]+' 매장';
+$('greet-store').textContent=STORES[s];
+$('greet-store2').textContent=STORES[s];
+document.title=`탭샵바 · ${STORES[s]} 탭 사진 올리기`;
+if(s==='cheonggye')$('row-360').style.display='flex';
+
+let files=[];
+const list=$('list'),go=$('go'),status=$('status'),bar=$('bar'),bari=$('bari'),countEl=$('count'),done=$('done');
+async function refreshCount(){
+  try{const r=await fetch(`${API}?k=${KEY}&s=${s}&t=${Date.now()}`);const j=await r.json();if(j.ok)countEl.innerHTML=`지금까지 ${STORES[s]} 폴더에 <b>${j.count}장</b> 올라와 있어요.`;}catch(e){}
+}
+refreshCount();
+$('files').addEventListener('change',e=>{
+  const picked=[...e.target.files].filter(f=>f.type.startsWith('image/')||/\.(heic|heif|jpe?g|png)$/i.test(f.name));
+  picked.sort((a,b)=>a.lastModified-b.lastModified);
+  files=picked.map(f=>({f,st:'대기'}));
+  list.innerHTML='';
+  files.forEach((it,i)=>{
+    const li=document.createElement('li');
+    const img=document.createElement('img');
+    try{img.src=URL.createObjectURL(it.f)}catch(e){}
+    li.innerHTML=`<span class="nm">${String(i+1).padStart(2,'0')} · ${it.f.name} · ${(it.f.size/1048576).toFixed(1)}MB</span><span class="st">대기</span>`;
+    li.prepend(img);list.appendChild(li);it.li=li;
+  });
+  go.disabled=files.length===0;
+  status.textContent=files.length?`${files.length}장 선택됨. 찍은 시간 순서로 올라가요.`:'';
+  done.style.display='none';
+});
+const toB64=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=rej;r.readAsDataURL(f)});
+async function uploadOne(it){
+  const data=await toB64(it.f);
+  const body=JSON.stringify({k:KEY,s,name:it.f.name,mime:it.f.type||'image/jpeg',data,shot:it.f.lastModified,who:$('who').value.trim()});
+  const r=await fetch(API,{method:'POST',body});
+  const j=await r.json();
+  if(!j.ok)throw new Error(j.err||'fail');
+  return j;
+}
+go.addEventListener('click',async()=>{
+  go.disabled=true;$('files').disabled=true;bar.style.display='block';
+  let ok=0,fail=0;
+  for(let i=0;i<files.length;i++){
+    const it=files[i];const st=it.li.querySelector('.st');
+    if(it.st==='완료'){ok++;continue;}
+    st.textContent='올리는 중';st.className='st ing';
+    status.textContent=`${i+1} / ${files.length} 올리는 중… 화면을 닫지 말아 주세요.`;
+    let tries=0;
+    while(tries<2){
+      try{const j=await uploadOne(it);it.st='완료';st.textContent='완료 · '+j.name.split('_').slice(0,2).join('_');st.className='st ok';ok++;break;}
+      catch(e){tries++;if(tries>=2){it.st='실패';st.textContent='실패';st.className='st err';fail++;}}
+    }
+    bari.style.width=Math.round((i+1)/files.length*100)+'%';
+  }
+  $('files').disabled=false;
+  status.textContent='';
+  done.style.display='block';
+  done.innerHTML=fail?`<b>${ok}장 완료, ${fail}장 실패.</b> 실패한 것만 다시 "올리기"를 눌러 주세요. 계속 안 되면 hello@tsb.wine 로 알려 주세요.`:`<b>${ok}장 모두 올라갔어요. 고맙습니다!</b><br>더 올릴 게 있으면 다시 사진 고르기를 눌러 주세요.`;
+  if(fail)go.disabled=false;
+  refreshCount();
+});
+})();
+</script>
+</body>
+</html>
