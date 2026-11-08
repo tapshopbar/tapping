@@ -205,9 +205,15 @@ footer{background:#000;color:#fff;padding:70px var(--pad) 40px}
 .tap .tag{font-size:10px;font-weight:800;letter-spacing:.1em;padding:3px 7px;border-radius:999px;background:#eee;display:inline-block;margin-top:6px}
 .tap .tag.red{background:var(--red);color:#fff}.tap .tag.white{background:var(--yellow)}.tap .tag.premium{background:#000;color:#fff}.tap .tag.sb{background:var(--blue);color:#fff}
 .tap .price{font-size:14px;font-weight:700;white-space:nowrap;text-align:right}.tap .price small{display:block;font-size:10px;color:#888;font-weight:600}
+.island{position:relative;margin:0 0 26px;background:#000;aspect-ratio:16/9;max-height:82vh;width:100%;overflow:hidden}
+.island iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.island .full{position:absolute;left:14px;top:14px;z-index:2;background:#fff;color:#000;font-size:12px;font-weight:800;letter-spacing:.04em;padding:9px 12px;border-radius:4px;text-decoration:none}
+.island.soon{aspect-ratio:auto;max-height:none;background:#0E0E0E;color:#fff;padding:26px 28px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.island.soon b{font-size:clamp(20px,2.4vw,30px);letter-spacing:-.04em}.island.soon span{font-size:11px;letter-spacing:.1em;color:#aaa;font-weight:800}
+.tap[role=button]{cursor:pointer}.tap[role=button]:hover .ko,.tap[role=button]:focus-visible .ko{color:#4A0B18;text-decoration:underline}
 .taps-note{font-size:12px;color:#666;margin:22px 0 0;max-width:760px;line-height:1.7}
 .taps-note b{color:#000}
-@media(max-width:860px){.taps{padding:60px var(--pad) 60px}.taps-head{margin-bottom:18px}.taps-head h2{font-size:11vw}.store-tabs{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px;scrollbar-width:none}.store-tabs button{flex:0 0 auto;padding:10px 14px;font-size:12px}.taps-grid{grid-template-columns:1fr}.tap{grid-template-columns:28px 1fr auto}}
+@media(max-width:860px){.taps{padding:60px var(--pad) 60px}.taps-head{margin-bottom:18px}.taps-head h2{font-size:11vw}.store-tabs{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px;scrollbar-width:none}.store-tabs button{flex:0 0 auto;padding:10px 14px;font-size:12px}.island{aspect-ratio:4/5;width:auto;margin-left:calc(-1*var(--pad));margin-right:calc(-1*var(--pad))}.taps-grid{grid-template-columns:1fr}.tap{grid-template-columns:28px 1fr auto}}
 
 .fbbox{display:none}
 .tf{background:#fff;width:min(760px,100%);min-height:min(78vh,620px);position:relative;border-radius:10px;padding:56px 56px 28px;display:flex;flex-direction:column;font-family:"Pretendard Variable",Pretendard,sans-serif;color:#0E0E0E}
@@ -397,6 +403,7 @@ html[data-season="winter"] .rev{background:var(--wine)}html[data-season="glass"]
 
 <section class="taps" id="ontap" aria-label="매장별 탭 와인">
   <div class="taps-head"><div><p class="kicker">On tap right now</p><h2 class="disp">What's on tap<br>tonight</h2></div><div class="store-tabs" role="tablist" aria-label="매장 선택"></div></div>
+  <div class="island" id="taps-island"></div>
   <div class="taps-meta"><span id="taps-count"></span><span id="taps-updated"></span></div>
   <div class="taps-grid" id="taps-grid"></div>
   <p class="taps-note" id="taps-note"></p>
@@ -476,8 +483,10 @@ window.__errors=[];addEventListener('error',e=>__errors.push(e.message));
 <script>
 (async()=>{const grid=document.getElementById('taps-grid'),tabs=document.querySelector('.store-tabs');if(!grid)return;let data;try{data=await (await fetch('assets/taps.json',{cache:'no-store'})).json()}catch(e){grid.innerHTML='<p>탭 정보를 불러오지 못했어요.</p>';return}
 const tagCls={Red:'red',White:'white','Sauvignon Blanc':'sb',Premium:'premium'};
-function render(id){const st=data.stores.find(x=>x.id===id);tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.id===id)));document.getElementById('taps-count').textContent=st.name+' · 탭 '+st.taps+'개 중 '+st.wines.length+'종 표시';document.getElementById('taps-updated').textContent='UPDATED '+data.updated+(data.mode==='sample'?' · SAMPLE':' · LIVE');grid.innerHTML=st.wines.map((w,i)=>`<div class="tap"><span class="no">${String(i+1).padStart(2,'0')}</span><div><span class="ko">${w.ko}</span><span class="en">${w.en} · ${w.origin}</span><span class="tag ${tagCls[w.cat]||''}">${w.cat.toUpperCase()}</span></div><div class="price">${w.bottle?w.bottle.toLocaleString('ko-KR')+'원<small>보틀 · 잔 가격은 탭 화면</small>':'<small>잔 가격은 탭 화면</small>'}</div></div>`).join('')}
-tabs.innerHTML=data.stores.map(s=>`<button role="tab" data-id="${s.id}" aria-selected="false">${s.name}</button>`).join('');tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(b)render(b.dataset.id)});document.getElementById('taps-note').innerHTML='<b>'+(data.mode==='sample'?'샘플 데이터.':'')+'</b> '+data.note;render(data.stores[0].id)})();
+function render(id){const st=data.stores.find(x=>x.id===id);tabs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.id===id)));document.getElementById('taps-count').textContent=st.name+' · 탭 '+st.taps+'개 중 '+st.wines.length+'종 표시';document.getElementById('taps-updated').textContent='UPDATED '+data.updated+(data.mode==='sample'?' · SAMPLE':' · LIVE');const isl=document.getElementById('taps-island');isl.className='island'+(st.island?'':' soon');isl.innerHTML=st.island?`<iframe src="${st.island}?embed=1" title="${st.name} 탭 아일랜드 (기계를 누르면 가까이)" loading="lazy"></iframe><a class="full" href="${st.island}">전체 화면 ↗</a>`:`<b>${st.name} 탭 아일랜드</b><span>PHOTO COMING SOON · 매장 사진 촬영 중</span>`;
+grid.innerHTML=st.wines.map((w,i)=>`<div class="tap"${st.island?' role="button" tabindex="0"':''} data-en="${w.en}"><span class="no">${String(i+1).padStart(2,'0')}</span><div><span class="ko">${w.ko}</span><span class="en">${w.en} · ${w.origin}</span><span class="tag ${tagCls[w.cat]||''}">${w.cat.toUpperCase()}</span></div><div class="price">${w.bottle?w.bottle.toLocaleString('ko-KR')+'원<small>보틀 · 잔 가격은 탭 화면</small>':'<small>잔 가격은 탭 화면</small>'}</div></div>`).join('')}
+tabs.innerHTML=data.stores.map(s=>`<button role="tab" data-id="${s.id}" aria-selected="false">${s.name}</button>`).join('');tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(b)render(b.dataset.id)});
+const openTap=e=>{const r=e.target.closest('.tap[role=button]'),f=document.querySelector('#taps-island iframe');if(!r||!f||(e.type==='keydown'&&e.key!=='Enter'))return;f.scrollIntoView({behavior:'smooth',block:'center'});f.contentWindow.postMessage({tapEn:r.dataset.en},location.origin)};grid.addEventListener('click',openTap);grid.addEventListener('keydown',openTap);document.getElementById('taps-note').innerHTML='<b>'+(data.mode==='sample'?'샘플 데이터.':'')+'</b> '+data.note;render(data.stores[0].id)})();
 </script>
 <script>
 (()=>{const m=document.getElementById('fbmodal'),form=document.getElementById('tf'),steps=[...form.querySelectorAll('.tf-step')],bar=document.getElementById('tf-bar'),back=document.getElementById('tf-back'),next=document.getElementById('tf-next');let i=0,sent=false;
