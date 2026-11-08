@@ -9,6 +9,7 @@
 <meta property="og:description" content="청계 삼일빌딩점 원형 탭 아일랜드를 눌러 보세요. 탭을 누르면 가까이, 길게 누르면 뒤로.">
 <meta property="og:image" content="../assets/island.jpg">
 <title>TAP SHOP BAR | 청계 탭 아일랜드 · 인터랙티브 시안 (목업)</title>
+<script>if(/[?&]embed=1/.test(location.search))document.documentElement.classList.add('embed')</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 <style>
 :root{--red:#F43131;--blue:#156DFF;--yellow:#FFC100;--wine:#4A0B18;--ink:#0E0E0E;--cream:#FFFDFC;--pad:24px}
@@ -137,6 +138,12 @@ button{font:inherit}
  .back{bottom:auto;top:54px;right:var(--pad);left:auto}
  .tag3 button{font-size:10px;padding:6px 9px}
 }
+/* embed mode: used inside the campaign page "What's on tap tonight" */
+.embed .mock,.embed .logo,.embed .intro,.embed .foot{display:none}
+.embed .bar{top:0;justify-content:flex-end}
+html.embed,html.embed body{overscroll-behavior:auto}
+.embed .panel header{padding-top:24px}
+@media (max-width:720px){.embed .back{top:12px}}
 </style>
 </head>
 <body>
@@ -229,9 +236,12 @@ const tagEls=[];
 WINES.forEach((w,i)=>{
   const t=document.createElement('div');t.className='tag3';
   const shortName=w.en.split(' ').slice(0,2).join(' ').replace(/,$/,'').toUpperCase();const b=document.createElement('button');b.className=catCls(w.cat);b.innerHTML=`<i></i>${shortName}`;b.title=w.ko;
-  b.onclick=e=>{e.stopPropagation();const m=MACHINES.find(m=>m.wines.includes(i));zoomTo(m,()=>{const s=document.querySelector(`#m-${m.id} .slot[data-w="${i}"]`);selectWine(i,m,s)});};
+  b.onclick=e=>{e.stopPropagation();openWine(i)};
   t.appendChild(b);ring3d.appendChild(t);tagEls.push(t);
 });
+function openWine(i){const m=MACHINES.find(m=>m.wines.includes(i));if(m)zoomTo(m,()=>selectWine(i,m,document.querySelector(`#m-${m.id} .slot[data-w="${i}"]`)))}
+/* parent page list click → open that wine here */
+addEventListener('message',e=>{if(e.origin!==location.origin||!e.data||!e.data.tapEn)return;const i=WINES.findIndex(w=>w.en===e.data.tapEn);if(i>=0)openWine(i)});
 let ringR=300;
 function layoutRing(){
   ringR=Math.max(80,ringwrap.offsetWidth/2*0.92);
