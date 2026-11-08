@@ -30,13 +30,6 @@
      "bottle": null
     },
     {
-     "ko": "케이머스 카베르네 소비뇽",
-     "en": "Caymus Cabernet Sauvignon",
-     "origin": "USA",
-     "cat": "Premium",
-     "bottle": null
-    },
-    {
      "ko": "샤또 메종 블랑쉬",
      "en": "Château Maison Blanche",
      "origin": "FRANCE",
@@ -44,18 +37,11 @@
      "bottle": 38000
     },
     {
-     "ko": "폴 자불레 지공다스 피에르 애기유",
-     "en": "Paul Jaboulet Aîné Gigondas Pierre Aiguille",
-     "origin": "FRANCE",
-     "cat": "Red",
-     "bottle": 52000
-    },
-    {
-     "ko": "빌라 안티노리 로쏘",
-     "en": "Villa Antinori Rosso",
-     "origin": "ITALY",
-     "cat": "Red",
-     "bottle": 32000
+     "ko": "케이머스 카베르네 소비뇽",
+     "en": "Caymus Cabernet Sauvignon",
+     "origin": "USA",
+     "cat": "Premium",
+     "bottle": null
     },
     {
      "ko": "프루노토 바롤로",
@@ -65,11 +51,25 @@
      "bottle": 70000
     },
     {
+     "ko": "폴 자불레 지공다스 피에르 애기유",
+     "en": "Paul Jaboulet Aîné Gigondas Pierre Aiguille",
+     "origin": "FRANCE",
+     "cat": "Red",
+     "bottle": 52000
+    },
+    {
      "ko": "꼬또 데 이마스 그랑 리제르바",
      "en": "Coto de Imaz Gran Reserva",
      "origin": "SPAIN",
      "cat": "Red",
      "bottle": 48000
+    },
+    {
+     "ko": "빌라 안티노리 로쏘",
+     "en": "Villa Antinori Rosso",
+     "origin": "ITALY",
+     "cat": "Red",
+     "bottle": 32000
     },
     {
      "ko": "카사노바 디 네리 로쏘 디 몬탈치노",
@@ -92,7 +92,8 @@
      "cat": "Sauvignon Blanc",
      "bottle": null
     }
-   ]
+   ],
+   "island": "cheonggye/"
   },
   {
    "id": "sangam",
