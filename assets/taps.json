@@ -13,84 +13,132 @@
      "en": "Château Fomey",
      "origin": "FRANCE",
      "cat": "Red",
-     "bottle": null
+     "bottle": null,
+     "tap": 1,
+     "region": "Bordeaux",
+     "grape": "메를로 · 카베르네",
+     "note": "자두와 블랙커런트, 가벼운 삼나무 향. 데일리로 마시기 좋은 보르도. 잠봉뵈르 샌드위치와."
     },
     {
      "ko": "레 칼케르 소비뇽 블랑",
      "en": "Les Calcaires Sauvignon Blanc",
      "origin": "FRANCE",
      "cat": "Sauvignon Blanc",
-     "bottle": null
+     "bottle": null,
+     "tap": 2,
+     "region": "Loire",
+     "grape": "소비뇽 블랑",
+     "note": "자몽과 라임, 풀 내음과 미네랄. 산뜻하고 드라이해서 굴·부라타와 첫 잔으로 좋아요."
     },
     {
      "ko": "덕혼 디코이 카베르네 소비뇽",
      "en": "Duckhorn Decoy Cabernet Sauvignon",
      "origin": "USA",
      "cat": "Red",
-     "bottle": null
+     "bottle": null,
+     "tap": 3,
+     "region": "California",
+     "grape": "카베르네 소비뇽",
+     "note": "블랙베리와 모카, 부드러운 타닌. 캘리포니아다운 풍성함에 균형감이 있는 레드."
     },
     {
      "ko": "샤또 메종 블랑쉬",
      "en": "Château Maison Blanche",
      "origin": "FRANCE",
      "cat": "Red",
-     "bottle": 38000
+     "bottle": 38000,
+     "tap": 4,
+     "region": "Bordeaux",
+     "grape": "메를로",
+     "note": "둥근 과일 맛과 부드러운 질감. 처음 보르도를 마셔 보는 분께 권하는 한 잔."
     },
     {
      "ko": "케이머스 카베르네 소비뇽",
      "en": "Caymus Cabernet Sauvignon",
      "origin": "USA",
      "cat": "Premium",
-     "bottle": null
+     "bottle": null,
+     "tap": 5,
+     "region": "Napa Valley",
+     "grape": "카베르네 소비뇽",
+     "note": "블랙체리와 카시스, 바닐라와 코코아의 진한 향. 부드럽고 둥근 타닌에 긴 여운. 스테이크·트러플 메뉴와."
     },
     {
      "ko": "프루노토 바롤로",
      "en": "Prunotto Barolo",
      "origin": "ITALY",
      "cat": "Premium",
-     "bottle": 70000
+     "bottle": 70000,
+     "tap": 6,
+     "region": "Piemonte",
+     "grape": "네비올로",
+     "note": "장미와 타르, 말린 체리와 감초. 단단한 타닌과 산도가 길게 이어지는 클래식 바롤로. 스테이크와."
     },
     {
      "ko": "폴 자불레 지공다스 피에르 애기유",
      "en": "Paul Jaboulet Aîné Gigondas Pierre Aiguille",
      "origin": "FRANCE",
      "cat": "Red",
-     "bottle": 52000
+     "bottle": 52000,
+     "tap": 7,
+     "region": "Rhône",
+     "grape": "그르나슈 · 시라",
+     "note": "잘 익은 붉은 과일과 후추, 허브 향. 따뜻하고 풍성한 남부 론 스타일. 한식 안주와도 잘 맞아요."
     },
     {
      "ko": "꼬또 데 이마스 그랑 리제르바",
      "en": "Coto de Imaz Gran Reserva",
      "origin": "SPAIN",
      "cat": "Red",
-     "bottle": 48000
+     "bottle": 48000,
+     "tap": 8,
+     "region": "Rioja",
+     "grape": "템프라니요",
+     "note": "오크 숙성에서 오는 바닐라·담배잎, 말린 자두. 부드럽고 우아한 리오하 그랑 리제르바."
     },
     {
      "ko": "빌라 안티노리 로쏘",
      "en": "Villa Antinori Rosso",
      "origin": "ITALY",
      "cat": "Red",
-     "bottle": 32000
+     "bottle": 32000,
+     "tap": 9,
+     "region": "Toscana",
+     "grape": "산지오베제 블렌드",
+     "note": "체리와 허브, 적당한 산도. 토스카나의 기본기. 루꼴라 떡볶이, 파스타와."
     },
     {
      "ko": "카사노바 디 네리 로쏘 디 몬탈치노",
      "en": "Casanova di Neri Rosso di Montalcino",
      "origin": "ITALY",
      "cat": "Red",
-     "bottle": 51000
+     "bottle": 51000,
+     "tap": 10,
+     "region": "Toscana",
+     "grape": "산지오베제",
+     "note": "브루넬로의 동생. 붉은 과일과 흙 내음, 생생한 산도. 안초비·올리브 메뉴와."
     },
     {
      "ko": "브레드 앤 버터 피노 누아",
      "en": "Bread & Butter Pinot Noir",
      "origin": "USA",
      "cat": "Red",
-     "bottle": 36000
+     "bottle": 36000,
+     "tap": 11,
+     "region": "California",
+     "grape": "피노 누아",
+     "note": "라즈베리와 바닐라, 이름처럼 부드럽고 버터리한 피노. 혼술로 가장 많이 나가는 잔."
     },
     {
      "ko": "토후 소비뇽 블랑",
      "en": "Tohu Sauvignon Blanc",
      "origin": "NEW ZEALAND",
      "cat": "Sauvignon Blanc",
-     "bottle": null
+     "bottle": null,
+     "tap": 12,
+     "region": "Marlborough",
+     "grape": "소비뇽 블랑",
+     "note": "패션프루트와 구스베리, 톡 쏘는 산도. 삼배체 굴과 가장 잘 맞는 조합."
     }
    ],
    "island": "cheonggye/"
@@ -105,72 +153,113 @@
      "en": "Unánime Malbec",
      "origin": "ARGENTINA",
      "cat": "Red",
-     "bottle": 52000
+     "bottle": 52000,
+     "tap": 1,
+     "region": "Mendoza",
+     "grape": "말벡",
+     "note": "검은 자두와 제비꽃, 은은한 오크. 묵직하지만 부드러워서 스테이크·폭립과."
     },
     {
      "ko": "펜리 에스테이트 피닉스 카베르네 소비뇽",
      "en": "Penley Estate Phoenix Cabernet Sauvignon",
      "origin": "AUSTRALIA",
      "cat": "Red",
-     "bottle": 31900
+     "bottle": 31900,
+     "tap": 2,
+     "region": "Coonawarra",
+     "grape": "카베르네 소비뇽",
+     "note": "카시스와 민트, 유칼립투스. 쿠나와라다운 선명한 카베르네."
     },
     {
      "ko": "꼬얌",
      "en": "Emiliana Coyam",
      "origin": "CHILE",
      "cat": "Red",
-     "bottle": 47000
+     "bottle": 47000,
+     "tap": 3,
+     "region": "Colchagua",
+     "grape": "시라 · 카르메네르 블렌드",
+     "note": "유기농 포도로 만든 블렌드. 검은 과일과 향신료, 매끈한 질감."
     },
     {
      "ko": "1865 셀렉티드 빈야드 카베르네 소비뇽",
      "en": "1865 Selected Vineyards Cabernet Sauvignon",
      "origin": "CHILE",
      "cat": "Red",
-     "bottle": 47900
-    },
-    {
-     "ko": "캐논볼 카베르네 소비뇽",
-     "en": "Cannonball Cabernet Sauvignon",
-     "origin": "USA",
-     "cat": "Red",
-     "bottle": 30000
-    },
-    {
-     "ko": "브레드 앤 버터 피노 누아",
-     "en": "Bread & Butter Pinot Noir",
-     "origin": "USA",
-     "cat": "Red",
-     "bottle": 36000
+     "bottle": 47900,
+     "tap": 4,
+     "region": "Maipo",
+     "grape": "카베르네 소비뇽",
+     "note": "블랙커런트와 다크 초콜릿. 칠레 카베르네의 진하고 둥근 맛."
     },
     {
      "ko": "토후 소비뇽 블랑",
      "en": "Tohu Sauvignon Blanc",
      "origin": "NEW ZEALAND",
      "cat": "Sauvignon Blanc",
-     "bottle": null
+     "bottle": null,
+     "tap": 5,
+     "region": "Marlborough",
+     "grape": "소비뇽 블랑",
+     "note": "패션프루트와 구스베리, 톡 쏘는 산도. 삼배체 굴과 가장 잘 맞는 조합."
     },
     {
      "ko": "레 칼케르 소비뇽 블랑",
      "en": "Les Calcaires Sauvignon Blanc",
      "origin": "FRANCE",
      "cat": "Sauvignon Blanc",
-     "bottle": null
+     "bottle": null,
+     "tap": 6,
+     "region": "Loire",
+     "grape": "소비뇽 블랑",
+     "note": "자몽과 라임, 풀 내음과 미네랄. 산뜻하고 드라이해서 굴·부라타와 첫 잔으로 좋아요."
+    },
+    {
+     "ko": "캐논볼 카베르네 소비뇽",
+     "en": "Cannonball Cabernet Sauvignon",
+     "origin": "USA",
+     "cat": "Red",
+     "bottle": 30000,
+     "tap": 13,
+     "region": "California",
+     "grape": "카베르네 소비뇽",
+     "note": "잘 익은 블랙베리와 모카, 부드러운 타닌. 부담 없이 고르는 캘리포니아 레드."
+    },
+    {
+     "ko": "브레드 앤 버터 피노 누아",
+     "en": "Bread & Butter Pinot Noir",
+     "origin": "USA",
+     "cat": "Red",
+     "bottle": 36000,
+     "tap": 14,
+     "region": "California",
+     "grape": "피노 누아",
+     "note": "라즈베리와 바닐라, 이름처럼 부드럽고 버터리한 피노. 혼술로 가장 많이 나가는 잔."
     },
     {
      "ko": "발렌시소 리제르바",
      "en": "Valenciso Reserva",
      "origin": "SPAIN",
      "cat": "Red",
-     "bottle": 48000
+     "bottle": 48000,
+     "tap": 17,
+     "region": "Rioja",
+     "grape": "템프라니요",
+     "note": "붉은 과일과 은은한 오크. 과하지 않고 우아한 리오하 레세르바."
     },
     {
      "ko": "마스 라 플라나",
      "en": "Torres Mas La Plana",
      "origin": "SPAIN",
      "cat": "Premium",
-     "bottle": 128000
+     "bottle": 128000,
+     "tap": 18,
+     "region": "Penedès",
+     "grape": "카베르네 소비뇽",
+     "note": "스페인 카베르네의 아이콘. 카시스·삼나무·감초, 길고 단단한 여운."
     }
-   ]
+   ],
+   "island": "sangam/"
   },
   {
    "id": "magok",
@@ -178,76 +267,117 @@
    "taps": 40,
    "wines": [
     {
+     "ko": "우나니메 말벡",
+     "en": "Unánime Malbec",
+     "origin": "ARGENTINA",
+     "cat": "Red",
+     "bottle": 52000,
+     "tap": 1,
+     "region": "Mendoza",
+     "grape": "말벡",
+     "note": "검은 자두와 제비꽃, 은은한 오크. 묵직하지만 부드러워서 스테이크·폭립과."
+    },
+    {
      "ko": "덕혼 디코이 카베르네 소비뇽",
      "en": "Duckhorn Decoy Cabernet Sauvignon",
      "origin": "USA",
      "cat": "Red",
-     "bottle": null
-    },
-    {
-     "ko": "이스까이 말벡 카베르네 프랑",
-     "en": "Trapiche Iscay Malbec Cabernet Franc",
-     "origin": "ARGENTINA",
-     "cat": "Premium",
-     "bottle": 88000
-    },
-    {
-     "ko": "마르케스 데 리스칼 그랑 리제르바",
-     "en": "Marqués de Riscal Gran Reserva",
-     "origin": "SPAIN",
-     "cat": "Premium",
-     "bottle": 99000
+     "bottle": null,
+     "tap": 2,
+     "region": "California",
+     "grape": "카베르네 소비뇽",
+     "note": "블랙베리와 모카, 부드러운 타닌. 캘리포니아다운 풍성함에 균형감이 있는 레드."
     },
     {
      "ko": "꼬또 데 이마스 그랑 리제르바",
      "en": "Coto de Imaz Gran Reserva",
      "origin": "SPAIN",
      "cat": "Red",
-     "bottle": 48000
+     "bottle": 48000,
+     "tap": 5,
+     "region": "Rioja",
+     "grape": "템프라니요",
+     "note": "오크 숙성에서 오는 바닐라·담배잎, 말린 자두. 부드럽고 우아한 리오하 그랑 리제르바."
     },
     {
      "ko": "카사노바 디 네리 로쏘 디 몬탈치노",
      "en": "Casanova di Neri Rosso di Montalcino",
      "origin": "ITALY",
      "cat": "Red",
-     "bottle": 51000
+     "bottle": 51000,
+     "tap": 6,
+     "region": "Toscana",
+     "grape": "산지오베제",
+     "note": "브루넬로의 동생. 붉은 과일과 흙 내음, 생생한 산도. 안초비·올리브 메뉴와."
+    },
+    {
+     "ko": "이스까이 말벡 카베르네 프랑",
+     "en": "Trapiche Iscay Malbec Cabernet Franc",
+     "origin": "ARGENTINA",
+     "cat": "Premium",
+     "bottle": 88000,
+     "tap": 9,
+     "region": "Mendoza",
+     "grape": "말벡 · 카베르네 프랑",
+     "note": "말벡의 농익은 과일에 카베르네 프랑의 허브 향. 묵직한 프리미엄 블렌드."
+    },
+    {
+     "ko": "마르케스 데 리스칼 그랑 리제르바",
+     "en": "Marqués de Riscal Gran Reserva",
+     "origin": "SPAIN",
+     "cat": "Premium",
+     "bottle": 99000,
+     "tap": 10,
+     "region": "Rioja",
+     "grape": "템프라니요 블렌드",
+     "note": "긴 오크 숙성의 가죽·담배잎·말린 과일. 클래식 리오하 그랑 리제르바."
     },
     {
      "ko": "프루노토 바롤로",
      "en": "Prunotto Barolo",
      "origin": "ITALY",
      "cat": "Premium",
-     "bottle": 70000
-    },
-    {
-     "ko": "토후 소비뇽 블랑",
-     "en": "Tohu Sauvignon Blanc",
-     "origin": "NEW ZEALAND",
-     "cat": "Sauvignon Blanc",
-     "bottle": null
-    },
-    {
-     "ko": "레 칼케르 소비뇽 블랑",
-     "en": "Les Calcaires Sauvignon Blanc",
-     "origin": "FRANCE",
-     "cat": "Sauvignon Blanc",
-     "bottle": null
-    },
-    {
-     "ko": "우나니메 말벡",
-     "en": "Unánime Malbec",
-     "origin": "ARGENTINA",
-     "cat": "Red",
-     "bottle": 52000
+     "bottle": 70000,
+     "tap": 11,
+     "region": "Piemonte",
+     "grape": "네비올로",
+     "note": "장미와 타르, 말린 체리와 감초. 단단한 타닌과 산도가 길게 이어지는 클래식 바롤로. 스테이크와."
     },
     {
      "ko": "꼬얌",
      "en": "Emiliana Coyam",
      "origin": "CHILE",
      "cat": "Red",
-     "bottle": 47000
+     "bottle": 47000,
+     "tap": 13,
+     "region": "Colchagua",
+     "grape": "시라 · 카르메네르 블렌드",
+     "note": "유기농 포도로 만든 블렌드. 검은 과일과 향신료, 매끈한 질감."
+    },
+    {
+     "ko": "토후 소비뇽 블랑",
+     "en": "Tohu Sauvignon Blanc",
+     "origin": "NEW ZEALAND",
+     "cat": "Sauvignon Blanc",
+     "bottle": null,
+     "tap": 17,
+     "region": "Marlborough",
+     "grape": "소비뇽 블랑",
+     "note": "패션프루트와 구스베리, 톡 쏘는 산도. 삼배체 굴과 가장 잘 맞는 조합."
+    },
+    {
+     "ko": "레 칼케르 소비뇽 블랑",
+     "en": "Les Calcaires Sauvignon Blanc",
+     "origin": "FRANCE",
+     "cat": "Sauvignon Blanc",
+     "bottle": null,
+     "tap": 18,
+     "region": "Loire",
+     "grape": "소비뇽 블랑",
+     "note": "자몽과 라임, 풀 내음과 미네랄. 산뜻하고 드라이해서 굴·부라타와 첫 잔으로 좋아요."
     }
-   ]
+   ],
+   "island": "magok/"
   },
   {
    "id": "dongdaemun",
@@ -255,76 +385,117 @@
    "taps": 48,
    "wines": [
     {
-     "ko": "케이머스 카베르네 소비뇽",
-     "en": "Caymus Cabernet Sauvignon",
-     "origin": "USA",
-     "cat": "Premium",
-     "bottle": null
-    },
-    {
      "ko": "샤또 메종 블랑쉬",
      "en": "Château Maison Blanche",
      "origin": "FRANCE",
      "cat": "Red",
-     "bottle": 38000
+     "bottle": 38000,
+     "tap": 1,
+     "region": "Bordeaux",
+     "grape": "메를로",
+     "note": "둥근 과일 맛과 부드러운 질감. 처음 보르도를 마셔 보는 분께 권하는 한 잔."
     },
     {
      "ko": "폴 자불레 지공다스 피에르 애기유",
      "en": "Paul Jaboulet Aîné Gigondas Pierre Aiguille",
      "origin": "FRANCE",
      "cat": "Red",
-     "bottle": 52000
+     "bottle": 52000,
+     "tap": 2,
+     "region": "Rhône",
+     "grape": "그르나슈 · 시라",
+     "note": "잘 익은 붉은 과일과 후추, 허브 향. 따뜻하고 풍성한 남부 론 스타일. 한식 안주와도 잘 맞아요."
     },
     {
      "ko": "빌라 안티노리 로쏘",
      "en": "Villa Antinori Rosso",
      "origin": "ITALY",
      "cat": "Red",
-     "bottle": 32000
+     "bottle": 32000,
+     "tap": 5,
+     "region": "Toscana",
+     "grape": "산지오베제 블렌드",
+     "note": "체리와 허브, 적당한 산도. 토스카나의 기본기. 루꼴라 떡볶이, 파스타와."
     },
     {
      "ko": "캐논볼 카베르네 소비뇽",
      "en": "Cannonball Cabernet Sauvignon",
      "origin": "USA",
      "cat": "Red",
-     "bottle": 30000
+     "bottle": 30000,
+     "tap": 9,
+     "region": "California",
+     "grape": "카베르네 소비뇽",
+     "note": "잘 익은 블랙베리와 모카, 부드러운 타닌. 부담 없이 고르는 캘리포니아 레드."
     },
     {
      "ko": "펜리 에스테이트 피닉스 카베르네 소비뇽",
      "en": "Penley Estate Phoenix Cabernet Sauvignon",
      "origin": "AUSTRALIA",
      "cat": "Red",
-     "bottle": 31900
+     "bottle": 31900,
+     "tap": 21,
+     "region": "Coonawarra",
+     "grape": "카베르네 소비뇽",
+     "note": "카시스와 민트, 유칼립투스. 쿠나와라다운 선명한 카베르네."
     },
     {
      "ko": "1865 셀렉티드 빈야드 카베르네 소비뇽",
      "en": "1865 Selected Vineyards Cabernet Sauvignon",
      "origin": "CHILE",
      "cat": "Red",
-     "bottle": 47900
+     "bottle": 47900,
+     "tap": 25,
+     "region": "Maipo",
+     "grape": "카베르네 소비뇽",
+     "note": "블랙커런트와 다크 초콜릿. 칠레 카베르네의 진하고 둥근 맛."
     },
     {
      "ko": "토후 소비뇽 블랑",
      "en": "Tohu Sauvignon Blanc",
      "origin": "NEW ZEALAND",
      "cat": "Sauvignon Blanc",
-     "bottle": null
+     "bottle": null,
+     "tap": 33,
+     "region": "Marlborough",
+     "grape": "소비뇽 블랑",
+     "note": "패션프루트와 구스베리, 톡 쏘는 산도. 삼배체 굴과 가장 잘 맞는 조합."
     },
     {
      "ko": "레 칼케르 소비뇽 블랑",
      "en": "Les Calcaires Sauvignon Blanc",
      "origin": "FRANCE",
      "cat": "Sauvignon Blanc",
-     "bottle": null
+     "bottle": null,
+     "tap": 34,
+     "region": "Loire",
+     "grape": "소비뇽 블랑",
+     "note": "자몽과 라임, 풀 내음과 미네랄. 산뜻하고 드라이해서 굴·부라타와 첫 잔으로 좋아요."
+    },
+    {
+     "ko": "케이머스 카베르네 소비뇽",
+     "en": "Caymus Cabernet Sauvignon",
+     "origin": "USA",
+     "cat": "Premium",
+     "bottle": null,
+     "tap": 49,
+     "region": "Napa Valley",
+     "grape": "카베르네 소비뇽",
+     "note": "블랙체리와 카시스, 바닐라와 코코아의 진한 향. 부드럽고 둥근 타닌에 긴 여운. 스테이크·트러플 메뉴와."
     },
     {
      "ko": "마스 라 플라나",
      "en": "Torres Mas La Plana",
      "origin": "SPAIN",
      "cat": "Premium",
-     "bottle": 128000
+     "bottle": 128000,
+     "tap": 50,
+     "region": "Penedès",
+     "grape": "카베르네 소비뇽",
+     "note": "스페인 카베르네의 아이콘. 카시스·삼나무·감초, 길고 단단한 여운."
     }
-   ]
+   ],
+   "island": "dongdaemun/"
   }
  ]
 }
