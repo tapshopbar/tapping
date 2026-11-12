@@ -1,0 +1,246 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta property="og:type" content="website"><meta property="og:title" content="10초 와인 사다리 · 탭샵바 시제품"><meta property="og:description" content="커피 한 잔, 초콜릿 한 조각, 오늘의 기분. 10초면 오늘의 한 잔이 보여요."><meta property="og:image" content="https://tapshopbar.github.io/tapping/ladder/og.jpg"><meta property="og:url" content="https://tapshopbar.github.io/tapping/ladder/"><meta name="twitter:card" content="summary_large_image"><title>TSB 더블 사다리 · 10초 와인 시제품 v0.1</title><style>
+:root{--wine:#4A0B18;--wine2:#6E1426;--wine3:#3A0812;--navy:#141B33;--cream:#FFFDFC;--ink:#0E0E0E;--yellow:#FFC100;--blue:#156DFF;--rose:#C9A0A8;--grey:#8A8384}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--wine3);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;color:var(--ink)}
+.app{max-width:440px;margin:0 auto;min-height:100vh;background:var(--cream);position:relative;overflow:hidden}
+.screen{display:none;padding:28px 22px 40px;min-height:100vh;animation:fade .35s ease}
+.screen.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.dark{background:linear-gradient(180deg,var(--wine2),var(--wine3));color:var(--cream)}
+.brand{font-size:12px;letter-spacing:.18em;opacity:.8}
+.hero{margin-top:64px}
+.hero h1{font-size:34px;line-height:1.2;margin:0 0 14px;letter-spacing:-.02em}
+.hero p{font-size:15px;line-height:1.6;opacity:.85;margin:0}
+.badge{display:inline-block;background:var(--yellow);color:var(--ink);font-size:11px;font-weight:700;padding:3px 8px;border-radius:99px;margin-bottom:14px}
+.stores{display:flex;gap:8px;flex-wrap:wrap;margin:36px 0 18px}
+.stores button{flex:1 1 40%;padding:12px;border-radius:12px;border:1px solid rgba(255,253,252,.35);background:transparent;color:var(--cream);font-size:15px}
+.stores button.sel{background:var(--cream);color:var(--wine);font-weight:700}
+.cta{display:block;width:100%;padding:16px;border:0;border-radius:14px;background:var(--cream);color:var(--wine);font-size:17px;font-weight:700;margin-top:12px}
+.cta.wine{background:var(--wine);color:var(--cream)}
+.ghost{display:block;width:100%;padding:12px;border:0;background:transparent;color:inherit;opacity:.7;font-size:14px;margin-top:6px}
+.prog{display:flex;gap:6px;margin-bottom:28px}.prog i{flex:1;height:3px;border-radius:2px;background:#eadfe0}.prog i.on{background:var(--wine)}
+.q h2{font-size:24px;line-height:1.35;margin:0 0 6px;letter-spacing:-.02em}
+.q .hint{font-size:13px;color:var(--grey);margin:0 0 22px}
+.opt{display:flex;align-items:center;gap:14px;padding:16px;border:1.5px solid #eee3e4;border-radius:16px;margin-bottom:10px;background:#fff;cursor:pointer;transition:all .15s}
+.opt:active{transform:scale(.98)}
+.opt.sel{border-color:var(--wine);background:#fbf3f4}
+.opt .ic{width:44px;height:44px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
+.opt .t{font-size:16px;font-weight:600}.opt .s{font-size:12.5px;color:var(--grey);margin-top:2px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid .opt{flex-direction:column;align-items:flex-start;margin:0;min-height:118px}
+.grid .opt .ic{width:auto;height:auto;padding:4px 10px;border-radius:99px;font-size:12px}
+#reading{display:none;align-items:center;justify-content:center;text-align:center}
+#reading.on{display:flex}
+.pulse{width:84px;height:84px;border-radius:50%;background:var(--cream);margin:0 auto 26px;animation:pl 1.2s infinite ease-in-out}
+@keyframes pl{0%,100%{transform:scale(.8);opacity:.5}50%{transform:scale(1);opacity:1}}
+#reading p{font-size:17px;line-height:1.6}
+.tag{display:inline-block;color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:99px}
+#res h2{font-size:27px;line-height:1.3;margin:12px 0 6px;letter-spacing:-.02em}#res h2 em{font-style:normal;color:var(--wine)}
+.lead{font-size:14px;color:#555;margin:0 0 16px}.note{font-size:12.5px;background:#fff6db;padding:8px 10px;border-radius:10px;color:#6b5400}
+.wine{display:flex;gap:12px;align-items:center;background:#fff;border:1px solid #f0e6e7;border-radius:16px;padding:10px;margin:10px 0}
+.wine img,.wine .noimg{width:54px;height:72px;object-fit:contain;flex:none;background:#faf6f6;border-radius:10px}
+.wine.big img,.wine.big .noimg{width:70px;height:96px}
+.wn{font-weight:700;font-size:15px;line-height:1.3}.wine.big .wn{font-size:17px}
+.wm{font-size:12px;color:var(--grey);margin-top:2px}.wa{font-size:12px;color:var(--wine2);margin-top:4px}
+.wp{font-size:13px;font-weight:700;margin-top:6px}.wp span{font-weight:400;color:var(--grey)}
+.vs{text-align:center;font-weight:800;color:var(--wine);font-size:13px;letter-spacing:.2em}
+.why{background:var(--navy);color:var(--cream);border-radius:16px;padding:14px 16px;margin:16px 0}
+.wl{font-size:14px;line-height:1.55;margin:4px 0}.wl b{display:inline-block;min-width:38px;color:var(--yellow);font-size:12px}
+.ladder{display:flex;gap:8px;margin:18px 0}.lg{flex:1}.lgn{font-size:10px;letter-spacing:.12em;color:var(--grey);margin-bottom:4px}
+.rung{display:flex;gap:6px;align-items:center;padding:5px 6px;border-radius:8px;margin-bottom:3px;background:#f6efef;font-size:10px;color:#9a8f90;line-height:1.2}
+.rung b{font-size:12px;min-width:16px;color:#b3a7a8}
+.rung.hot{background:var(--wine);color:var(--cream);transform:scale(1.04);box-shadow:0 0 0 2px var(--yellow)}.rung.hot b{color:var(--yellow)}
+.altt{font-size:12px;color:var(--grey);margin-top:10px}
+.src{font-size:11px;color:var(--grey);text-align:center;margin-top:18px}
+textarea{width:100%;min-height:78px;border:1.5px solid #eee3e4;border-radius:14px;padding:12px;font:inherit;font-size:15px;resize:none;background:#fff}
+textarea:focus{outline:none;border-color:var(--wine)}
+.lab{font-size:15px;font-weight:600;margin:18px 0 8px}.lab small{display:block;font-weight:400;color:var(--grey);font-size:12px;margin-top:2px}
+.wc{background:linear-gradient(160deg,var(--wine2),var(--wine3));color:var(--cream);border-radius:22px;padding:22px 20px;position:relative;overflow:hidden}
+.wch{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.14em;opacity:.75}
+.wcn{font-size:110px;font-weight:800;line-height:1;margin:14px 0 0;color:var(--yellow);letter-spacing:-.04em}
+.wct{font-size:24px;font-weight:800;margin-top:4px}.wcl{font-size:13px;opacity:.75}
+.wcw{margin-top:18px;font-size:13px;opacity:.85;line-height:1.5}.wcw b{font-size:18px;opacity:1}
+.wcq{margin-top:12px;font-size:15px;font-style:italic;line-height:1.5;border-left:2px solid var(--yellow);padding-left:10px}
+.wcr{margin-top:14px;font-size:12.5px;line-height:1.55;background:rgba(255,253,252,.08);padding:10px;border-radius:12px}
+.wcs{margin-top:16px;font-size:12px;letter-spacing:.06em;opacity:.8}
+.warn{margin-top:10px;font-size:9px;line-height:1.45;opacity:.6}
+.agegate{margin-top:20px;font-size:12px;opacity:.75;line-height:1.5}
+</style></head><body><div class="app">
+
+<section class="screen dark on" id="intro"><div class="brand">TAP SHOP BAR · DOUBLE LADDER</div>
+<div class="hero"><span class="badge">시제품 v0.1</span><h1>10초면<br>오늘의 한 잔이<br>보여요</h1><p>와인 이름 몰라도 괜찮아요.<br>커피 한 잔, 초콜릿 한 조각, 그리고 오늘의 기분.</p></div>
+<div class="stores" id="stores"></div>
+<button class="cta" onclick="show('q1')">만 19세 이상이에요, 시작할게요</button>
+<p class="agegate">만 19세 미만은 이용할 수 없어요. 매장 탭 와인은 실시간으로 불러와요.</p></section>
+
+<section class="screen q" id="q1"><div class="prog"><i class="on"></i><i></i><i></i><i></i></div><h2>커피, 어떻게 마셔요?</h2><p class="hint">입맛이 단맛·쓴맛을 얼마나 반기는지 보는 질문이에요.</p>
+<div class="opt" onclick="pickOpt('coffee','black',this,()=>show('q2'))"><div class="ic" style="background:#2b1d16">블랙</div><div><div class="t">블랙 그대로</div><div class="s">아메리카노, 에스프레소</div></div></div>
+<div class="opt" onclick="pickOpt('coffee','latte',this,()=>show('q2'))"><div class="ic" style="background:#a07a5a">라떼</div><div><div class="t">우유 넣어서</div><div class="s">라떼, 플랫화이트</div></div></div>
+<div class="opt" onclick="pickOpt('coffee','sweet',this,()=>show('q2'))"><div class="ic" style="background:#d39a4a">달달</div><div><div class="t">달달하게</div><div class="s">바닐라, 카라멜, 시럽 추가</div></div></div>
+<div class="opt" onclick="pickOpt('coffee','none',this,()=>show('q2'))"><div class="ic" style="background:#9a9090">패스</div><div><div class="t">커피 안 마셔요</div><div class="s">괜찮아요, 다음 질문으로</div></div></div></section>
+
+<section class="screen q" id="q2"><div class="prog"><i class="on"></i><i class="on"></i><i></i><i></i></div><h2>초콜릿 한 조각만 고른다면?</h2><p class="hint">매장에서는 실제로 한 조각씩 맛보고 골라요.</p>
+<div class="opt" onclick="pickOpt('choc','dark',this,()=>show('q3'))"><div class="ic" style="background:#2a1410">70%</div><div><div class="t">다크 초콜릿</div><div class="s">쌉싸름하고 진한 쪽</div></div></div>
+<div class="opt" onclick="pickOpt('choc','milk',this,()=>show('q3'))"><div class="ic" style="background:#7b4a2c">밀크</div><div><div class="t">밀크 초콜릿</div><div class="s">부드럽고 적당히 단</div></div></div>
+<div class="opt" onclick="pickOpt('choc','white',this,()=>show('q3'))"><div class="ic" style="background:#d8b98d">화이트</div><div><div class="t">화이트·카라멜</div><div class="s">달콤하고 크리미한</div></div></div></section>
+
+<section class="screen q" id="q3"><div class="prog"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><h2>오늘은 어떤 색이 끌려요?</h2><p class="hint">12 사다리의 첫 칸, 색이에요.</p>
+<div class="opt" onclick="pickOpt('color','red',this,()=>show('q4'))"><div class="ic" style="background:#6E1426">레드</div><div><div class="t">레드</div><div class="s">사다리 1~6번</div></div></div>
+<div class="opt" onclick="pickOpt('color','white',this,()=>show('q4'))"><div class="ic" style="background:#cdb76a">화이트</div><div><div class="t">화이트</div><div class="s">사다리 7~10번</div></div></div>
+<div class="opt" onclick="pickOpt('color','rose',this,()=>show('q4'))"><div class="ic" style="background:#d98a9c">로제</div><div><div class="t">로제·핑크</div><div class="s">가볍고 화사하게</div></div></div>
+<div class="opt" onclick="pickOpt('color','any',this,()=>show('q4'))"><div class="ic" style="background:#141B33">맡김</div><div><div class="t">아무거나, 맡길게요</div><div class="s">입맛에 맞춰 골라드려요</div></div></div></section>
+
+<section class="screen q" id="q4"><div class="prog"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><h2>오늘 이 한 잔으로<br>뭘 하고 싶어요?</h2><p class="hint">Why 사다리, 당신이 고르는 이유예요.</p><div class="grid" id="needgrid"></div></section>
+
+<section class="screen dark" id="reading"><div><div class="pulse"></div><p>두 개의 사다리를 맞추는 중<br><span style="opacity:.7;font-size:14px">입맛의 사다리 × 마음의 사다리</span></p></div></section>
+
+<section class="screen" id="result"><div id="res"></div>
+<button class="cta wine" onclick="show('fb')">마셔봤어요 · 한 줄 남기기</button><button class="ghost" onclick="restart()">처음부터 다시</button></section>
+
+<section class="screen" id="fb"><div class="q"><h2>어땠어요?</h2><p class="hint">짧게 써도 돼요. 이 한 줄이 다음 추천을 바꿔요.</p></div>
+<div class="lab">이 잔, 어땠어요? 왜요?<small>예: 생각보다 상큼해서 친구랑 계속 이야기하게 됐어요</small></div><textarea id="fb1" placeholder="한 줄이면 충분해요"></textarea>
+<div class="lab">그게 왜 좋았어요(싫었어요)?<small>Why 사다리 한 칸 위로. 코칭의 "왜?"와 같은 질문이에요.</small></div><textarea id="fb2" placeholder="한 번 더, 왜?"></textarea>
+<button class="cta wine" onclick="makeCard()">나의 Why 카드 받기</button></section>
+
+<section class="screen" id="cardscreen"><div id="card"></div><button class="cta wine" onclick="restart()">한 잔 더 고르기</button><p class="src">카드를 스크린샷으로 저장해 공유할 수 있어요.</p></section>
+
+</div>
+<script>const SNAP=[{"st":"cheonggye","d":"Red","k":"애봇 앤 델로네 카베르네 소비뇽","e":"Abbotts & Delaunay Cabernet Sauvignon","c":"프랑스","g":["카베르네 소비뇽"],"a":["블랙베리","체리","흑후추"],"pg":4000,"pt":1500,"pb":25900,"img":null},{"st":"cheonggye","d":"Red","k":"샤또 몽페라 레드","e":"Chateau Mont Perat Rouge","c":"프랑스","g":["메를로","카베르네 소비뇽","카베르네 프랑"],"a":["블랙체리","블랙커런트","허브"],"pg":5600,"pt":2100,"pb":35900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/292.png"},{"st":"cheonggye","d":"Red","k":"로버트 몬다비 버번 배럴 카베르네소비뇽","e":"Robert Mondavi Bourbon Barrel Cabernet Sauvignon","c":"미국","g":["카베르네소비뇽"],"a":["블루베리","검은 체리","다크 초콜릿"],"pg":6400,"pt":2400,"pb":38000,"img":null},{"st":"cheonggye","d":"Red","k":"F 네그로 아마로","e":"San Marzano F Negroamaro","c":"이탈리아","g":["네그로아마로"],"a":["자두","체리","라즈베리"],"pg":9600,"pt":3600,"pb":59900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/9.png"},{"st":"cheonggye","d":"Red","k":"아젤리아 돌체토 달바 브리코 델오리올로 DOC","e":"Azelia Dolcetto d'Alba Bricco dell'Oriolo DOC","c":"이탈리아","g":["돌체토"],"a":["블랙체리","블랙베리","바이올렛"],"pg":6400,"pt":2400,"pb":37800,"img":"https://content.tsb.wine/alcohol/images/95ef8d59-7e91-44ad-88e3-1858ce10b171.webp"},{"st":"cheonggye","d":"Red","k":"보글 메를로","e":"Bogle Merlot","c":"미국","g":["메를로"],"a":["블랙베리","플럼","초콜릿"],"pg":5600,"pt":2100,"pb":36000,"img":"https://content.tsb.wine/alcohol/images/443aba12-6fb1-4592-913b-cadda187ccc3.webp"},{"st":"cheonggye","d":"Red","k":"도멘 베사 벨리 쁘띠 에니라","e":"Domaine Bessa Valley Petit Enir","c":"불가리아","g":["메를로","쉬라","쁘띠 베르도","카베르네 소비뇽"],"a":["레드 프루츠","플럼","우디"],"pg":4800,"pt":1800,"pb":28900,"img":null},{"st":"cheonggye","d":"Red","k":"볼베르 배럴 셀렉션","e":"Volver Barrel Selection","c":"스페인","g":["템프라니요"],"a":["자두","체리","아스파라거스"],"pg":6400,"pt":2400,"pb":38000,"img":null},{"st":"cheonggye","d":"Red","k":"레드 디어 스테이션 50 쉬라즈","e":"Red Deer Station 50 Shiraz","c":"호주","g":["쉬라즈"],"a":["블랙베리","자두","초콜릿"],"pg":6400,"pt":2400,"pb":39800,"img":"https://content.tsb.wine/alcohol/images/1bad7ccb-ca55-4679-bf88-c1f6cd83c75e.webp"},{"st":"cheonggye","d":"Red","k":"킹핀 레드","e":"King pin Red","c":"스페인","g":["템프라니요","쉬라","카베르네소비"],"a":["자두","블랙베리","바닐라"],"pg":3200,"pt":1200,"pb":20000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/459310-TSB-1722412555.png"},{"st":"cheonggye","d":"White","k":"샤또 생 미셀 콜럼비아 밸리 리슬링","e":"Chateau Ste. Michelle Columbia Valley Riesling","c":"미국","g":["리슬링"],"a":["사과","미네랄"],"pg":5600,"pt":2100,"pb":32000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/298.png"},{"st":"cheonggye","d":"White","k":"보글 슈냉블랑","e":"Bogle Chenin Blanc","c":"미국","g":["슈냉 블랑"],"a":["아니스","복숭아","자두"],"pg":5600,"pt":2100,"pb":36000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/459261-TSB-1718964771.png"},{"st":"cheonggye","d":"White","k":"뮤직베이 소비뇽블랑","e":"Music Bay SauvignonBlanc","c":"뉴질랜드","g":["소비뇽"],"a":["레몬","오렌지","햇복숭아"],"pg":4800,"pt":1800,"pb":27000,"img":"https://content.tsb.wine/alcohol/images/e4338b04-fd32-45db-8853-7366aedc90e2.webp"},{"st":"cheonggye","d":"White","k":"오투 말보로 소비뇽 블랑","e":"Otu Marlborough Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽블랑"],"a":["레몬"],"pg":4800,"pt":1800,"pb":29000,"img":"https://content.tsb.wine/alcohol/images/36429586-4ae3-4bea-a131-27e13a4c3e32.webp"},{"st":"cheonggye","d":"Red","k":"트러블 메이커","e":"Troublemaker","c":"미국","g":["시라/쉬라즈","그르나슈","진판델","시라/쉬라즈"],"a":["코코넛","체리","바닐라"],"pg":5600,"pt":2100,"pb":33900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/514.png"},{"st":"cheonggye","d":"Soooo good 2","k":"러브블록 말보로 소비뇽블랑","e":"Loveblock Marlborough Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽 블랑"],"a":["복숭아","허브","파인애플"],"pg":6400,"pt":2400,"pb":37800,"img":"https://content.tsb.wine/alcohol/images/6b56f19a-7eb4-4e5a-9773-01ab6279de53.webp"},{"st":"cheonggye","d":"Soooo good 2","k":"애봇 앤 델로네 샤도네이","e":"Abbotts & Delaunay Chardonnay","c":"프랑스","g":["샤도네이"],"a":["배","그린애플","헤이즐넛"],"pg":4000,"pt":1500,"pb":25900,"img":"https://content.tsb.wine/alcohol/images/4044cc77-dc80-4e84-8e51-a02836d095e0.webp"},{"st":"cheonggye","d":"Soooo good 2","k":"까날라스 블랑코","e":"Canallas Blanco","c":"스페인","g":["메르세게라","모스카텔"],"a":["레몬","복숭아","아몬드"],"pg":4000,"pt":1500,"pb":22000,"img":"https://content.tsb.wine/alcohol/images/526fe85f-ddde-4e6a-b96d-546f9ae6acee.webp"},{"st":"cheonggye","d":"Soooo good 2","k":"그린베이 소비뇽블랑","e":"Green Bay Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽블랑"],"a":["레몬","라임","햇사과"],"pg":4800,"pt":1800,"pb":27900,"img":"https://content.tsb.wine/alcohol/images/aaef8704-5f9e-46eb-8287-065fbddb2b70.webp"},{"st":"cheonggye","d":"vivino 2","k":"샤또 포메이","e":"Chateau Pomeys","c":"프랑스","g":["메를로","카베르네 소비뇽"],"a":["크랜베리","블랙커런트","야생 체리"],"pg":7200,"pt":2700,"pb":42000,"img":null},{"st":"cheonggye","d":"vivino 2","k":"쌩 클레어 오마카 리저브 샤도네이","e":"Saint Clair Omaka Reserve Chardonnay","c":"뉴질랜드","g":[],"a":[],"pg":6400,"pt":2400,"pb":38900,"img":null},{"st":"cheonggye","d":"TSB CREW PICK 2","k":"그로브 밀 소비뇽 블랑","e":"Grove Mill Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽 블랑"],"a":["구아바","패션프루츠"],"pg":5600,"pt":2100,"pb":32000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/1678-TSB-1698413296.png"},{"st":"cheonggye","d":"TSB CREW PICK 2","k":"타피 소비뇽 블랑","e":"TAPI sauvignon blanc","c":"뉴질랜드","g":["소비뇽 블랑"],"a":["레몬","라임","패션프루츠"],"pg":5600,"pt":2100,"pb":35000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/484.png"},{"st":"cheonggye","d":"TSB CREW PICK 2","k":"이기갈 꼬뜨 뒤 론 루즈","e":"E.Guigal Cotes du Rhone Rouge","c":"프랑스","g":["쉬라즈","그르나쉬","무르베드르"],"a":["딸기","허브","후추"],"pg":5600,"pt":2100,"pb":34000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/403.png"},{"st":"cheonggye","d":"Red","k":"까날라스 틴토","e":"Canallas Tinto","c":"스페인","g":["템프라니요","모나스트렐"],"a":["체리","자두","바닐라"],"pg":4000,"pt":1500,"pb":22000,"img":"https://content.tsb.wine/alcohol/images/b7bb8a34-2bd5-4965-99fb-5046e99f35d9.webp"},{"st":"cheonggye","d":"Red","k":"마츠 엘 피카로","e":"El Picaro, Matsu","c":"스페인","g":["템프라니요"],"a":["체리","블루베리","라즈베리"],"pg":4000,"pt":1500,"pb":26000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/%E1%84%86%E1%85%A1%E1%84%8E%E1%85%B3+%E1%84%8B%E1%85%A6%E1%86%AF+%E1%84%91%E1%85%B5%E1%84%8F%E1%85%A1%E1%84%85%E1%85%A9.png"},{"st":"cheonggye","d":"Red","k":"시데랄","e":"Sideral","c":"칠레","g":["카베르네소비뇽","카베르네프랑","카르미네르","쉬라즈","쁘띠베르도"],"a":["블랙커런트","삼나무","체리"],"pg":8800,"pt":3300,"pb":55000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/327.png"},{"st":"cheonggye","d":"Red","k":"집집락 쉬라즈 카베르네","e":"JIP JIP ROCKS Shiraz Cabernet","c":"호주","g":["쉬라즈","카베르네소비뇽"],"a":["블랙 베리","자두","시나몬"],"pg":4000,"pt":1500,"pb":24800,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/459370-TSB-1729073921.png"},{"st":"cheonggye","d":"White","k":"킹핀 화이트","e":"King Pin White","c":"스페인","g":["샤르도네","소비뇽블랑","리슬링"],"a":["레몬","라임","리치"],"pg":3200,"pt":1200,"pb":20000,"img":null},{"st":"cheonggye","d":"White","k":"제니 비냐 알테 소아베 클라시코","e":"Zeni, Soave Vigne Alte Classico","c":"이탈리아","g":["가르가네가","트레비아노","샤도네이"],"a":["레몬","레몬 제스트","자몽"],"pg":4800,"pt":1800,"pb":30000,"img":null},{"st":"cheonggye","d":"White","k":"리마페레 소비뇽 블랑","e":"Rimapere Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽 블랑"],"a":["감귤","구즈베리","미네랄"],"pg":5600,"pt":2100,"pb":31800,"img":"https://content.tsb.wine/alcohol/images/1da57de8-d724-4acc-816b-83a318ac5e15.webp"},{"st":"cheonggye","d":"White","k":"스톤 베이 소비뇽 블랑","e":"Stonebay Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽 블랑"],"a":["허브","패션후르츠","레몬"],"pg":4000,"pt":1500,"pb":25900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/1138.png"},{"st":"cheonggye","d":"White","k":"쓰리 브룸즈 말보로 소비뇽블랑","e":"Three Brooms MARLBOROUGH SAUVIGNON BLANC","c":"뉴질랜드","g":["소비뇽 블랑"],"a":["레몬 그라스","라임","미네랄리티"],"pg":6400,"pt":2400,"pb":37900,"img":null},{"st":"cheonggye","d":"White","k":"테 파 소비뇽 블랑","e":"Te pa Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽 블랑"],"a":["라임 자몽 제스트","패션프루트","엘더 플라워"],"pg":6400,"pt":2400,"pb":39800,"img":"https://content.tsb.wine/alcohol/images/1abb4d16-26e2-4aba-bf2f-9eac071b3b67.webp"},{"st":"cheonggye","d":"FAZER","k":"콥케 리저브 토니","e":"KOPKE RESERVA TAWNY","c":"포르투갈","g":["틴타 로리츠","투리가 나시오날","투링가 프랑카"],"a":["카라멜","초콜렛","오크"],"pg":5600,"pt":2100,"pb":33900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/464.png"},{"st":"cheonggye","d":"FAZER","k":"퀘베도 토니 포트 10y","e":"Quevedo Tawny Port 10y ","c":"포르투갈","g":["투리가 나시오날","투리가 프란카","틴타 로리즈","틴타 바로카"],"a":["자두","건포도","헤이즐넛"],"pg":8800,"pt":3300,"pb":55000,"img":"https://content.tsb.wine/alcohol/images/1dd619a7-82d3-4c1f-a84a-8ace1eae921b.webp"},{"st":"cheonggye","d":"Red","k":"마초맨","e":"Casa Rojo Machoman","c":"스페인","g":["모나스트렐"],"a":["체리","로즈마리","가죽"],"pg":8000,"pt":3000,"pb":48000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/178.png"},{"st":"cheonggye","d":"Red","k":"비주엘라 셀렉시온 템프라니요","e":"Viyuela Seleccion Tempranillo","c":"스페인","g":["템프라니요"],"a":["블랙베리","바닐라","담배"],"pg":5600,"pt":2100,"pb":31900,"img":"https://content.tsb.wine/alcohol/images/89ff20bd-f4b9-4f90-ae58-d047561a45a4.webp"},{"st":"cheonggye","d":"White","k":"쿠케리 소노마 샤도네이","e":" Kukeri Sonoma Coast Chardonnay","c":"미국","g":["샤도네이"],"a":["레몬 제스트","배","사과"],"pg":12800,"pt":4800,"pb":79000,"img":"https://content.tsb.wine/alcohol/images/72191880-7fc3-4285-885b-3e2c7e963b34.webp"},{"st":"cheonggye","d":"White","k":"보글 샤르도네","e":"Bogle Chardonnay","c":"미국","g":["샤르도네"],"a":["레몬","망고","버터 스카치"],"pg":5600,"pt":2100,"pb":36000,"img":"https://content.tsb.wine/alcohol/images/2d898191-b942-4145-900b-b4cc962289bd.webp"},{"st":"cheonggye","d":"SWEET_AND_ROSE","k":"페리와인즈 핑크라벨","e":"Pery Wines Pink Labael","c":"조지아","g":["사페라비"],"a":["장미꽃","라일락","딸기"],"pg":6400,"pt":2400,"pb":39900,"img":"https://content.tsb.wine/alcohol/images/9044f121-5309-4c8f-95f3-6317a23bc10f.webp"},{"st":"cheonggye","d":"SWEET_AND_ROSE","k":"버메스터 10y 토니 포트","e":"Burmester, 10 Year Old Tawny Port","c":"포르투갈","g":["포트 블랜드"],"a":["농익은 과일","꿀","견과류"],"pg":12800,"pt":4800,"pb":79900,"img":null},{"st":"sangam","d":"SAUVIGNON_BLANC","k":"리버 송 소비뇽 블랑","e":"River Song Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽 블랑"],"a":["레몬","라임","자몽"],"pg":3200,"pt":1200,"pb":18900,"img":"https://content.tsb.wine/alcohol/images/602429f5-b39a-49c0-acc4-a7c12a71ed8c.webp"},{"st":"sangam","d":"SAUVIGNON_BLANC","k":"티키 싱글빈야드 소비뇽블랑","e":"Tiki Single Vineyard Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽블랑"],"a":["레몬","라임","오렌지"],"pg":5600,"pt":2100,"pb":32000,"img":"https://content.tsb.wine/alcohol/images/595d1a63-3c77-4701-bc1a-62c13db53eb4.webp"},{"st":"sangam","d":"SAUVIGNON_BLANC","k":"러시안잭 소비뇽 블랑","e":"Russian Jack Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽블랑"],"a":["레몬","레몬 제스트","자몽"],"pg":4800,"pt":1800,"pb":27900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/119.png"},{"st":"sangam","d":"SWEET_AND_ROSE","k":"킨즈마라울리 마라니, 킨즈마라울리","e":"Kindzmarauli Marani, Kindzmarauli","c":"조지아","g":["사페라비"],"a":["블랙베리","라즈베리","자두"],"pg":6400,"pt":2400,"pb":39900,"img":null},{"st":"sangam","d":"SWEET_AND_ROSE","k":"펠리시타 로제","e":"Eclipse Felicita Rose","c":"조지아","g":["사페라비"],"a":["라즈베리","자몽","딸기"],"pg":5600,"pt":2100,"pb":32900,"img":"https://content.tsb.wine/alcohol/images/6952460a-ba76-4d4a-a243-8647453b4488.webp"},{"st":"sangam","d":"SWEET_AND_ROSE","k":"두르뜨 뉘메로 엥 로제","e":"Dourthe Numero 1 Rose","c":"프랑스","g":["카베르네 프랑","카베르네 소비뇽","메를로"],"a":["사과","살구","장미꽃"],"pg":4000,"pt":1500,"pb":21000,"img":null},{"st":"sangam","d":"TSB PICK 6","k":"레살테 오리겐","e":"Origen de Resalte","c":"스페인","g":["템프라니요"],"a":["블랙베리","블랙커런트","감초"],"pg":9600,"pt":3600,"pb":59900,"img":null},{"st":"sangam","d":"TSB PICK 6","k":"페리와인즈 레드라벨","e":"Pery Wines Red Labael","c":"조지아","g":["사페라비"],"a":["블랙베리","체리","자두"],"pg":6400,"pt":2400,"pb":39900,"img":"https://content.tsb.wine/alcohol/images/2732cdc5-d3ea-45d8-adbd-1cf47cf322d0.webp"},{"st":"sangam","d":"Red","k":"비주엘라 리제르바 템프라니요","e":"Viyuela Reserva Tempranillo","c":"스페인","g":["템프라니요"],"a":["블랙베리","검은 자두","카카오"],"pg":8800,"pt":3300,"pb":55900,"img":null},{"st":"sangam","d":"Red","k":"그린베이 피노 누아","e":"Green Bay Pinot Noir","c":"뉴질랜드","g":["피노 누아"],"a":["체리","라즈베리","야생 딸기"],"pg":6400,"pt":2400,"pb":36900,"img":null},{"st":"sangam","d":"Red","k":"러브블록 센트럴 오타고 피노누아","e":"Loveblock Central Otago Pinot Noir","c":"뉴질랜드","g":["피노 누아"],"a":["체리","딸기","붉은 자두"],"pg":8000,"pt":3000,"pb":52000,"img":"https://content.tsb.wine/alcohol/images/643648a8-57d5-4c1d-9c8e-dc0c9b922de6.webp"},{"st":"sangam","d":"FRANCE","k":"르 84 레드","e":"Le 84 Red","c":"프랑스","g":["시라","그르나슈"],"a":["레드베리","검은 체리","딸기"],"pg":7200,"pt":2700,"pb":45000,"img":"https://content.tsb.wine/alcohol/images/e967a4b1-8f4d-459f-9110-23401164d3f5.webp"},{"st":"sangam","d":"FRANCE","k":"이기갈 꼬뜨 뒤 론 블랑","e":"E.Guigal, Cotes du Rhone Blanc","c":"프랑스","g":["비오니에","루산느","마르산느","클레렛"],"a":["살구","복숭아","아카시아"],"pg":5600,"pt":2100,"pb":34000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/404.png"},{"st":"sangam","d":"ITALY","k":"폰타나프레다 가비 디 가비","e":"FontanaFredda Gavi di Gavi","c":"이탈리아","g":["코르테제"],"a":["레몬","라임","리치"],"pg":6400,"pt":2400,"pb":41800,"img":null},{"st":"sangam","d":"USA","k":"섹슈얼 초콜릿","e":"Sexual Chocolat","c":"미국","g":["진판델","쉬라즈"],"a":["체리","블랙베리","향신료"],"pg":9600,"pt":3600,"pb":59900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/311.png"},{"st":"sangam","d":"SPAIN","k":"마츠 엘 레시오","e":"Matsu El Recio","c":"스페인","g":["템프라니요"],"a":["블랙베리","다크초콜렛","훈제"],"pg":5600,"pt":2100,"pb":35000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/%EB%A7%88%EC%B8%A0_%EC%97%98_%EB%A0%88%EC%8B%9C%EC%98%A4-removebg-preview.png"},{"st":"sangam","d":"SPAIN","k":"레살테 벤디미아 셀렉시오나다","e":"Resalte Vendimia Seleccionada","c":"스페인","g":["템프라니요"],"a":["블랙베리","흑자두","감초"],"pg":5600,"pt":2100,"pb":33900,"img":"https://content.tsb.wine/alcohol/images/2e2cf7ac-66f2-4bde-a301-0ed157a4de1c.webp"},{"st":"sangam","d":"PORT_WINE","k":"퀘베도 토니 포트 10y","e":"Quevedo Tawny Port 10y ","c":"포르투갈","g":["투리가 나시오날","투리가 프란카","틴타 로리즈","틴타 바로카"],"a":["자두","건포도","헤이즐넛"],"pg":8800,"pt":3300,"pb":55000,"img":"https://content.tsb.wine/alcohol/images/1dd619a7-82d3-4c1f-a84a-8ace1eae921b.webp"},{"st":"sangam","d":"PORT_WINE","k":"퀘베도 화이트 포트","e":"Quevedo White Port","c":"포르투갈","g":["말바시아 피나","구베이오","비오지뉴","모스카델","라비가토"],"a":["파인애플","사과","봄 꿀"],"pg":4800,"pt":1800,"pb":29800,"img":"https://content.tsb.wine/alcohol/images/8d2df7f9-9136-4e5e-8164-280df220369e.webp"},{"st":"sangam","d":"PORT_WINE","k":"퀘베도 루비 포트","e":"Quevedo Ruby Port","c":"포르투갈","g":["뚜리가 나시오날","뚜리갈 프란카","틴타 로리"],"a":["붉은 체리","체리 잼","다크 초콜릿"],"pg":4800,"pt":1800,"pb":29800,"img":"https://content.tsb.wine/alcohol/images/c62c0f8c-9aaa-49db-a321-31be62afae6b.webp"},{"st":"sangam","d":"White","k":"리마페레 소비뇽 블랑","e":"Rimapere Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽 블랑"],"a":["감귤","구즈베리","미네랄"],"pg":5600,"pt":2100,"pb":31800,"img":"https://content.tsb.wine/alcohol/images/1da57de8-d724-4acc-816b-83a318ac5e15.webp"},{"st":"sangam","d":"White","k":"페리와인즈 옐로우라벨","e":"Pery Wines Yellow Label","c":"조지아","g":["르카치텔리"],"a":["레몬","라임","오렌지"],"pg":6400,"pt":2400,"pb":40900,"img":"https://content.tsb.wine/alcohol/images/1fd4af5c-c60d-47f4-a53e-aa98d0026e16.webp"},{"st":"magok","d":"WINE21_PICK","k":"블랙빌리 올드바인 그르나슈","e":"Black billy old vine grenache","c":"호주","g":["그르나슈"],"a":["딸기","라즈베리","체리"],"pg":7200,"pt":2700,"pb":43000,"img":"https://content.tsb.wine/alcohol/images/533493dc-7fef-4c49-8121-5e57b85bca87.webp"},{"st":"magok","d":"WINE21_PICK","k":"바라 로제","e":"Vara Rose","c":"루마니아","g":["메를로","페테아스카 네아그라"],"a":["크렌베리","딸기","라즈베리"],"pg":4000,"pt":1500,"pb":21000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/Vara+Rose.png"},{"st":"magok","d":"WINE21_PICK","k":"카 데이 프라티 이 프라티 루가나","e":"Ca dei Frati I Frati Lugana","c":"이탈리아","g":["트루비아나"],"a":["레몬","살구","흰 꽃"],"pg":7200,"pt":2700,"pb":44300,"img":"https://content.tsb.wine/alcohol/images/e8554842-4ec4-4560-b6de-ed1824d83985.webp"},{"st":"magok","d":"SAUVIGNON_BLANC","k":"러시안잭 소비뇽 블랑","e":"Russian Jack Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽블랑"],"a":["레몬","레몬 제스트","자몽"],"pg":4800,"pt":1800,"pb":27900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/119.png"},{"st":"magok","d":"SAUVIGNON_BLANC","k":"도멘 디노쇼 레 드쉬 AOP 투렌 소비뇽 블랑","e":"Domaine Dinocheau Les Dessus Touraine Sauvignon Bl","c":"프랑스","g":["소비뇽 블랑"],"a":["자몽","레몬","열대과일"],"pg":5600,"pt":2100,"pb":35900,"img":null},{"st":"magok","d":"SAUVIGNON_BLANC","k":"티키 싱글빈야드 소비뇽블랑","e":"Tiki Single Vineyard Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽블랑"],"a":["레몬","라임","오렌지"],"pg":5600,"pt":2100,"pb":32000,"img":"https://content.tsb.wine/alcohol/images/595d1a63-3c77-4701-bc1a-62c13db53eb4.webp"},{"st":"magok","d":"CHARDONNAY","k":"타라파카 그란 리제르바 샤르도네","e":"Tarapaca, Gran Reserva Chardonnay","c":"칠레","g":["샤르도네"],"a":["레몬","라임","바나나"],"pg":6400,"pt":2400,"pb":37000,"img":"https://content.tsb.wine/alcohol/images/0c15e0bf-9731-4721-a5de-e1eadfd28d0a.webp"},{"st":"magok","d":"CHARDONNAY","k":"레벨 릿지 샤르도네","e":"Rebel Ridge Chardonny","c":"미국","g":["샤르도네"],"a":["레몬","바닐라","토스트"],"pg":5600,"pt":2100,"pb":32400,"img":"https://content.tsb.wine/alcohol/images/219cd804-cbe4-4bde-b4b7-8ec3345febe0.webp"},{"st":"magok","d":"CHARDONNAY","k":"그린베이 샤도네이","e":"Green Bay Chardonnay","c":"뉴질랜드","g":["샤도네이"],"a":["파인애플","멜론","레몬 제스트"],"pg":4800,"pt":1800,"pb":27900,"img":"https://content.tsb.wine/alcohol/images/9811287d-f4c0-4b6d-a476-066e9d30fb56.webp"},{"st":"magok","d":"OTHER_WHITE","k":"쓰리 브룸즈 싱글 빈야드 리슬링","e":"Three Brooms Single Vineyard Riesling","c":"뉴질랜드","g":["리슬링"],"a":["청사과","꿀","밀랍"],"pg":6400,"pt":2400,"pb":37900,"img":null},{"st":"magok","d":"OTHER_WHITE","k":"티키 싱글빈야드 리슬링","e":"Tiki Single Vineyard Riesling","c":"뉴질랜드","g":["리슬링"],"a":["레몬","라임","자몽"],"pg":5600,"pt":2100,"pb":32000,"img":"https://content.tsb.wine/alcohol/images/71b0ab79-6889-4418-b565-4c8fa70714d6.webp"},{"st":"magok","d":"Red","k":"카를로 사니 수수마니엘로","e":"Carlot Sani Susumaniello","c":"이탈리아","g":["수수마니엘로"],"a":["초콜릿","꽃","자두"],"pg":4800,"pt":1800,"pb":27900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/433.png"},{"st":"magok","d":"Red","k":"끌로 드 로스 씨에떼","e":"Clos de los Siete","c":"아르헨티나","g":["말벡","메를로","카베르네 소비뇽","ETC"],"a":["배","자두","오크"],"pg":8800,"pt":3300,"pb":57000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/684.png"},{"st":"magok","d":"Red","k":"그린베이 피노 누아","e":"Green Bay Pinot Noir","c":"뉴질랜드","g":["피노 누아"],"a":["체리","라즈베리","야생 딸기"],"pg":6400,"pt":2400,"pb":36900,"img":null},{"st":"magok","d":"Red","k":"로버트 몬다비 프라이빗 셀렉션  카베르네 소비뇽","e":"Robert Mondavi Private Selection Cabernet Sauvigno","c":"미국","g":["카베르네소비뇽","쁘띠 시라","따나"],"a":["블랙베리","블랙체리","후추"],"pg":6400,"pt":2400,"pb":38000,"img":"https://content.tsb.wine/alcohol/images/6fbc63e6-463f-48ea-9eea-9e4b9d2f8e80.webp"},{"st":"magok","d":"Red","k":"샤또 모네 보르도","e":"Chateau Bonnet Bordeaux","c":"프랑스","g":["메를로","카베르네 소비뇽"],"a":["체리","라즈베리","피망"],"pg":7200,"pt":2700,"pb":44900,"img":"https://content.tsb.wine/alcohol/images/7825ccb3-40a8-45e1-b1d7-30af91963c4c.webp"},{"st":"magok","d":"Red","k":"레살테 벤디미아 셀렉시오나다","e":"Resalte Vendimia Seleccionada","c":"스페인","g":["템프라니요"],"a":["블랙베리","흑자두","감초"],"pg":5600,"pt":2100,"pb":33900,"img":"https://content.tsb.wine/alcohol/images/2e2cf7ac-66f2-4bde-a301-0ed157a4de1c.webp"},{"st":"magok","d":"Red","k":"F 네그로 아마로","e":"San Marzano F Negroamaro","c":"이탈리아","g":["네그로아마로"],"a":["자두","체리","라즈베리"],"pg":9600,"pt":3600,"pb":59900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/9.png"},{"st":"magok","d":"PORT_SHERRY","k":"버메스터 토니 포트","e":"Burmester Tawny Porto","c":"포르투갈","g":["포트 블랜드"],"a":["토피","초콜릿","캐러멜"],"pg":4800,"pt":1800,"pb":29900,"img":"https://content.tsb.wine/alcohol/images/f63e1f13-7ad2-4b98-a065-52ae8c83d8c7.webp"},{"st":"magok","d":"PORT_SHERRY","k":"퀘베도 루비 포트","e":"Quevedo Ruby Port","c":"포르투갈","g":["뚜리가 나시오날","뚜리갈 프란카","틴타 로리"],"a":["붉은 체리","체리 잼","다크 초콜릿"],"pg":4800,"pt":1800,"pb":29800,"img":"https://content.tsb.wine/alcohol/images/c62c0f8c-9aaa-49db-a321-31be62afae6b.webp"},{"st":"magok","d":"PORT_SHERRY","k":"퀘베도 화이트 포트","e":"Quevedo White Port","c":"포르투갈","g":["말바시아 피나","구베이오","비오지뉴","모스카델","라비가토"],"a":["파인애플","사과","봄 꿀"],"pg":4800,"pt":1800,"pb":29800,"img":"https://content.tsb.wine/alcohol/images/8d2df7f9-9136-4e5e-8164-280df220369e.webp"},{"st":"dongdaemun","d":"FRANCE","k":"샤또 드 말랑장 이브","e":"Chateau de Malengin Eve","c":"프랑스","g":["메를로"],"a":["자두","블랙베리","라벤더"],"pg":12800,"pt":4800,"pb":81000,"img":null},{"st":"dongdaemun","d":"FRANCE","k":"애봇 앤 델로네 카베르네 소비뇽","e":"Abbotts & Delaunay Cabernet Sauvignon","c":"프랑스","g":["카베르네 소비뇽"],"a":["블랙베리","체리","흑후추"],"pg":4000,"pt":1500,"pb":25900,"img":null},{"st":"dongdaemun","d":"FRANCE","k":"르 84 레드","e":"Le 84 Red","c":"프랑스","g":["시라","그르나슈"],"a":["레드베리","검은 체리","딸기"],"pg":7200,"pt":2700,"pb":45000,"img":"https://content.tsb.wine/alcohol/images/e967a4b1-8f4d-459f-9110-23401164d3f5.webp"},{"st":"dongdaemun","d":"USA","k":"오린스위프트 파피용","e":"Orin Swift Paplillon ","c":"미국","g":["카베르네 소비뇽","메를로","말벡"],"a":["삼나무","장미꽃","체리"],"pg":28000,"pt":10500,"pb":182000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/727-TSB-1689832344.png"},{"st":"dongdaemun","d":"USA","k":"셀레스테 서울 에디션","e":"Celeste Seoul Edition","c":"스페인","g":["템프라니요"],"a":["블랙베리","블랙 체리","블루베리 잼"],"pg":7200,"pt":2700,"pb":45000,"img":"https://content.tsb.wine/alcohol/images/20b1eacd-c68e-4d99-8ea7-e657686a2bc1.webp"},{"st":"dongdaemun","d":"AUS_SPAIN","k":"비주엘라 셀렉시온 템프라니요","e":"Viyuela Seleccion Tempranillo","c":"스페인","g":["템프라니요"],"a":["블랙베리","바닐라","담배"],"pg":5600,"pt":2100,"pb":31900,"img":"https://content.tsb.wine/alcohol/images/89ff20bd-f4b9-4f90-ae58-d047561a45a4.webp"},{"st":"dongdaemun","d":"AUS_SPAIN","k":"그린베이 피노 누아","e":"Green Bay Pinot Noir","c":"뉴질랜드","g":["피노 누아"],"a":["체리","라즈베리","야생 딸기"],"pg":6400,"pt":2400,"pb":36900,"img":null},{"st":"dongdaemun","d":"CHARDONNAY#2","k":"쓰리 브룸즈 싱글 빈야드 리슬링","e":"Three Brooms Single Vineyard Riesling","c":"뉴질랜드","g":["리슬링"],"a":["청사과","꿀","밀랍"],"pg":6400,"pt":2400,"pb":37900,"img":null},{"st":"dongdaemun","d":"SAUVIGNON_BLANC","k":"오투 말보로 소비뇽 블랑","e":"Otu Marlborough Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽블랑"],"a":["레몬"],"pg":4800,"pt":1800,"pb":29000,"img":"https://content.tsb.wine/alcohol/images/36429586-4ae3-4bea-a131-27e13a4c3e32.webp"},{"st":"dongdaemun","d":"SAUVIGNON_BLANC","k":"리버 송 소비뇽 블랑","e":"River Song Sauvignon Blanc","c":"뉴질랜드","g":["소비뇽 블랑"],"a":["레몬","라임","자몽"],"pg":3200,"pt":1200,"pb":18900,"img":"https://content.tsb.wine/alcohol/images/602429f5-b39a-49c0-acc4-a7c12a71ed8c.webp"},{"st":"dongdaemun","d":"vivino 2","k":"아네모 르카치텔리","e":"Anemo Rkatsiteli","c":"조지아","g":["르카치텔리"],"a":["풋사과","모과","멜론"],"pg":8000,"pt":3000,"pb":49900,"img":"https://content.tsb.wine/alcohol/images/74e01d02-e44b-47d3-ab12-6c40bf739b2a.webp"},{"st":"dongdaemun","d":"vivino 2","k":"슈타인샤든 클래식 그뤼너 벨트리너","e":"Steinschaden Grüner Veltliner Classic","c":"오스트리아","g":["그뤼너 벨트리너"],"a":["사과","시트러스","후추"],"pg":4800,"pt":1800,"pb":31500,"img":"https://content.tsb.wine/alcohol/images/541afe52-ddfa-48f7-b06f-c732c7298f2b.webp"},{"st":"dongdaemun","d":"TSB CREW PICK 1","k":"까날라스 블랑코","e":"Canallas Blanco","c":"스페인","g":["메르세게라","모스카텔"],"a":["레몬","복숭아","아몬드"],"pg":4000,"pt":1500,"pb":22000,"img":"https://content.tsb.wine/alcohol/images/526fe85f-ddde-4e6a-b96d-546f9ae6acee.webp"},{"st":"dongdaemun","d":"TSB CREW PICK 1","k":"신퀀타 꼴레찌오네","e":"San Marzano Collezione Cinquanta ","c":"이탈리아","g":["프리미티보","네그로아마로"],"a":["블랙베리","바닐라","체리"],"pg":7200,"pt":2700,"pb":43000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/332.png"},{"st":"dongdaemun","d":"vivino","k":"러브블록 센트럴 오타고 피노누아","e":"Loveblock Central Otago Pinot Noir","c":"뉴질랜드","g":["피노 누아"],"a":["체리","딸기","붉은 자두"],"pg":8000,"pt":3000,"pb":52000,"img":"https://content.tsb.wine/alcohol/images/643648a8-57d5-4c1d-9c8e-dc0c9b922de6.webp"},{"st":"dongdaemun","d":"WHISKEY","k":"그라함 파인 루비 포트","e":"Grahams, Fine Ruby Port","c":"포르투갈","g":["투리가 나시오날","틴타 바로카","투리가 프란카","틴타 로리즈"],"a":["블랙베리","초콜릿","카라멜"],"pg":6400,"pt":2400,"pb":38000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/19.png"},{"st":"dongdaemun","d":"WHISKEY","k":"퀘베도 로제 포트","e":"Quevedo Rosé Port","c":"포르투갈","g":["투리가 나시오날","투리가 프란카","틴타 로리즈","틴타 바로카"],"a":["딸기","라즈베리","수박"],"pg":5600,"pt":2100,"pb":32800,"img":null},{"st":"dongdaemun","d":"WINE21_PICK","k":"펠리시타 로제","e":"Eclipse Felicita Rose","c":"조지아","g":["사페라비"],"a":["라즈베리","자몽","딸기"],"pg":5600,"pt":2100,"pb":32900,"img":"https://content.tsb.wine/alcohol/images/6952460a-ba76-4d4a-a243-8647453b4488.webp"},{"st":"dongdaemun","d":"Soooo good 2","k":"페리와인즈 핑크라벨","e":"Pery Wines Pink Labael","c":"조지아","g":["사페라비"],"a":["장미꽃","라일락","딸기"],"pg":6400,"pt":2400,"pb":39900,"img":"https://content.tsb.wine/alcohol/images/9044f121-5309-4c8f-95f3-6317a23bc10f.webp"},{"st":"dongdaemun","d":"Soooo good 2","k":"마담 드 레인","e":"Madame de Rayne","c":"프랑스","g":["소테른"],"a":["설탕에 절인 파인애플","말린 살구","복숭아"],"pg":11200,"pt":4200,"pb":69000,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/2333-TSB-1723707049.png"},{"st":"dongdaemun","d":"Soooo good 2","k":"라다치니 아이스","e":"Radacini Ice Wine ","c":"몰도바 공화국","g":["리슬링"],"a":["살구","복숭아","멜론"],"pg":14400,"pt":5400,"pb":44900,"img":"https://dfvuopx4lhr5l.cloudfront.net/alcohol_images/1676-TSB-1696824578.png"}];
+
+const LADDER_OVERRIDE={'카를로 사니 수수마니엘로':3,'카를로 사니 네로 디 트로이':3,'테라자스 리저브 말벡':3,'세인트 할렛 블랙 클레이 쉬라즈':3,'산타헬레나 그란 리제르바':4,'집집락 cs':4,'집집락 쉬라즈 카베르네':4,'킹핀 레드':5,'타라파카 리제르바 카르미네르':6,'집집락 샤르도네':9,'킹핀 화이트':10,'바바 로제타':2};
+function ladderOf(w){
+  const n=(w.wine_ko||'')+' '+(w.wine_en||''); const gl=(w.grape_ko||[]); const g=gl.join('/'); const g1=(gl[0]||'')+' '+n; const a=(w.aroma||[]).join(',');
+  const key=(w.wine_ko||'').trim().toLowerCase();
+  for(const k in LADDER_OVERRIDE){ if(key.startsWith(k.toLowerCase())) return LADDER_OVERRIDE[k]; }
+  const has=(re,s)=>re.test(s);
+  if(has(/화이트 포트|white port/i,n)) return 7;
+  if(has(/로제 포트|rose port/i,n)) return 2;
+  if(has(/포트|port|토니|tawny/i,n)) return 1;
+  if(has(/아이스|소테른|sauternes|ice wine/i,n+' '+g)) return 7;
+  if(has(/킨즈마라울리|kindzmarauli/i,n)) return 2;
+  if(has(/까바|브뤼|스파클링|프로세코|샴페인|cava|brut|prosecco|champagne/i,n)) return has(/스위트|모스카토|dolce|sweet/i,n)?11:12;
+  if(has(/로제|핑크|rose|rosé|pink/i,n)) return 10;
+  const red=/카베르네|cabernet|메를로|merlot|쉬라|시라|syrah|shiraz|템프라니요|tempranillo|피노 ?누아|pinot noir|말벡|malbec|그르나|grenache|돌체토|네그로|진판델|프리미티보|모나스트렐|사페라비|산지오베제|수수마니엘로|카르미네르|가메|투리가|틴타|페테아스카/i;
+  const white=/소비뇽 ?블랑|sauvignon blanc|^소비뇽$|샤르도네|샤도네이|chardonnay|리슬링|riesling|슈냉|chenin|비오니에|르카치텔리|그뤼너|코르테제|가르가네가|트루비아나|메르세게라|모스카텔|피노 ?그리|소비뇽블랑/i;
+  const firstWhite = has(white,(gl[0]||'')) || (!gl.length && has(white,n));
+  const isRed = !firstWhite && has(red,g+' '+n);
+  if(isRed){
+    if(has(/피노|그르나|돌체토|가메|pinot|grenache/i,(gl[0]||n))) return has(/후추|허브|피망|흙|가죽|로즈마리/,a)?6:5;
+    return has(/오크|담배|가죽|삼나무|토스트|배럴|리제르바|리저브|그란|reserva|barrel|10y/i,a+' '+n)?4:3;
+  }
+  if(has(/리슬링|riesling/i,g1)) return has(/꿀|밀랍/,a)?8:10;
+  if(has(/샤르도네|샤도네이|chardonnay|비오니에|슈냉|chenin/i,(gl[0]||'')+' '+(gl.length?'':n))) return 9;
+  if(has(white,g+' '+n)) return 10;
+  return 0;
+}
+
+const STORES={cheonggye:'청계',sangam:'상암',magok:'마곡',dongdaemun:'동대문'};
+const LADDER={1:['레드','달콤 · 묵직','포트처럼 진하고 달콤한 레드'],2:['레드','달콤 · 가벼움','가볍고 달콤한 레드·로제'],3:['레드','드라이 · 묵직 · 과일향','과일 향이 먼저 오는 묵직한 레드'],4:['레드','드라이 · 묵직 · 숙성향','오크·가죽·삼나무, 숙성 향의 묵직한 레드'],5:['레드','드라이 · 가벼움 · 꽃향','꽃과 붉은 과일, 가볍고 부드러운 레드'],6:['레드','드라이 · 가벼움 · 스파이시','후추·허브, 가볍고 스파이시한 레드'],7:['화이트','달콤 · 묵직','꿀과 말린 과일, 진하고 달콤한 화이트'],8:['화이트','달콤 · 가벼움','꽃과 꿀, 가볍고 달콤한 화이트'],9:['화이트','드라이 · 풍성 · 열대과일','버터·열대과일, 풍성한 화이트'],10:['화이트','드라이 · 가벼움 · 시트러스','레몬·자몽, 상큼한 화이트·로제'],11:['스파클링','달콤 · 캐주얼','달콤하게 톡 터지는 스파클링'],12:['스파클링','드라이 · 크리스프','깔끔하고 시원한 스파클링']};
+const SHORT={1:'달콤·묵직',2:'달콤·가벼움',3:'묵직·과일',4:'묵직·숙성',5:'가벼움·꽃',6:'가벼움·스파이시',7:'달콤·묵직',8:'달콤·가벼움',9:'풍성·열대',10:'가벼움·시트러스',11:'달콤·캐주얼',12:'드라이·크리스프'};
+const NEAR={1:[2,4,3],2:[1,5,8],3:[4,5,1],4:[3,1,6],5:[6,3,2],6:[5,4,3],7:[8,9,1],8:[7,10,2],9:[10,7,8],10:[9,8,12],11:[8,2,12],12:[10,9,11]};
+const NEEDS={
+ certainty:{card:'실패 없는 한 잔',sub:'오늘은 편안하게',persona:'단골',emoji:'안심',color:'#2E5E4E'},
+ variety:{card:'처음 보는 한 잔',sub:'오늘은 새롭게',persona:'탐험가',emoji:'모험',color:'#B5532A'},
+ significance:{card:'오늘은 특별하게',sub:'좋은 날, 좋은 잔',persona:'주인공',emoji:'특별',color:'#7A1F3D'},
+ connection:{card:'같이 나누는 한 잔',sub:'함께라서 좋은',persona:'호스트',emoji:'함께',color:'#9C4A6B'},
+ growth:{card:'비교하며 알아가기',sub:'차이를 느껴보는',persona:'탐구자',emoji:'배움',color:'#2F4A7A'},
+ contribution:{card:'이야기가 있는 한 잔',sub:'작은 산지를 응원하는',persona:'응원자',emoji:'의미',color:'#6B5B2E'}
+};
+const FAMILIAR=/카베르네|메를로|소비뇽|샤르도네|샤도네이|피노 ?누아|쉬라즈|말벡/;
+const FAM_COUNTRY=/프랑스|미국|뉴질랜드|호주|칠레/;
+const UNUSUAL_C=/조지아|불가리아|몰도바|루마니아|오스트리아|포르투갈/;
+const UNUSUAL_G=/사페라비|르카치텔리|수수마니엘로|네그로|돌체토|모나스트렐|그뤼너|코르테제|트루비아나|메르세게라|페테아스카|슈냉/;
+const STORY=[[/조지아/,'8천 년 와인 역사의 조지아, 토착 품종으로 빚은 와인이에요.'],[/올드바인|old vine/i,'수십 년 된 늙은 포도나무(올드바인)에서 온 와인이에요.'],[/싱글 ?빈야드/,'한 밭(싱글 빈야드)의 개성을 그대로 담은 와인이에요.'],[/AOP|DOC|AOC/,'원산지 보호 등급을 받은 작은 산지의 와인이에요.'],[/불가리아|몰도바|루마니아/,'잘 알려지지 않은 동유럽 산지를 응원하는 선택이에요.']];
+const KW={certainty:/익숙|무난|편안|편해|안전|실패|늘|역시|믿|아는/,variety:/새롭|새로|처음|신기|독특|색다|의외|놀라|낯선/,significance:/고급|특별|비싼|귀한|자랑|인정|최고|축하|기념/,connection:/같이|함께|친구|나눠|대화|분위기|사람|연인|가족/,growth:/비교|알게|배웠|차이|공부|궁금|이해|맛보/,contribution:/의미|응원|생산자|지역|이야기|가치|착한|역사/};
+let S={store:'cheonggye',coffee:null,choc:null,color:null,need:null,wines:[],live:false,ladder:null,pick:null};
+const $=s=>document.querySelector(s);
+function show(id){document.querySelectorAll('.screen').forEach(e=>e.classList.remove('on'));$('#'+id).classList.add('on');window.scrollTo(0,0);}
+function won(n){return n?Number(n).toLocaleString('ko-KR')+'원':'-';}
+async function loadTaps(){
+  try{const r=await fetch('https://api.tsb.wine/public/taps?store='+S.store,{cache:'no-store'});if(!r.ok)throw 0;const j=await r.json();const out=[];
+    j.dispensers.forEach(d=>d.slots.forEach(s=>{if(s.status==='on'&&s.category==='Wine')out.push({st:S.store,d:d.title,k:(s.wine_ko||'').trim(),e:s.wine_en,c:s.country_ko,g:s.grape_ko||[],a:(s.aroma||[]).slice(0,3),pg:s.price_glass,pt:s.price_taste,pb:s.bottle_price,img:s.image_url});}));
+    if(!out.length)throw 0;S.wines=out;S.live=true;}
+  catch(e){S.wines=SNAP.filter(w=>w.st===S.store);S.live=false;}
+  S.wines.forEach(w=>w.L=ladderOf({wine_ko:w.k,wine_en:w.e,grape_ko:w.g,aroma:w.a}));
+}
+function computeLadder(){
+  const sw={black:0,latte:1,sweet:2,none:1}[S.coffee]+{dark:0,milk:1,white:2}[S.choc];
+  const body={black:2,latte:1,sweet:0,none:1}[S.coffee]+{dark:2,milk:1,white:0}[S.choc];
+  const sweet=sw>=3, full=body>=3;
+  let c=S.color; if(c==='any') c=full?'red':'white';
+  if(c==='rose') return sweet?2:10;
+  if(c==='red'){ if(sweet) return full?1:2; if(full) return (S.coffee==='black'&&S.choc==='dark')?4:3; return S.coffee==='black'?6:5; }
+  if(sweet) return full?7:8; return full?9:10;
+}
+function scoreFor(w,need,all){
+  const txt=w.k+' '+(w.e||'')+' '+w.g.join('/')+' '+w.c;const prices=all.map(x=>x.pg||0).sort((a,b)=>a-b);const med=prices[Math.floor(prices.length/2)]||0;
+  const fam=(FAMILIAR.test(w.g.join('/')+w.k)?1:0)+(FAM_COUNTRY.test(w.c||'')?1:0);const un=(UNUSUAL_C.test(w.c||'')?1:0)+(UNUSUAL_G.test(w.g.join('/')+w.k)?1:0);
+  const fruity=/딸기|체리|라즈베리|복숭아|레몬|자두|사과|망고|파인애플/.test(w.a.join(','))?1:0;
+  switch(need){
+    case 'certainty':return fam*2-un*2-Math.abs((w.pg||0)-med)/4000;
+    case 'variety':return un*3-fam;
+    case 'significance':return (w.pg||0)/1000+(/리저브|리제르바|그란|10y|싱글|에디션|파피용/.test(txt)?3:0);
+    case 'connection':return fruity*2+fam-Math.abs((w.pg||0)-med)/5000;
+    case 'growth':return fam+(w.a.length?1:0);
+    case 'contribution':return (STORY.some(([re])=>re.test(txt))?4:0)+un;
+  }
+}
+function storyOf(w){const txt=w.k+' '+(w.e||'')+' '+w.c;for(const [re,s] of STORY) if(re.test(txt)) return s;return w.c+'의 '+(w.g[0]||'와인')+', 이 와인이 어디서 왔는지부터 이야기가 시작돼요.';}
+function recommend(){
+  const want=computeLadder();let L=want,pool=S.wines.filter(w=>w.L===L),moved=false;
+  if(!pool.length){for(const n of NEAR[want]){const p=S.wines.filter(w=>w.L===n);if(p.length){L=n;pool=p;moved=true;break;}}}
+  if(!pool.length){pool=S.wines.slice();L=pool[0]?.L||want;moved=true;}
+  const uniq=[];const seen=new Set();pool.forEach(w=>{if(!seen.has(w.k)){seen.add(w.k);uniq.push(w);}});
+  const ranked=uniq.map(w=>({w,s:scoreFor(w,S.need,uniq)})).sort((a,b)=>b.s-a.s).map(x=>x.w);
+  let pick=ranked[0],pair=null;
+  if(S.need==='growth'){const g0=(pick.g[0]||'');pair=ranked.find(x=>x!==pick&&((x.g[0]||'')===g0&&x.c!==pick.c))||ranked.find(x=>x!==pick&&x.c!==pick.c)||ranked[1]||null;}
+  S.ladder=L;S.want=want;S.moved=moved;S.pick=pick;S.pair=pair;S.alts=ranked.filter(x=>x!==pick&&x!==pair).slice(0,2);
+}
+function needLine(){const w=S.pick,n=S.need,g=w.g[0]||'와인';
+  if(n==='certainty')return '오늘은 실패 없는 한 잔. 익숙한 '+g+' 중에서 지금 탭에 있는 가장 믿음직한 걸로 골랐어요.';
+  if(n==='variety')return '오늘은 처음 보는 한 잔. '+(w.c||'')+'의 '+g+', 아마 처음 만나실 거예요.';
+  if(n==='significance')return '오늘은 주인공. 지금 이 매장 '+S.ladder+'번 사다리에서 가장 귀한 한 잔이에요.';
+  if(n==='connection')return '오늘은 함께. 누구나 좋아할 과일 향이라 나눠 마시기 좋아요. 보틀로는 '+won(w.pb)+'.';
+  if(n==='growth')return S.pair?'오늘은 비교. 테이스팅 잔(30ml) 두 개를 나란히: '+w.k+' vs '+S.pair.k+'. 차이를 말로 해보면 내 입맛이 보여요.':'오늘은 알아가기. 테이스팅 잔으로 먼저 맛보고 이야기 나눠요.';
+  if(n==='contribution')return '오늘은 이야기가 있는 한 잔. '+storyOf(w);
+}
+function rungsHTML(active){let h='<div class="ladder">';const groups=[['RED',1,6],['WHITE',7,10],['SPARKLING',11,12]];
+  for(const [gname,a,b] of groups){h+='<div class="lg"><div class="lgn">'+gname+'</div>';for(let i=a;i<=b;i++){h+='<div class="rung'+(i===active?' hot':'')+'"><b>'+i+'</b><span>'+SHORT[i]+'</span></div>';}h+='</div>';}
+  return h+'</div>';}
+function wineCard(w,big){return '<div class="wine'+(big?' big':'')+'">'+(w.img?'<img src="'+w.img+'" alt="">':'<div class="noimg"></div>')+'<div class="wi"><div class="wn">'+w.k+'</div><div class="wm">'+[w.c,(w.g||[]).slice(0,2).join(' · ')].filter(Boolean).join(' / ')+'</div>'+(w.a.length?'<div class="wa">'+w.a.join(' · ')+'</div>':'')+'<div class="wp">잔 '+won(w.pg)+' <span>· 테이스팅 '+won(w.pt)+'</span></div></div></div>';}
+async function goResult(){
+  show('reading');await Promise.all([loadTaps(),new Promise(r=>setTimeout(r,1400))]);recommend();
+  const N=NEEDS[S.need],L=LADDER[S.ladder];
+  $('#res').innerHTML='<div class="tag" style="background:'+N.color+'">'+N.emoji+'</div>'
+   +'<h2>오늘 당신은<br><em>'+S.ladder+'번 사다리의 '+N.persona+'</em></h2>'
+   +'<p class="lead">'+L[0]+' · '+L[2]+'</p>'
+   +(S.moved?'<p class="note">원래 맞는 칸은 '+S.want+'번인데 지금 탭에 없어서, 가장 가까운 '+S.ladder+'번에서 골랐어요.</p>':'')
+   +wineCard(S.pick,true)+(S.pair?'<div class="vs">VS</div>'+wineCard(S.pair,true):'')
+   +'<div class="why"><div class="wl"><b>맛</b>'+L[2]+'. 커피·초콜릿 답으로 찾은 칸이에요.</div><div class="wl"><b>이유</b>'+needLine()+'</div></div>'
+   +rungsHTML(S.ladder)
+   +(S.alts.length?'<div class="alt"><div class="altt">같은 칸 다른 잔</div>'+S.alts.map(w=>wineCard(w,false)).join('')+'</div>':'')
+   +'<p class="src">'+STORES[S.store]+' 탭 '+(S.live?'실시간':'스냅샷(11/13)')+' 기준 · 시제품 v0.1</p>';
+  show('result');
+}
+function tagNeed(t){let best=null,bc=0;for(const k in KW){const m=(t.match(new RegExp(KW[k].source,'g'))||[]).length;if(m>bc){bc=m;best=k;}}return best;}
+function makeCard(){
+  const t1=$('#fb1').value.trim(),t2=$('#fb2').value.trim();const tag=tagNeed(t1+' '+t2)||S.need;const N=NEEDS[S.need],T=NEEDS[tag];
+  const same=tag===S.need;const d=new Date();const ds=(d.getMonth()+1)+'.'+d.getDate();
+  $('#card').innerHTML='<div class="wc"><div class="wch"><span>MY WHY CARD</span><span>'+STORES[S.store]+' · '+ds+'</span></div>'
+   +'<div class="wcn">'+S.ladder+'</div><div class="wct">'+S.ladder+'번 사다리의 '+N.persona+'</div><div class="wcl">'+LADDER[S.ladder][1]+'</div>'
+   +'<div class="wcw">오늘 고른 이유<br><b>'+N.card+'</b></div>'
+   +(t1?'<div class="wcq">“'+t1.replace(/</g,'&lt;')+'”</div>':'')
+   +'<div class="wcr">당신의 한 줄에서 읽힌 why: <b>'+T.emoji+' · '+T.card+'</b>'+(same?' (고른 이유와 같아요. 진심이었네요.)':' (고를 땐 '+N.emoji+', 마시고 보니 '+T.emoji+'. 이 차이가 당신의 진짜 취향이에요.)')+'</div>'
+   +'<div class="wcs">wine is second americano</div><div class="warn">경고: 지나친 음주는 뇌졸중, 기억력 손상이나 치매를 유발합니다. 임신 중 음주는 기형아 출생 위험을 높입니다. 음주운전은 자신과 다른 사람의 생명을 위태롭게 할 수 있습니다.</div></div>'
+   +'<p class="src">시제품: 한 줄 판정은 키워드 방식이에요. 실제 서비스는 Jev가 판정합니다.</p>';
+  show('cardscreen');
+}
+function pickOpt(group,val,el,next){S[group]=val;el.parentElement.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');setTimeout(()=>next(),220);}
+
+function restart(){S.coffee=S.choc=S.color=S.need=null;document.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));$('#fb1').value='';$('#fb2').value='';show('intro');}
+(function init(){
+  const st=$('#stores');Object.entries(STORES).forEach(([k,v])=>{const b=document.createElement('button');b.textContent=v+'점';if(k===S.store)b.classList.add('sel');b.onclick=()=>{S.store=k;st.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');};st.appendChild(b);});
+  const g=$('#needgrid');Object.entries(NEEDS).forEach(([k,n])=>{const d=document.createElement('div');d.className='opt';d.innerHTML='<div class="ic" style="background:'+n.color+'">'+n.emoji+'</div><div class="t">'+n.card+'</div><div class="s">'+n.sub+'</div>';d.onclick=()=>pickOpt('need',k,d,goResult);g.appendChild(d);});
+  const p=new URLSearchParams(location.search).get('store');if(p&&STORES[p]){S.store=p;st.querySelectorAll('button').forEach((b,i)=>b.classList.toggle('sel',Object.keys(STORES)[i]===p));}
+})();
+</script></body></html>
