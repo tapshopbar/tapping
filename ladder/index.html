@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta property="og:type" content="website"><meta property="og:title" content="10초 와인 사다리 · 탭샵바 시제품"><meta property="og:description" content="커피 한 잔, 초콜릿 한 조각, 오늘의 기분. 10초면 오늘의 한 잔이 보여요."><meta property="og:image" content="https://tapshopbar.github.io/tapping/ladder/og.jpg"><meta property="og:url" content="https://tapshopbar.github.io/tapping/ladder/"><meta name="twitter:card" content="summary_large_image"><title>TSB 더블 사다리 · 10초 와인 시제품 v0.3</title><style>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta property="og:type" content="website"><meta property="og:title" content="10초 와인 사다리 · 탭샵바 시제품"><meta property="og:description" content="커피 한 잔, 초콜릿 한 조각, 오늘의 기분. 10초면 오늘의 한 잔이 보여요."><meta property="og:image" content="https://tapshopbar.github.io/tapping/ladder/og.jpg"><meta property="og:url" content="https://tapshopbar.github.io/tapping/ladder/"><meta name="twitter:card" content="summary_large_image"><title>TSB 더블 사다리 · 10초 와인 시제품 v0.4</title><style>
 :root{--wine:#4A0B18;--wine2:#6E1426;--wine3:#3A0812;--navy:#141B33;--cream:#FFFDFC;--ink:#0E0E0E;--yellow:#FFC100;--blue:#156DFF;--rose:#C9A0A8;--grey:#8A8384}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--wine3);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;color:var(--ink)}
@@ -108,10 +108,11 @@ textarea:focus{outline:none;border-color:var(--wine)}
 .ladtip{margin-top:12px;font-size:13.5px;line-height:1.6;background:#F4F0F0;border-radius:12px;padding:12px 14px;min-height:48px}
 .ladtip b{color:var(--wine)}.ladtip .now{margin-top:6px;color:#555}
 .twol{text-align:center;font-size:13px;font-weight:700;color:var(--wine);margin-top:16px!important}
+.where{margin-top:8px;font-size:12.5px;line-height:1.45;background:#fff6db;border-radius:10px;padding:7px 9px;color:#3a2d00}.where b{display:block;font-size:11px;letter-spacing:.06em;color:#8a6a00;margin-bottom:1px}.where i{font-style:normal;color:#b5532a}
 </style></head><body><div class="app">
 
 <section class="screen dark on" id="intro"><div class="brand">TAP SHOP BAR · DOUBLE LADDER</div>
-<div class="hero"><span class="badge">시제품 v0.3</span><h1>10초면<br>오늘의 한 잔이<br>보여요</h1><p>와인 이름 몰라도 괜찮아요.<br>커피 한 잔, 초콜릿 한 조각, 그리고 오늘의 기분.</p></div>
+<div class="hero"><span class="badge">시제품 v0.4</span><h1>10초면<br>오늘의 한 잔이<br>보여요</h1><p>와인 이름 몰라도 괜찮아요.<br>커피 한 잔, 초콜릿 한 조각, 그리고 오늘의 기분.</p></div>
 <div class="stores" id="stores"></div>
 <button class="cta" onclick="show('q1')">만 19세 이상이에요, 시작할게요</button>
 <p class="agegate">만 19세 미만은 이용할 수 없어요. 매장 탭 와인은 실시간으로 불러와요.</p></section>
@@ -201,7 +202,7 @@ function show(id){document.querySelectorAll('.screen').forEach(e=>e.classList.re
 function won(n){return n?Number(n).toLocaleString('ko-KR')+'원':'-';}
 async function loadTaps(){
   try{const r=await fetch('https://api.tsb.wine/public/taps?store='+S.store,{cache:'no-store'});if(!r.ok)throw 0;const j=await r.json();const out=[];
-    j.dispensers.forEach(d=>d.slots.forEach(s=>{if(s.status==='on'&&s.category==='Wine')out.push({st:S.store,d:d.title,k:(s.wine_ko||'').trim(),e:s.wine_en,c:s.country_ko,g:s.grape_ko||[],a:(s.aroma||[]).slice(0,3),pg:s.price_glass,pt:s.price_taste,pb:s.bottle_price,img:s.image_url});}));
+    j.dispensers.forEach(d=>d.slots.forEach(s=>{if(s.status==='on'&&s.category==='Wine'&&!(s.remaining_pct!=null&&s.remaining_pct<5))out.push({st:S.store,dn:d.dispenser,sl:s.slot,rp:s.remaining_pct,d:d.title,k:(s.wine_ko||'').trim(),e:s.wine_en,c:s.country_ko,g:s.grape_ko||[],a:(s.aroma||[]).slice(0,3),pg:s.price_glass,pt:s.price_taste,pb:s.bottle_price,img:s.image_url});}));
     if(!out.length)throw 0;S.wines=out;S.live=true;}
   catch(e){S.wines=SNAP.filter(w=>w.st===S.store);S.live=false;}
   S.wines.forEach(w=>w.L=ladderOf({wine_ko:w.k,wine_en:w.e,grape_ko:w.g,aroma:w.a}));
@@ -250,7 +251,8 @@ function needLine(){const w=S.pick,n=S.need,g=w.g[0]||'와인';
 function rungsHTML(active){let h='<div class="ladder">';const groups=[['RED',1,6],['WHITE',7,10],['SPARKLING',11,12]];
   for(const [gname,a,b] of groups){h+='<div class="lg"><div class="lgn">'+gname+'</div>';for(let i=a;i<=b;i++){h+='<div class="rung'+(i===active?' hot':'')+'"><b>'+i+'</b><span>'+SHORT[i]+'</span></div>';}h+='</div>';}
   return h+'</div>';}
-function wineCard(w,big){return '<div class="wine'+(big?' big':'')+'">'+(w.img?'<img src="'+w.img+'" alt="">':'<div class="noimg"></div>')+'<div class="wi"><div class="wn">'+w.k+'</div><div class="wm">'+[w.c,(w.g||[]).slice(0,2).join(' · ')].filter(Boolean).join(' / ')+'</div>'+(w.a.length?'<div class="wa">'+w.a.join(' · ')+'</div>':'')+'<div class="wp">잔 '+won(w.pg)+' <span>· 테이스팅 '+won(w.pt)+'</span></div></div></div>';}
+function whereHTML(w){if(!w.dn)return '';return '<div class="where"><b>여기서 따르세요</b>'+STORES[S.store]+' · '+w.dn+'번 탭 기계 · '+w.sl+'번째 칸'+(w.rp!=null&&w.rp<20?' <i>곧 바뀔 수 있어요</i>':'')+'</div>';}
+function wineCard(w,big){return '<div class="wine'+(big?' big':'')+'">'+(w.img?'<img src="'+w.img+'" alt="">':'<div class="noimg"></div>')+'<div class="wi"><div class="wn">'+w.k+'</div><div class="wm">'+[w.c,(w.g||[]).slice(0,2).join(' · ')].filter(Boolean).join(' / ')+'</div>'+(w.a.length?'<div class="wa">'+w.a.join(' · ')+'</div>':'')+'<div class="wp">잔 '+won(w.pg)+' <span>· 테이스팅 '+won(w.pt)+'</span></div>'+(big?whereHTML(w):'')+'</div></div>';}
 async function goResult(){
   show('reading');await Promise.all([loadTaps(),new Promise(r=>setTimeout(r,1400))]);recommend();
   const N=NEEDS[S.need],L=LADDER[S.ladder];
@@ -262,7 +264,7 @@ async function goResult(){
    +'<div class="why"><div class="wl"><b>맛</b>'+L[2]+'. 커피·초콜릿 답으로 찾은 칸이에요.</div><div class="wl"><b>이유</b>'+needLine()+'</div></div>'
    +founderHTML()
    +(S.alts.length?'<div class="alt"><div class="altt">같은 칸 다른 잔</div>'+S.alts.map(w=>wineCard(w,false)).join('')+'</div>':'')
-   +'<p class="src">'+STORES[S.store]+' 탭 '+(S.live?'실시간':'스냅샷(11/13)')+' 기준 · 시제품 v0.3</p>';
+   +'<p class="src">'+STORES[S.store]+' 탭 '+(S.live?'실시간':'스냅샷(11/13)')+' 기준 · 시제품 v0.4</p>';
   show('result');bindTree('#res');
 }
 function tagNeed(t){let best=null,bc=0;for(const k in KW){const m=(t.match(new RegExp(KW[k].source,'g'))||[]).length;if(m>bc){bc=m;best=k;}}return best;}
