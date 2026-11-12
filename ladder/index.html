@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta property="og:type" content="website"><meta property="og:title" content="10초 와인 사다리 · 탭샵바 시제품"><meta property="og:description" content="커피 한 잔, 초콜릿 한 조각, 오늘의 기분. 10초면 오늘의 한 잔이 보여요."><meta property="og:image" content="https://tapshopbar.github.io/tapping/ladder/og.jpg"><meta property="og:url" content="https://tapshopbar.github.io/tapping/ladder/"><meta name="twitter:card" content="summary_large_image"><title>TSB 더블 사다리 · 10초 와인 시제품 v0.2</title><style>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta property="og:type" content="website"><meta property="og:title" content="10초 와인 사다리 · 탭샵바 시제품"><meta property="og:description" content="커피 한 잔, 초콜릿 한 조각, 오늘의 기분. 10초면 오늘의 한 잔이 보여요."><meta property="og:image" content="https://tapshopbar.github.io/tapping/ladder/og.jpg"><meta property="og:url" content="https://tapshopbar.github.io/tapping/ladder/"><meta name="twitter:card" content="summary_large_image"><title>TSB 더블 사다리 · 10초 와인 시제품 v0.3</title><style>
 :root{--wine:#4A0B18;--wine2:#6E1426;--wine3:#3A0812;--navy:#141B33;--cream:#FFFDFC;--ink:#0E0E0E;--yellow:#FFC100;--blue:#156DFF;--rose:#C9A0A8;--grey:#8A8384}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;background:var(--wine3);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;color:var(--ink)}
@@ -111,7 +111,7 @@ textarea:focus{outline:none;border-color:var(--wine)}
 </style></head><body><div class="app">
 
 <section class="screen dark on" id="intro"><div class="brand">TAP SHOP BAR · DOUBLE LADDER</div>
-<div class="hero"><span class="badge">시제품 v0.2</span><h1>10초면<br>오늘의 한 잔이<br>보여요</h1><p>와인 이름 몰라도 괜찮아요.<br>커피 한 잔, 초콜릿 한 조각, 그리고 오늘의 기분.</p></div>
+<div class="hero"><span class="badge">시제품 v0.3</span><h1>10초면<br>오늘의 한 잔이<br>보여요</h1><p>와인 이름 몰라도 괜찮아요.<br>커피 한 잔, 초콜릿 한 조각, 그리고 오늘의 기분.</p></div>
 <div class="stores" id="stores"></div>
 <button class="cta" onclick="show('q1')">만 19세 이상이에요, 시작할게요</button>
 <p class="agegate">만 19세 미만은 이용할 수 없어요. 매장 탭 와인은 실시간으로 불러와요.</p></section>
@@ -260,10 +260,10 @@ async function goResult(){
    +(S.moved?'<p class="note">원래 맞는 칸은 '+S.want+'번인데 지금 탭에 없어서, 가장 가까운 '+S.ladder+'번에서 골랐어요.</p>':'')
    +wineCard(S.pick,true)+(S.pair?'<div class="vs">VS</div>'+wineCard(S.pair,true):'')
    +'<div class="why"><div class="wl"><b>맛</b>'+L[2]+'. 커피·초콜릿 답으로 찾은 칸이에요.</div><div class="wl"><b>이유</b>'+needLine()+'</div></div>'
-   +rungsHTML(S.ladder)
+   +founderHTML()
    +(S.alts.length?'<div class="alt"><div class="altt">같은 칸 다른 잔</div>'+S.alts.map(w=>wineCard(w,false)).join('')+'</div>':'')
-   +'<p class="src">'+STORES[S.store]+' 탭 '+(S.live?'실시간':'스냅샷(11/13)')+' 기준 · 시제품 v0.2</p>';
-  show('result');
+   +'<p class="src">'+STORES[S.store]+' 탭 '+(S.live?'실시간':'스냅샷(11/13)')+' 기준 · 시제품 v0.3</p>';
+  show('result');bindTree('#res');
 }
 function tagNeed(t){let best=null,bc=0;for(const k in KW){const m=(t.match(new RegExp(KW[k].source,'g'))||[]).length;if(m>bc){bc=m;best=k;}}return best;}
 function makeCard(){
@@ -276,7 +276,7 @@ function makeCard(){
    +'<div class="wcr">당신의 한 줄에서 읽힌 why: <b>'+T.emoji+' · '+T.card+'</b>'+(same?' (고른 이유와 같아요. 진심이었네요.)':' (고를 땐 '+N.emoji+', 마시고 보니 '+T.emoji+'. 이 차이가 당신의 진짜 취향이에요.)')+'</div>'
    +'<div class="wcs">wine is second americano</div><div class="warn">경고: 지나친 음주는 뇌졸중, 기억력 손상이나 치매를 유발합니다. 임신 중 음주는 기형아 출생 위험을 높입니다. 음주운전은 자신과 다른 사람의 생명을 위태롭게 할 수 있습니다.</div></div>'
    +'<p class="src">시제품: 한 줄 판정은 키워드 방식이에요. 실제 서비스는 Jev가 판정합니다.</p>'+founderHTML();
-  show('cardscreen');bindTree();
+  show('cardscreen');bindTree('#card');
 }
 const TREE = (() => {
   const XS = [32, 90, 148, 206, 264, 322];
@@ -357,10 +357,10 @@ function founderHTML(){const L=S.ladder,p=pathOf(L).split('/');
  +'<p>와인 이름을 몰라도 입맛만으로 고를 수 있게 만든 "차차 12 WINES"(2014)예요. 오늘 당신은 이 길로 내려왔어요.</p>'
  +'<div class="path">'+p.map(s=>'<span>'+(SEG[s]||s)+'</span><i>→</i>').join('')+'<b>'+L+'번</b></div>'
  +board(pathOf(L),L,true,'detail')
- +'<div class="ladtip" id="ladtip">번호를 눌러 보세요. 대표님이 고른 대표 와인과 지금 탭에 있는 와인이 나와요.</div>'
+ +'<div class="ladtip">번호를 눌러 보세요. 대표님이 고른 대표 와인과 지금 탭에 있는 와인이 나와요.</div>'
  +'<p class="twol">입맛의 사다리 (차차 12 WINES) × 마음의 사다리 (Life Span)<br>= 더블 사다리</p></div>';}
-function bindTree(){document.querySelectorAll('.tree .leaf').forEach(c=>c.addEventListener('click',()=>{document.querySelectorAll('.tree .leaf').forEach(z=>z.classList.remove('pick'));c.classList.add('pick');const n=+c.dataset.no;const now=[...new Set(S.wines.filter(w=>w.L===n).map(w=>w.k))];
- $('#ladtip').innerHTML='<b>'+n+'번</b> · '+LADDER[n][1]+(n===S.ladder?' ← <b>오늘 내 칸</b>':'')+'<br>대표님 추천: '+(SHEET_WINES[n]||'-')+'<div class="now">지금 '+STORES[S.store]+' 탭: '+(now.length?now.slice(0,4).join(', ')+(now.length>4?' 외 '+(now.length-4)+'종':''):'없음')+'</div>';}));}
+function bindTree(scope){const root=document.querySelector(scope);root.querySelectorAll('.tree .leaf').forEach(c=>c.addEventListener('click',()=>{root.querySelectorAll('.tree .leaf').forEach(z=>z.classList.remove('pick'));c.classList.add('pick');const n=+c.dataset.no;const now=[...new Set(S.wines.filter(w=>w.L===n).map(w=>w.k))];
+ root.querySelector('.ladtip').innerHTML='<b>'+n+'번</b> · '+LADDER[n][1]+(n===S.ladder?' ← <b>오늘 내 칸</b>':'')+'<br>대표님 추천: '+(SHEET_WINES[n]||'-')+'<div class="now">지금 '+STORES[S.store]+' 탭: '+(now.length?now.slice(0,4).join(', ')+(now.length>4?' 외 '+(now.length-4)+'종':''):'없음')+'</div>';}));}
 
 function pickOpt(group,val,el,next){S[group]=val;el.parentElement.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');setTimeout(()=>next(),220);}
 
