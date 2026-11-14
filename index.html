@@ -121,7 +121,7 @@ html[data-season="glass"] #cw.c1,html[data-season="glass"] #cw.c2,html[data-seas
 .store .en{font-size:11px;letter-spacing:.14em;font-weight:800;opacity:.7;margin-bottom:12px;display:block}
 .store strong{display:block;font-size:22px;font-weight:800;letter-spacing:-.03em;margin-bottom:8px}
 .store .soon{display:inline-block;background:var(--block-a-accent);color:#000;font-size:11px;font-weight:800;padding:3px 8px;margin-bottom:8px}
-.store .links{margin-top:14px;display:flex;flex-direction:column;gap:6px}.store .links a{border-bottom:1px solid rgba(255,255,255,.6);align-self:flex-start;font-weight:700}
+.store .links{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 16px}.store .links a.way{color:var(--block-a-accent)}.store .links a{border-bottom:1px solid rgba(255,255,255,.6);align-self:flex-start;font-weight:700}
 .rooms{margin-top:70px;display:grid;grid-template-columns:1fr 2fr;gap:5vw;align-items:start}
 .rooms h3{font-size:clamp(34px,4vw,60px);margin:0 0 12px}.rooms p{margin:0;font-size:15px;opacity:.9;max-width:420px}
 .rooms .list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -385,11 +385,11 @@ html[data-season="winter"] .rev{background:var(--wine)}html[data-season="glass"]
   <h2 class="disp">From Cheonggye<br>to <span>Dongdaemun</span></h2>
   <p class="lead">청계, 상암, 마곡, 동대문. 그리고 곧 서여의도. 점심 커피부터 늦은 와인까지, 우리 동네의 탭샵바.</p>
   <div class="stores">
-    <div class="store"><span class="en">CHEONGGYE</span><strong>청계 · 삼일빌딩점</strong>청계천 옆, 퇴근길 한 잔<br>0507-1331-4095<div class="links"><a href="https://map.naver.com/p/search/%ED%83%AD%EC%83%B5%EB%B0%94%20%EC%B2%AD%EA%B3%84" target="_blank" rel="noopener">지도 보기</a></div></div>
-    <div class="store"><span class="en">SANGAM</span><strong>상암</strong>DMC, 점심부터 저녁까지<br>0507-1312-0267 · 단체 예약은 매장 문의<div class="links"><a href="https://map.naver.com/p/search/%ED%83%AD%EC%83%B5%EB%B0%94%20%EC%83%81%EC%95%94" target="_blank" rel="noopener">지도 보기</a></div></div>
-    <div class="store"><span class="en">MAGOK</span><strong>마곡</strong>VL르웨스트 · 룸 예약 가능 (최대 8인)<br>9인 이상·단체는 매장 문의 0507-1425-8809<div class="links"><a href="https://naver.me/GwfJltAG" target="_blank" rel="noopener">지도 보기</a></div></div>
-    <div class="store"><span class="en">DONGDAEMUN</span><strong>동대문 · 두타</strong>두타몰, 쇼핑 끝에 한 잔<br>0507-1385-7973<div class="links"><a href="https://map.naver.com/p/search/%ED%83%AD%EC%83%B5%EB%B0%94%20%EB%8F%99%EB%8C%80%EB%AC%B8" target="_blank" rel="noopener">지도 보기</a></div></div>
-    <div class="store"><span class="en">SEO-YEOUIDO</span><span class="soon">오픈 준비 중</span><strong>서여의도 · 파라곤 디아케이드</strong>지하 2층 · 룸 3개<br>오픈 예정</div>
+    <div class="store"><span class="en">CHEONGGYE</span><strong>청계 · 삼일빌딩점</strong>청계천 옆, 퇴근길 한 잔<br>0507-1331-4095<div class="links"><a href="https://map.naver.com/p/search/%ED%83%AD%EC%83%B5%EB%B0%94%20%EC%B2%AD%EA%B3%84" target="_blank" rel="noopener">지도 보기</a><a class="way" href="https://tapshopbar.github.io/way/cheonggye" target="_blank" rel="noopener">길안내 →</a></div></div>
+    <div class="store"><span class="en">SANGAM</span><strong>상암</strong>DMC, 점심부터 저녁까지<br>0507-1312-0267 · 단체 예약은 매장 문의<div class="links"><a href="https://map.naver.com/p/search/%ED%83%AD%EC%83%B5%EB%B0%94%20%EC%83%81%EC%95%94" target="_blank" rel="noopener">지도 보기</a><a class="way" href="https://tapshopbar.github.io/way/sangam" target="_blank" rel="noopener">길안내 →</a></div></div>
+    <div class="store"><span class="en">MAGOK</span><strong>마곡</strong>VL르웨스트 · 룸 예약 가능 (최대 8인)<br>9인 이상·단체는 매장 문의 0507-1425-8809<div class="links"><a href="https://naver.me/GwfJltAG" target="_blank" rel="noopener">지도 보기</a><a class="way" href="https://tapshopbar.github.io/way/magok" target="_blank" rel="noopener">길안내 →</a></div></div>
+    <div class="store"><span class="en">DONGDAEMUN</span><strong>동대문 · 두타</strong>두타몰, 쇼핑 끝에 한 잔<br>0507-1385-7973<div class="links"><a href="https://map.naver.com/p/search/%ED%83%AD%EC%83%B5%EB%B0%94%20%EB%8F%99%EB%8C%80%EB%AC%B8" target="_blank" rel="noopener">지도 보기</a><a class="way" href="https://tapshopbar.github.io/way/dongdaemun" target="_blank" rel="noopener">길안내 →</a></div></div>
+    <div class="store"><span class="en">SEO-YEOUIDO</span><span class="soon">오픈 준비 중</span><strong>서여의도 · 파라곤 디아케이드</strong>지하 2층 · 룸 3개<br>오픈 예정<div class="links"><a class="way" href="https://tapshopbar.github.io/way/seoyeouido" target="_blank" rel="noopener">길안내 →</a></div></div>
   </div>
   <div class="rooms">
     <div><h3 class="disp">Rooms</h3><p>모임, 회식, 생일, 시음회. 프라이빗하게 즐기세요. 예약은 네이버 예약으로 바로 연결됩니다. 매장 전체 대관은 대관 문의를 이용해 주세요.</p></div>
@@ -432,14 +432,14 @@ html[data-season="winter"] .rev{background:var(--wine)}html[data-season="glass"]
   <h2 class="disp">Your taste.<br>Your tap.</h2>
   <p class="ko">가까운 탭샵바에서 만나요.</p>
   <p>모임·회식·시음회는 룸 예약으로, 매장 전체 대관은 대관 문의로. 매장 위치와 운영 정보는 공식 홈페이지에서 확인해 주세요.</p>
-  <a class="btn" href="https://tsb.wine/" target="_blank" rel="noopener">FIND A STORE</a>
+  <a class="btn" href="https://tsb.wine/" target="_blank" rel="noopener">FIND A STORE</a> <a class="btn ghost" href="https://tapshopbar.github.io/way/" target="_blank" rel="noopener">길안내</a>
   <a class="btn ghost" href="https://tsb.wine/party/" target="_blank" rel="noopener">대관 문의</a>
 </section>
 
 <footer>
   <div class="fgrid">
     <div><h4>GET THE APP</h4><div class="get">앱 다운로드하고<br>적립 시작하기 →</div><a href="https://apps.apple.com/kr/app/tapshopbar/id6759531852" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=wine.tsb.app" target="_blank" rel="noopener">Google Play</a><img class="slogan" src="assets/slogan.png" alt="wine is second americano"><div style="font-size:14px;font-weight:700">와인을 커피처럼.</div></div>
-    <div><h4>COMPANY</h4><a href="#menu">Menu</a><a href="#locations">Locations</a><a href="https://tsb.wine/reservation/" target="_blank" rel="noopener">예약</a><a href="https://tsb.wine/party/" target="_blank" rel="noopener">Private Events</a><a href="#film">About us</a><a href="https://tsb.wine/franchise" target="_blank" rel="noopener">Franchise</a></div>
+    <div><h4>COMPANY</h4><a href="#menu">Menu</a><a href="#locations">Locations</a><a href="https://tapshopbar.github.io/way/" target="_blank" rel="noopener">길안내</a><a href="https://tsb.wine/reservation/" target="_blank" rel="noopener">예약</a><a href="https://tsb.wine/party/" target="_blank" rel="noopener">Private Events</a><a href="#film">About us</a><a href="https://tsb.wine/franchise" target="_blank" rel="noopener">Franchise</a></div>
     <div><h4>SUPPORT</h4><a href="https://tsb.wine/help.html" target="_blank" rel="noopener">Help Centre</a><a href="https://tsb.wine/partnerships.html" target="_blank" rel="noopener">Partnerships</a><a href="https://tsb.wine/press.html" target="_blank" rel="noopener">Press</a></div>
     <div><h4>SOCIALS</h4><a href="https://www.instagram.com/tap.shop.bar/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@TSBKorea" target="_blank" rel="noopener">YouTube</a><a href="https://pf.kakao.com/_xjHlbxj" target="_blank" rel="noopener">KakaoTalk</a></div>
   </div>
